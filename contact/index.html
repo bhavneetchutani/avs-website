@@ -2,16 +2,16 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Contact information for AVS Freight Services.">
+<meta name="description" content="Get a freight quote from AVS Freight Services, Cypress TX. Flatbed and hotshot to jobsites in all 48 contiguous states. Call (281) 758-8676.">
 <link rel="canonical" href="https://avsfreight.com/contact/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AVS Freight Services">
 <meta property="og:title" content="Contact — AVS Freight Services">
-<meta property="og:description" content="Contact information for AVS Freight Services.">
+<meta property="og:description" content="Get a freight quote from AVS Freight Services, Cypress TX. Flatbed and hotshot to jobsites in all 48 contiguous states. Call (281) 758-8676.">
 <meta property="og:url" content="https://avsfreight.com/contact/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Contact — AVS Freight Services">
-<meta name="twitter:description" content="Contact information for AVS Freight Services.">
+<meta name="twitter:description" content="Get a freight quote from AVS Freight Services, Cypress TX. Flatbed and hotshot to jobsites in all 48 contiguous states. Call (281) 758-8676.">
 <link rel="icon" type="image/svg+xml" href="../assets/ca127996-399d-4732-b567-cf3dbe49d203.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/ed28774d-9950-4b00-9725-c1d27e16a2f7.png">
 <link rel="icon" type="image/png" sizes="512x512" href="../assets/63b2dd29-5af6-4310-9eea-316140ffa5eb.png">
@@ -164,6 +164,68 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
 @keyframes avsFade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes avsMarkIn { from { opacity: 0; transform: scale(.72) rotate(-24deg); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* ── quote form ─────────────────────────────────────────────────────── */
+#quote-form label, #q-done p[style*="Spline"] { display: block; }
+#quote-form > div > p > label,
+#quote-form > p > label {
+  font-family: 'Spline Sans Mono', monospace;
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: #8CA1B8; margin-bottom: 8px;
+}
+#quote-form input[type="text"],
+#quote-form input[type="email"],
+#quote-form input[type="tel"],
+#quote-form input[type="date"],
+#quote-form select,
+#quote-form textarea {
+  width: 100%; box-sizing: border-box;
+  background: #050A12; color: #EEF4FA;
+  border: 1px solid #17293C; border-radius: 0;
+  padding: 12px 13px;
+  font-family: Archivo, system-ui, sans-serif; font-size: 15px; line-height: 1.4;
+  transition: border-color .18s, box-shadow .18s;
+  -webkit-appearance: none; appearance: none;
+}
+#quote-form textarea { resize: vertical; min-height: 84px; }
+#quote-form select {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M0 0h11L5.5 7z' fill='%238CA1B8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 13px center;
+  padding-right: 34px; cursor: pointer;
+}
+#quote-form input:hover, #quote-form select:hover, #quote-form textarea:hover { border-color: #274a6b; }
+#quote-form input:focus-visible, #quote-form select:focus-visible, #quote-form textarea:focus-visible {
+  outline: none; border-color: #2196E8; box-shadow: 0 0 0 2px rgba(33,150,232,.34);
+}
+#quote-form input[type="checkbox"]:focus-visible { outline: 2px solid #2196E8; outline-offset: 2px; }
+#quote-form ::placeholder { color: #3E5C7A; opacity: 1; }
+#quote-form input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(.62) sepia(.2) saturate(3) hue-rotate(175deg); cursor: pointer; }
+
+#quote-form [data-err] { display: none; margin-top: 7px; font-size: 13px; line-height: 1.45; color: #FF9E7A; }
+#quote-form [data-err]::before { content: "\26A0\FE0E  "; }
+#quote-form [data-err].on { display: block; }
+#quote-form [aria-invalid="true"] { border-color: #FF9E7A; }
+#quote-form [data-hint] { display: block; margin-top: 7px; font-size: 13px; line-height: 1.45; color: #3E5C7A; }
+
+#q-submit {
+  background: #2196E8; color: #050A12; border: 0; cursor: pointer;
+  font-family: 'Spline Sans Mono', monospace; font-size: 12px;
+  letter-spacing: .16em; text-transform: uppercase;
+  padding: 16px 30px; transition: background .18s;
+  clip-path: polygon(0 0, calc(100% - 11px) 0, 100% 19px, 100% 100%, 11px 100%, 0 calc(100% - 19px));
+}
+#q-submit:hover { background: #6FC2F2; }
+#q-submit:focus-visible { outline: 2px solid #6FC2F2; outline-offset: 3px; }
+#q-submit[disabled] { background: #274a6b; color: #8CA1B8; cursor: progress; }
+#q-status.bad { color: #FF9E7A; }
+#q-status a { color: #F2A93B; }
+
+@media (max-width: 1000px) {
+  [data-quote-grid] { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 620px) {
+  #quote-form [data-row] { grid-template-columns: 1fr !important; }
+}
 </style>
 </head>
 <body>
@@ -186,9 +248,155 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
   </header>
 
 
-  <main style="padding:clamp(140px,16vw,180px) clamp(24px,4vw,56px) clamp(96px,10vw,140px);max-width:1500px;margin:0 auto;min-height:40vh">
-    <h1 style="margin:0 0 18px 0;font-size:clamp(32px,4vw,52px);line-height:1.08;font-weight:800;letter-spacing:-.03em">Contact</h1>
-    <p style="margin:0;font-size:18px;line-height:1.6;color:#A8BCD0;max-width:640px">Full content for this page is coming in a future update.</p>
+  <main style="padding:clamp(126px,15vw,168px) clamp(24px,4vw,56px) clamp(96px,10vw,140px);max-width:1500px;margin:0 auto">
+
+    <div style="max-width:760px">
+      <p style="margin:0 0 14px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Cypress, Texas &middot; MC-999084</p>
+      <h1 style="margin:0 0 20px;font-size:clamp(32px,4vw,52px);line-height:1.06;font-weight:800;letter-spacing:-.03em">Contact</h1>
+      <p style="margin:0;font-size:18px;line-height:1.6;color:#A8BCD0">Three people run this company. Whichever one you reach knows your load. Send the lane below and you'll get a number back, or call and we'll work it out on the phone.</p>
+    </div>
+
+    <!-- ── QUOTE FORM ─────────────────────────────────────────────────── -->
+    <section id="quote" style="margin-top:clamp(56px,7vw,84px);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:start" data-quote-grid>
+
+      <div style="background:#0A1220;border:1px solid #17293C;padding:clamp(24px,3vw,40px);clip-path:polygon(0 0, calc(100% - 22px) 0, 100% 38px, 100% 100%, 22px 100%, 0 calc(100% - 38px))">
+        <h2 style="margin:0 0 8px;font-size:clamp(22px,2.4vw,30px);line-height:1.15;font-weight:800;letter-spacing:-.02em">Get a quote</h2>
+        <p style="margin:0 0 26px;font-size:15px;line-height:1.6;color:#8CA1B8">Shipping freight? Start here. Carrying it? <a href="/carriers/">Head to the carrier page</a>.</p>
+
+        <form id="quote-form" novalidate>
+          <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+            <label for="q-company-url">Company website</label>
+            <input type="text" id="q-company-url" name="company_url" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div data-row style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <p data-field style="margin:0 0 16px"><label for="q-origin">Pick-up &mdash; city &amp; state, or ZIP <span style="color:#F2A93B">*</span></label><input type="text" id="q-origin" name="origin" required autocomplete="off" placeholder="Houston, TX"><span data-err id="q-origin-err"></span></p>
+            <p data-field style="margin:0 0 16px"><label for="q-dest">Delivery &mdash; city &amp; state, or ZIP <span style="color:#F2A93B">*</span></label><input type="text" id="q-dest" name="dest" required autocomplete="off" placeholder="77433"><span data-err id="q-dest-err"></span></p>
+          </div>
+
+          <div data-row style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <p data-field style="margin:0 0 16px">
+              <label for="q-date">Pick-up date <span style="color:#F2A93B">*</span></label>
+              <input type="date" id="q-date" name="pickup_date" required>
+              <label for="q-asap" style="display:flex;align-items:center;gap:9px;margin-top:11px;font-family:Archivo,system-ui,sans-serif;font-size:14px;letter-spacing:0;text-transform:none;color:#A8BCD0;cursor:pointer">
+                <input type="checkbox" id="q-asap" name="asap" style="width:17px;height:17px;accent-color:#2196E8;flex:0 0 auto;margin:0"> As soon as you can
+              </label>
+              <span data-err id="q-date-err"></span>
+            </p>
+            <p data-field style="margin:0 0 16px"><label for="q-weight">Approximate weight <span style="color:#F2A93B">*</span></label><input type="text" id="q-weight" name="weight" required inputmode="numeric" autocomplete="off" placeholder="38,000 lb"><span data-err id="q-weight-err"></span></p>
+          </div>
+
+          <div data-row style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <p data-field style="margin:0 0 16px"><label for="q-commodity">What you're shipping <span style="color:#F2A93B">*</span></label><input type="text" id="q-commodity" name="commodity" required autocomplete="off" placeholder="MSE wall panels"><span data-err id="q-commodity-err"></span></p>
+            <p data-field style="margin:0 0 16px"><label for="q-equipment">Equipment</label><select id="q-equipment" name="equipment"><option value="Not sure" selected>Not sure &mdash; tell me what fits</option><option value="Flatbed">Flatbed</option><option value="Hotshot">Hotshot</option></select></p>
+          </div>
+
+          <hr style="border:0;border-top:1px solid #17293C;margin:10px 0 24px">
+
+          <div data-row style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <p data-field style="margin:0 0 16px"><label for="q-name">Your name <span style="color:#F2A93B">*</span></label><input type="text" id="q-name" name="name" required autocomplete="name"><span data-err id="q-name-err"></span></p>
+            <p data-field style="margin:0 0 16px"><label for="q-company">Company <span style="color:#F2A93B">*</span></label><input type="text" id="q-company" name="company" required autocomplete="organization"><span data-err id="q-company-err"></span></p>
+          </div>
+
+          <div data-row style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <p data-field style="margin:0 0 16px"><label for="q-email">Email <span style="color:#F2A93B">*</span></label><input type="email" id="q-email" name="email" required autocomplete="email" inputmode="email"><span data-err id="q-email-err"></span></p>
+            <p data-field style="margin:0 0 16px"><label for="q-phone">Phone</label><input type="tel" id="q-phone" name="phone" autocomplete="tel" inputmode="tel"><span data-hint>Often the fastest way to get you an answer.</span></p>
+          </div>
+
+          <p data-field style="margin:0 0 22px"><label for="q-notes">Anything else</label><textarea id="q-notes" name="notes" rows="3" placeholder="Dimensions, tarping, jobsite access, appointment windows."></textarea></p>
+
+          <button type="submit" id="q-submit">Send it</button>
+          <p id="q-status" role="status" aria-live="polite" style="margin:16px 0 0;font-size:14px;line-height:1.6;color:#8CA1B8"></p>
+        </form>
+
+        <div id="q-done" hidden style="padding:6px 0 4px">
+          <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2196E8">Sent</p>
+          <h2 style="margin:0 0 14px;font-size:clamp(21px,2.2vw,27px);line-height:1.2;font-weight:800;letter-spacing:-.02em">We have it.</h2>
+          <p style="margin:0 0 10px;font-size:16px;line-height:1.65;color:#A8BCD0">We usually come back within the hour during business hours &mdash; 7am to 6pm Central, Monday to Friday. If it's moving today, call. That's faster than anything else.</p>
+          <p style="margin:0;font-size:19px;font-weight:700"><a href="tel:+12817588676">(281) 758-8676</a></p>
+        </div>
+      </div>
+
+      <aside style="display:flex;flex-direction:column;gap:22px">
+        <div style="border-left:2px solid #2196E8;padding:2px 0 2px 18px">
+          <p style="margin:0 0 7px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Faster than the form</p>
+          <p style="margin:0 0 6px;font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.1"><a href="tel:+12817588676">(281) 758-8676</a></p>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">7am&ndash;6pm Central, Monday to Friday. Someone who can quote the load picks up.</p>
+        </div>
+        <div style="border-left:2px solid #17293C;padding:2px 0 2px 18px">
+          <p style="margin:0 0 7px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">What we'll need eventually</p>
+          <p style="margin:0;font-size:14px;line-height:1.65;color:#8CA1B8">Pick-up and delivery, the date, what it is, roughly what it weighs. Dimensions and jobsite access if you have them. If you don't have all of it, send what you have &mdash; we'll ask for the rest.</p>
+        </div>
+        <div style="border-left:2px solid #17293C;padding:2px 0 2px 18px">
+          <p style="margin:0 0 7px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Not a quote?</p>
+          <p style="margin:0;font-size:14px;line-height:1.65;color:#8CA1B8">Carrier setup, invoices and everything else is <a href="#people">further down this page</a>.</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ── PEOPLE ─────────────────────────────────────────────────────── -->
+    <section id="people" style="margin-top:clamp(72px,9vw,120px)">
+      <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Who you'll be talking to</p>
+      <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,38px);line-height:1.12;font-weight:800;letter-spacing:-.03em">Reach the right person first</h2>
+      <p style="margin:0 0 40px;font-size:17px;line-height:1.6;color:#A8BCD0;max-width:640px">Small company, so nothing gets routed. Pick whoever fits and you're already talking to the person who can act.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:1px;background:#17293C;border:1px solid #17293C">
+
+        <div style="background:#050A12;padding:clamp(22px,2.4vw,30px)">
+          <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2196E8">Quotes &amp; dispatch</p>
+          <p style="margin:0 0 3px;font-size:20px;font-weight:700;letter-spacing:-.01em">CJ Singh</p>
+          <p style="margin:0 0 16px;font-size:14px;color:#3E5C7A">President</p>
+          <p style="margin:0 0 6px;font-size:15px;line-height:1.6"><a href="mailto:cj@avsfreight.com">cj@avsfreight.com</a></p>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.6"><a href="tel:+12817588676">(281) 758-8676</a></p>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">New loads, rates, and anything happening on a load that's already moving.</p>
+        </div>
+
+        <div style="background:#050A12;padding:clamp(22px,2.4vw,30px)">
+          <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2196E8">Carrier setup</p>
+          <p style="margin:0 0 3px;font-size:20px;font-weight:700;letter-spacing:-.01em">Preet Kaur</p>
+          <p style="margin:0 0 16px;font-size:14px;color:#3E5C7A">Carrier Sales</p>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.6"><a href="mailto:kk@avsfreight.com">kk@avsfreight.com</a></p>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">Packets, W-9s, certificates of insurance, and getting set up to run for us. <a href="/carriers/">Carrier page</a>.</p>
+        </div>
+
+        <div style="background:#050A12;padding:clamp(22px,2.4vw,30px)">
+          <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2196E8">Billing</p>
+          <p style="margin:0 0 3px;font-size:20px;font-weight:700;letter-spacing:-.01em">Accounts</p>
+          <p style="margin:0 0 16px;font-size:14px;color:#3E5C7A">Invoicing &amp; settlement</p>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.6"><a href="mailto:billing@avsfreight.com">billing@avsfreight.com</a></p>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">Invoices, remittances, notices of assignment and payment status. Send invoices here, not to a person.</p>
+        </div>
+
+        <div style="background:#050A12;padding:clamp(22px,2.4vw,30px)">
+          <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2196E8">New business</p>
+          <p style="margin:0 0 3px;font-size:20px;font-weight:700;letter-spacing:-.01em">Vinnie Chutani</p>
+          <p style="margin:0 0 16px;font-size:14px;color:#3E5C7A">Growth</p>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.6"><a href="mailto:vinnie@avsfreight.com">vinnie@avsfreight.com</a></p>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">Ongoing lanes, contract freight, and anything that needs a longer conversation than a single load.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DETAILS ────────────────────────────────────────────────────── -->
+    <section id="details" style="margin-top:clamp(72px,9vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(28px,3.5vw,52px);padding-top:clamp(40px,5vw,60px);border-top:1px solid #17293C">
+      <div>
+        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Office</p>
+        <p style="margin:0;font-size:15px;line-height:1.75;color:#A8BCD0">AVS Freight Services Inc.<br>15055 Fairfield Meadows Dr<br>Ste 130-26<br>Cypress, TX 77433</p>
+      </div>
+      <div>
+        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Hours</p>
+        <p style="margin:0;font-size:15px;line-height:1.75;color:#A8BCD0">7am &ndash; 6pm Central<br>Monday to Friday<br><span style="color:#8CA1B8">Loads already moving are covered outside those hours &mdash; call the number above.</span></p>
+      </div>
+      <div>
+        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Authority</p>
+        <p style="margin:0;font-size:15px;line-height:1.75;color:#A8BCD0">MC-999084<br>USDOT 2950817<br>Licensed property broker<br><span style="color:#8CA1B8">Operating since 2016</span></p>
+      </div>
+      <div>
+        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Coverage</p>
+        <p style="margin:0;font-size:15px;line-height:1.75;color:#A8BCD0">48 contiguous states<br>Flatbed &amp; hotshot<br><span style="color:#8CA1B8">Out of the Houston and Gulf Coast corridor.</span></p>
+      </div>
+    </section>
+
   </main>
 
   <footer style="padding:40px clamp(24px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;border-top:1px solid #17293C">
@@ -201,4 +409,164 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
   </footer>
 
 </div>
+<script>
+/* ── Quote form ───────────────────────────────────────────────────────────
+   HubSpot Forms API v3. Both identifiers below are PUBLIC by design and are
+   safe in a public repo -- they are the same two strings HubSpot prints in
+   its own embed snippet.
+
+   TO SWITCH THE FORM ON:
+     HubSpot -> Marketing -> Forms -> (open the form) -> Share -> Embed code.
+     The snippet contains  portalId: "NNNNNNNN"  and  formId: "xxxxxxxx-...".
+     Paste them into the two constants below. Nothing else changes.
+
+   The form sends only HubSpot's DEFAULT contact properties -- email,
+   firstname, lastname, company, phone, message -- so it works on whatever
+   tier the account is on today and needs no custom properties created.
+   The freight detail is composed into `message`.
+
+   WHILE THESE ARE EMPTY the form does not claim success: submitting shows the
+   phone number and cj@ instead. A form that says "thanks" and dropped the
+   enquiry is worse than no form.                                          */
+var HS_PORTAL_ID = "";
+var HS_FORM_GUID = "";
+
+(function () {
+  var form = document.getElementById("quote-form");
+  if (!form) return;
+
+  var done   = document.getElementById("q-done");
+  var status = document.getElementById("q-status");
+  var submit = document.getElementById("q-submit");
+  var loadedAt = Date.now();
+
+  var FALLBACK =
+    'We could not send that. Please call <a href="tel:+12817588676">(281) 758-8676</a> ' +
+    'or email <a href="mailto:cj@avsfreight.com">cj@avsfreight.com</a> and we will pick it up from there.';
+
+  function fail(msg) {
+    status.className = "bad";
+    status.innerHTML = msg || FALLBACK;
+    submit.disabled = false;
+    submit.textContent = "Send it";
+  }
+
+  function succeed() {
+    form.hidden = true;
+    done.hidden = false;
+    done.setAttribute("tabindex", "-1");
+    done.focus();
+  }
+
+  function setError(el, message) {
+    var err = document.getElementById(el.id + "-err");
+    if (message) {
+      el.setAttribute("aria-invalid", "true");
+      el.setAttribute("aria-describedby", el.id + "-err");
+      if (err) { err.textContent = message; err.classList.add("on"); }
+    } else {
+      el.removeAttribute("aria-invalid");
+      el.removeAttribute("aria-describedby");
+      if (err) { err.textContent = ""; err.classList.remove("on"); }
+    }
+  }
+
+  var LABELS = {
+    "q-origin": "Tell us where it picks up.",
+    "q-dest": "Tell us where it goes.",
+    "q-date": "Give us a date, or tick “as soon as you can”.",
+    "q-weight": "Roughly what does it weigh?",
+    "q-commodity": "What are we hauling?",
+    "q-name": "Your name, so we know who we are replying to.",
+    "q-company": "Which company are you with?",
+    "q-email": "We need an email to send the quote to."
+  };
+
+  function validate() {
+    var bad = null;
+    Object.keys(LABELS).forEach(function (id) {
+      var el = document.getElementById(id);
+      var value = (el.value || "").trim();
+      var empty = !value;
+      if (id === "q-date" && document.getElementById("q-asap").checked) empty = false;
+      var invalidEmail = id === "q-email" && value && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+      if (empty || invalidEmail) {
+        setError(el, invalidEmail ? "That email address does not look right." : LABELS[id]);
+        if (!bad) bad = el;
+      } else {
+        setError(el, null);
+      }
+    });
+    return bad;
+  }
+
+  form.addEventListener("input", function (e) {
+    if (e.target.getAttribute("aria-invalid") === "true") setError(e.target, null);
+  });
+  document.getElementById("q-asap").addEventListener("change", function () {
+    if (this.checked) setError(document.getElementById("q-date"), null);
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    status.className = "";
+    status.textContent = "";
+
+    var bad = validate();
+    if (bad) {
+      status.className = "bad";
+      status.textContent = "Some of that is still missing — the marked fields.";
+      bad.focus();
+      return;
+    }
+
+    /* Spam: a filled honeypot, or a form completed faster than a person can
+       read it, is discarded silently. The sender is shown the same screen a
+       real submission gets, so an automated retry learns nothing. */
+    var trap = document.getElementById("q-company-url").value;
+    if (trap || Date.now() - loadedAt < 3000) { succeed(); return; }
+
+    var v = function (id) { return (document.getElementById(id).value || "").trim(); };
+    var name = v("q-name").split(/\s+/);
+    var asap = document.getElementById("q-asap").checked;
+
+    var message = [
+      "Pick-up:   " + v("q-origin"),
+      "Delivery:  " + v("q-dest"),
+      "Date:      " + (asap ? "AS SOON AS POSSIBLE" + (v("q-date") ? " (or " + v("q-date") + ")" : "") : v("q-date")),
+      "Commodity: " + v("q-commodity"),
+      "Weight:    " + v("q-weight"),
+      "Equipment: " + v("q-equipment"),
+      v("q-notes") ? "\nNotes:\n" + v("q-notes") : ""
+    ].join("\n").trim();
+
+    if (!HS_PORTAL_ID || !HS_FORM_GUID) { fail(); return; }
+
+    submit.disabled = true;
+    submit.textContent = "Sending…";
+
+    var fields = [
+      { name: "email",     value: v("q-email") },
+      { name: "firstname", value: name[0] || "" },
+      { name: "lastname",  value: name.slice(1).join(" ") },
+      { name: "company",   value: v("q-company") },
+      { name: "message",   value: message }
+    ];
+    if (v("q-phone")) fields.push({ name: "phone", value: v("q-phone") });
+
+    fetch("https://api.hsforms.com/submissions/v3/integration/submit/" +
+          HS_PORTAL_ID + "/" + HS_FORM_GUID, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fields: fields,
+        context: { pageUri: location.href, pageName: document.title }
+      })
+    }).then(function (r) {
+      /* Assert on the RESPONSE, never on the request completing. */
+      if (r.ok) { succeed(); } else { fail(); }
+    }).catch(function () { fail(); });
+  });
+})();
+</script>
 </body></html>
