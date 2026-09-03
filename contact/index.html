@@ -198,14 +198,14 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
   outline: none; border-color: #2196E8; box-shadow: 0 0 0 2px rgba(33,150,232,.34);
 }
 #quote-form input[type="checkbox"]:focus-visible { outline: 2px solid #2196E8; outline-offset: 2px; }
-#quote-form ::placeholder { color: #3E5C7A; opacity: 1; }
+#quote-form ::placeholder { color: #6485A3; opacity: 1; }
 #quote-form input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(.62) sepia(.2) saturate(3) hue-rotate(175deg); cursor: pointer; }
 
 #quote-form [data-err] { display: none; margin-top: 7px; font-size: 13px; line-height: 1.45; color: #FF9E7A; }
 #quote-form [data-err]::before { content: "\26A0\FE0E  "; }
 #quote-form [data-err].on { display: block; }
 #quote-form [aria-invalid="true"] { border-color: #FF9E7A; }
-#quote-form [data-hint] { display: block; margin-top: 7px; font-size: 13px; line-height: 1.45; color: #3E5C7A; }
+#quote-form [data-hint] { display: block; margin-top: 7px; font-size: 13px; line-height: 1.45; color: #6485A3; }
 
 #q-submit {
   background: #2196E8; color: #050A12; border: 0; cursor: pointer;
@@ -225,6 +225,22 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
 }
 @media (max-width: 620px) {
   #quote-form [data-row] { grid-template-columns: 1fr !important; }
+}
+
+/* axe link-in-text-block: a link inside prose must not be distinguished by
+   colour alone (WCAG 1.4.1). The global `a { text-decoration: none }` strips
+   every underline, which is right for nav and buttons and wrong for body copy.
+   Scoped to prose only, and [data-btn] opts a button-shaped link back out. */
+main p a:not([data-btn]), main li a:not([data-btn]),
+section p a:not([data-btn]), section li a:not([data-btn]) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(111, 194, 242, .55);
+}
+main p a:not([data-btn]):hover, main li a:not([data-btn]):hover,
+section p a:not([data-btn]):hover, section li a:not([data-btn]):hover {
+  text-decoration-color: currentColor;
 }
 </style>
 </head>
@@ -251,7 +267,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
   <main style="padding:clamp(126px,15vw,168px) clamp(24px,4vw,56px) clamp(96px,10vw,140px);max-width:1500px;margin:0 auto">
 
     <div style="max-width:760px">
-      <p style="margin:0 0 14px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Cypress, Texas &middot; MC-999084</p>
+      <p style="margin:0 0 14px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Cypress, Texas &middot; MC-999084</p>
       <h1 style="margin:0 0 20px;font-size:clamp(32px,4vw,52px);line-height:1.06;font-weight:800;letter-spacing:-.03em">Contact</h1>
       <p style="margin:0;font-size:18px;line-height:1.6;color:#A8BCD0">Three people run this company. Whichever one you reach knows your load. Send the lane below and you'll get a number back, or call and we'll work it out on the phone.</p>
     </div>
@@ -319,16 +335,16 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
 
       <aside style="display:flex;flex-direction:column;gap:22px">
         <div style="border-left:2px solid #2196E8;padding:2px 0 2px 18px">
-          <p style="margin:0 0 7px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Faster than the form</p>
+          <p style="margin:0 0 7px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Faster than the form</p>
           <p style="margin:0 0 6px;font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.1"><a href="tel:+12817588676">(281) 758-8676</a></p>
           <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">7am&ndash;6pm Central, Monday to Friday. Someone who can quote the load picks up.</p>
         </div>
         <div style="border-left:2px solid #17293C;padding:2px 0 2px 18px">
-          <p style="margin:0 0 7px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">What we'll need eventually</p>
+          <p style="margin:0 0 7px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">What we'll need eventually</p>
           <p style="margin:0;font-size:14px;line-height:1.65;color:#8CA1B8">Pick-up and delivery, the date, what it is, roughly what it weighs. Dimensions and jobsite access if you have them. If you don't have all of it, send what you have &mdash; we'll ask for the rest.</p>
         </div>
         <div style="border-left:2px solid #17293C;padding:2px 0 2px 18px">
-          <p style="margin:0 0 7px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Not a quote?</p>
+          <p style="margin:0 0 7px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Not a quote?</p>
           <p style="margin:0;font-size:14px;line-height:1.65;color:#8CA1B8">Carrier setup, invoices and everything else is <a href="#people">further down this page</a>.</p>
         </div>
       </aside>
@@ -336,7 +352,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
 
     <!-- ── PEOPLE ─────────────────────────────────────────────────────── -->
     <section id="people" style="margin-top:clamp(72px,9vw,120px)">
-      <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Who you'll be talking to</p>
+      <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Who you'll be talking to</p>
       <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,38px);line-height:1.12;font-weight:800;letter-spacing:-.03em">Reach the right person first</h2>
       <p style="margin:0 0 40px;font-size:17px;line-height:1.6;color:#A8BCD0;max-width:640px">Small company, so nothing gets routed. Pick whoever fits and you're already talking to the person who can act.</p>
 
@@ -345,7 +361,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
         <div style="background:#050A12;padding:clamp(22px,2.4vw,30px)">
           <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2196E8">Quotes &amp; dispatch</p>
           <p style="margin:0 0 3px;font-size:20px;font-weight:700;letter-spacing:-.01em">CJ Singh</p>
-          <p style="margin:0 0 16px;font-size:14px;color:#3E5C7A">President</p>
+          <p style="margin:0 0 16px;font-size:14px;color:#6485A3">President</p>
           <p style="margin:0 0 6px;font-size:15px;line-height:1.6"><a href="mailto:cj@avsfreight.com">cj@avsfreight.com</a></p>
           <p style="margin:0 0 14px;font-size:15px;line-height:1.6"><a href="tel:+12817588676">(281) 758-8676</a></p>
           <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">New loads, rates, and anything happening on a load that's already moving.</p>
@@ -354,7 +370,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
         <div style="background:#050A12;padding:clamp(22px,2.4vw,30px)">
           <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2196E8">Carrier setup</p>
           <p style="margin:0 0 3px;font-size:20px;font-weight:700;letter-spacing:-.01em">Preet Kaur</p>
-          <p style="margin:0 0 16px;font-size:14px;color:#3E5C7A">Carrier Sales</p>
+          <p style="margin:0 0 16px;font-size:14px;color:#6485A3">Carrier Sales</p>
           <p style="margin:0 0 14px;font-size:15px;line-height:1.6"><a href="mailto:kk@avsfreight.com">kk@avsfreight.com</a></p>
           <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">Packets, W-9s, certificates of insurance, and getting set up to run for us. <a href="/carriers/">Carrier page</a>.</p>
         </div>
@@ -362,7 +378,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
         <div style="background:#050A12;padding:clamp(22px,2.4vw,30px)">
           <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2196E8">Billing</p>
           <p style="margin:0 0 3px;font-size:20px;font-weight:700;letter-spacing:-.01em">Accounts</p>
-          <p style="margin:0 0 16px;font-size:14px;color:#3E5C7A">Invoicing &amp; settlement</p>
+          <p style="margin:0 0 16px;font-size:14px;color:#6485A3">Invoicing &amp; settlement</p>
           <p style="margin:0 0 14px;font-size:15px;line-height:1.6"><a href="mailto:billing@avsfreight.com">billing@avsfreight.com</a></p>
           <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">Invoices, remittances, notices of assignment and payment status. Send invoices here, not to a person.</p>
         </div>
@@ -370,7 +386,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
         <div style="background:#050A12;padding:clamp(22px,2.4vw,30px)">
           <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2196E8">New business</p>
           <p style="margin:0 0 3px;font-size:20px;font-weight:700;letter-spacing:-.01em">Vinnie Chutani</p>
-          <p style="margin:0 0 16px;font-size:14px;color:#3E5C7A">Growth</p>
+          <p style="margin:0 0 16px;font-size:14px;color:#6485A3">Growth</p>
           <p style="margin:0 0 14px;font-size:15px;line-height:1.6"><a href="mailto:vinnie@avsfreight.com">vinnie@avsfreight.com</a></p>
           <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">Ongoing lanes, contract freight, and anything that needs a longer conversation than a single load.</p>
         </div>
@@ -380,19 +396,19 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
     <!-- ── DETAILS ────────────────────────────────────────────────────── -->
     <section id="details" style="margin-top:clamp(72px,9vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(28px,3.5vw,52px);padding-top:clamp(40px,5vw,60px);border-top:1px solid #17293C">
       <div>
-        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Office</p>
+        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Office</p>
         <p style="margin:0;font-size:15px;line-height:1.75;color:#A8BCD0">AVS Freight Services Inc.<br>15055 Fairfield Meadows Dr<br>Ste 130-26<br>Cypress, TX 77433</p>
       </div>
       <div>
-        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Hours</p>
+        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Hours</p>
         <p style="margin:0;font-size:15px;line-height:1.75;color:#A8BCD0">7am &ndash; 6pm Central<br>Monday to Friday<br><span style="color:#8CA1B8">Loads already moving are covered outside those hours &mdash; call the number above.</span></p>
       </div>
       <div>
-        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Authority</p>
+        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Authority</p>
         <p style="margin:0;font-size:15px;line-height:1.75;color:#A8BCD0">MC-999084<br>USDOT 2950817<br>Licensed property broker<br><span style="color:#8CA1B8">Operating since 2016</span></p>
       </div>
       <div>
-        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Coverage</p>
+        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Coverage</p>
         <p style="margin:0;font-size:15px;line-height:1.75;color:#A8BCD0">48 contiguous states<br>Flatbed &amp; hotshot<br><span style="color:#8CA1B8">Out of the Houston and Gulf Coast corridor.</span></p>
       </div>
     </section>
@@ -404,7 +420,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
       <span style="font-weight:900;font-variation-settings:'wdth' 125;font-size:17px;line-height:1;letter-spacing:-.02em;color:#8CA1B8">AVS</span>
       
       <span style="width: 11px; height: 18px; background: #2196E8; clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); display: block"></span><span style="font-weight:200;font-variation-settings:'wdth' 100;font-size:17px;line-height:1;letter-spacing:.02em;color:#8CA1B8">Freight Services</span>
-      <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;color:#3E5C7A;margin-left:8px">CYPRESS, TEXAS</span>
+      <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;color:#6485A3;margin-left:8px">CYPRESS, TEXAS</span>
     </div>
   </footer>
 

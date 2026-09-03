@@ -170,6 +170,22 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
 @keyframes avsFade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes avsMarkIn { from { opacity: 0; transform: scale(.72) rotate(-24deg); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* axe link-in-text-block: a link inside prose must not be distinguished by
+   colour alone (WCAG 1.4.1). The global `a { text-decoration: none }` strips
+   every underline, which is right for nav and buttons and wrong for body copy.
+   Scoped to prose only, and [data-btn] opts a button-shaped link back out. */
+main p a:not([data-btn]), main li a:not([data-btn]),
+section p a:not([data-btn]), section li a:not([data-btn]) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(111, 194, 242, .55);
+}
+main p a:not([data-btn]):hover, main li a:not([data-btn]):hover,
+section p a:not([data-btn]):hover, section li a:not([data-btn]):hover {
+  text-decoration-color: currentColor;
+}
 </style>
 </helmet>
 <div id="page-top" style="background:#050A12;color:#EEF4FA;font-family:Archivo,system-ui,sans-serif;overflow-x:clip">
@@ -191,6 +207,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
     </nav>
     <a href="#contact" data-hdr-cta="" style="display:inline-flex;align-items:center;gap:10px;background:#2196E8;color:#050A12;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:13px 22px;white-space:nowrap;flex:0 0 auto;clip-path:polygon(0 0, calc(100% - 11px) 0, 100% 19px, 100% 100%, 11px 100%, 0 calc(100% - 19px));transition:background .2s" style-hover="background:#6FC2F2"><span data-cta-long="">Call dispatch</span><span data-cta-icon="" style="display:none;align-items:center" aria-label="Call dispatch"><svg sc-camel-view-box="0 0 24 24" width="17" height="17" fill="currentColor" style="display:block"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1z"></path></svg></span></a>
   </header>
+  <main>
 
   <div data-rig="" style="position:relative;height:675vh">
     <div style="position:sticky;top:0;height:100vh;overflow:hidden">
@@ -1838,11 +1855,11 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
         <p style="margin:0;font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:#A8BCD0;max-width:620px;text-wrap:pretty;animation:avsRise .9s .34s cubic-bezier(.2,.7,.3,1) both">MSE retaining-wall panels. Structural steel. Precast concrete. We move it flatbed and hotshot, out of the Houston and Gulf Coast corridor. It lands on live highway and heavy-civil jobsites, in all 48 contiguous states. No dock. No forklift. There's an appointment window, and PPE rules that change from site to site. Somebody meets the truck, every time.</p>
         <div style="display:flex;gap:36px;flex-wrap:wrap;animation:avsRise .9s .4s cubic-bezier(.2,.7,.3,1) both">
           <div style="display:flex;flex-direction:column;gap:4px">
-            <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5C7590">Median reply to a quote</span>
+            <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7395B3">Median reply to a quote</span>
             <span style="font-size:30px;font-weight:800;color:#F2A93B;letter-spacing:-.01em">20 minutes</span>
           </div>
           <div style="display:flex;flex-direction:column;gap:4px">
-            <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5C7590">Loads covered in a day</span>
+            <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7395B3">Loads covered in a day</span>
             <span style="font-size:30px;font-weight:800;color:#6FC2F2;letter-spacing:-.01em">90%+</span>
           </div>
         </div>
@@ -1850,7 +1867,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
           <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
             <a href="#contact" style="display:inline-flex;align-items:center;gap:12px;background:#2196E8;color:#050A12;font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:18px 30px;clip-path:polygon(0 0, calc(100% - 13px) 0, 100% 23px, 100% 100%, 13px 100%, 0 calc(100% - 23px));transition:background .2s" style-hover="background:#6FC2F2">Get a quote</a>
           </div>
-          <p style="margin:0;font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:.03em;color:#8CA1B8">Or call <a href="tel:+12817588676" style="color:#EEF4FA;border-bottom:1px dashed #3E5C7A">(281) 758-8676</a> · <a href="/what-we-move/" style="color:#6FC2F2">see what we move →</a></p>
+          <p style="margin:0;font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:.03em;color:#8CA1B8">Or call <a href="tel:+12817588676" style="color:#EEF4FA;border-bottom:1px dashed #6485A3">(281) 758-8676</a> · <a href="/what-we-move/" style="color:#6FC2F2">see what we move →</a></p>
         </div>
       </div>
       <div style="flex:0 1 340px;display:flex;justify-content:center;align-items:center;min-width:260px">
@@ -1861,23 +1878,23 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
 
   <div style="display:flex;flex-wrap:wrap;gap:1px;background:#17293C;border-top:1px solid #17293C;border-bottom:1px solid #17293C;font-family:'Spline Sans Mono',monospace">
     <div data-reveal="rise" style="flex:1 1 200px;background:#050A12;padding:22px 28px;display:flex;flex-direction:column;gap:7px">
-      <span style="font-size:10px;letter-spacing:.22em;color:#5C7590">MC NUMBER</span>
+      <span style="font-size:10px;letter-spacing:.22em;color:#7395B3">MC NUMBER</span>
       <span style="font-size:15px;color:#EEF4FA;letter-spacing:.04em">MC-999084</span>
     </div>
     <div data-reveal="rise" style="flex:1 1 200px;background:#050A12;padding:22px 28px;display:flex;flex-direction:column;gap:7px">
-      <span style="font-size:10px;letter-spacing:.22em;color:#5C7590">USDOT</span>
+      <span style="font-size:10px;letter-spacing:.22em;color:#7395B3">USDOT</span>
       <span style="font-size:15px;color:#EEF4FA;letter-spacing:.04em">2950817</span>
     </div>
     <div data-reveal="rise" style="flex:1 1 200px;background:#050A12;padding:22px 28px;display:flex;flex-direction:column;gap:7px">
-      <span style="font-size:10px;letter-spacing:.22em;color:#5C7590">EQUIPMENT</span>
+      <span style="font-size:10px;letter-spacing:.22em;color:#7395B3">EQUIPMENT</span>
       <span style="font-size:15px;color:#EEF4FA;letter-spacing:.04em">Flatbed &amp; hotshot</span>
     </div>
     <div data-reveal="rise" style="flex:1 1 200px;background:#050A12;padding:22px 28px;display:flex;flex-direction:column;gap:7px">
-      <span style="font-size:10px;letter-spacing:.22em;color:#5C7590">COVERAGE</span>
+      <span style="font-size:10px;letter-spacing:.22em;color:#7395B3">COVERAGE</span>
       <span style="font-size:15px;color:#EEF4FA;letter-spacing:.04em">48 contiguous states</span>
     </div>
     <div data-reveal="rise" style="flex:1 1 200px;background:#050A12;padding:22px 28px;display:flex;flex-direction:column;gap:7px">
-      <span style="font-size:10px;letter-spacing:.22em;color:#5C7590">OPERATING SINCE</span>
+      <span style="font-size:10px;letter-spacing:.22em;color:#7395B3">OPERATING SINCE</span>
       <span style="font-size:15px;color:#F2A93B;letter-spacing:.04em">2016</span>
     </div>
   </div>
@@ -1895,22 +1912,22 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
       <div data-reveal="rise" style="background:#0A1523;border:1px solid #17293C;padding:36px 32px 40px;display:flex;flex-direction:column;gap:18px;clip-path:polygon(0 0, calc(100% - 26px) 0, 100% 45px, 100% 100%, 0 100%);transition:background .28s,border-color .28s,transform .35s cubic-bezier(.2,.7,.3,1)" style-hover="background:#0E1D2E;border-color:#2A4A69;transform:translateY(-4px)">
-        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#5C7590">01</span>
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#7395B3">01</span>
         <h3 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-.01em">MSE wall panels</h3>
         <p style="margin:0;font-size:15px;line-height:1.7;color:#8CA1B8">Precast panels for highway retaining walls. Flatbed, tarped, and staged in the order the crew wants them off the truck — the first piece needed loaded last, so nobody's re-stacking a trailer at the curb.</p>
       </div>
       <div data-reveal="rise" style="background:#0A1523;border:1px solid #17293C;padding:36px 32px 40px;display:flex;flex-direction:column;gap:18px;clip-path:polygon(0 0, calc(100% - 26px) 0, 100% 45px, 100% 100%, 0 100%);transition:background .28s,border-color .28s,transform .35s cubic-bezier(.2,.7,.3,1)" style-hover="background:#0E1D2E;border-color:#2A4A69;transform:translateY(-4px)">
-        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#5C7590">02</span>
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#7395B3">02</span>
         <h3 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-.01em">Structural steel</h3>
         <p style="margin:0;font-size:15px;line-height:1.7;color:#8CA1B8">Beams and members bound for a highway or heavy-civil site. Strapped and tarped for the road, not a warehouse dock, and loaded so the heaviest piece isn't the first one off.</p>
       </div>
       <div data-reveal="rise" style="background:#0A1523;border:1px solid #17293C;padding:36px 32px 40px;display:flex;flex-direction:column;gap:18px;clip-path:polygon(0 0, calc(100% - 26px) 0, 100% 45px, 100% 100%, 0 100%);transition:background .28s,border-color .28s,transform .35s cubic-bezier(.2,.7,.3,1)" style-hover="background:#0E1D2E;border-color:#2A4A69;transform:translateY(-4px)">
-        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#5C7590">03</span>
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#7395B3">03</span>
         <h3 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-.01em">Precast concrete</h3>
         <p style="margin:0;font-size:15px;line-height:1.7;color:#8CA1B8">Heavy, and not forgiving of a bad tie-down. It rides flatbed, at a weight our trailers are built for, secured the same way for a two-mile drive or a two-day one.</p>
       </div>
       <div data-reveal="rise" style="background:#0A1523;border:1px solid #17293C;padding:36px 32px 40px;display:flex;flex-direction:column;gap:18px;clip-path:polygon(0 0, calc(100% - 26px) 0, 100% 45px, 100% 100%, 0 100%);transition:background .28s,border-color .28s,transform .35s cubic-bezier(.2,.7,.3,1)" style-hover="background:#0E1D2E;border-color:#2A4A69;transform:translateY(-4px)">
-        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#5C7590">04</span>
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#7395B3">04</span>
         <h3 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-.01em">Hotshot, when it can't wait</h3>
         <p style="margin:0;font-size:15px;line-height:1.7;color:#8CA1B8">A smaller load, gone the same day a jobsite calls for a part or a repair that can't wait for the next truckload run. About a third of what we haul moves this way — <a href="/what-we-move/" style="color:#6FC2F2">more on that here</a>.</p>
       </div>
@@ -1977,15 +1994,15 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
       <p style="margin:0;font-size:17px;line-height:1.7;color:#A8BCD0;max-width:520px">Houston and the Gulf Coast industrial corridor is where our freight starts most often. From there, flatbed and hotshot runs go to every one of the 48 contiguous states — Houston to Riviera, Houston to Fort Worth, Houston to San Antonio, and plenty of points further out — with the same reference number on it the whole way.</p>
       <div style="display:flex;gap:1px;background:#17293C;border:1px solid #17293C;font-family:'Spline Sans Mono',monospace;flex-wrap:wrap">
         <div style="flex:1 1 140px;background:#050A12;padding:22px 24px;display:flex;flex-direction:column;gap:8px">
-          <span style="font-size:10px;letter-spacing:.22em;color:#5C7590">HOME BASE</span>
+          <span style="font-size:10px;letter-spacing:.22em;color:#7395B3">HOME BASE</span>
           <span style="font-size:14px;color:#EEF4FA">Cypress, Texas</span>
         </div>
         <div style="flex:1 1 140px;background:#050A12;padding:22px 24px;display:flex;flex-direction:column;gap:8px">
-          <span style="font-size:10px;letter-spacing:.22em;color:#5C7590">CORE CORRIDOR</span>
+          <span style="font-size:10px;letter-spacing:.22em;color:#7395B3">CORE CORRIDOR</span>
           <span style="font-size:14px;color:#EEF4FA">Houston · Gulf Coast</span>
         </div>
         <div style="flex:1 1 140px;background:#050A12;padding:22px 24px;display:flex;flex-direction:column;gap:8px">
-          <span style="font-size:10px;letter-spacing:.22em;color:#5C7590">REACH</span>
+          <span style="font-size:10px;letter-spacing:.22em;color:#7395B3">REACH</span>
           <span style="font-size:14px;color:#EEF4FA">Continental U.S.</span>
         </div>
       </div>
@@ -2011,17 +2028,17 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
       </div>
       <div data-reveal="rise" style="flex:0 1 400px;min-width:300px;background:rgba(10,21,35,.72);border:1px solid #24405C;backdrop-filter:blur(6px);padding:36px 34px;display:flex;flex-direction:column;gap:26px;clip-path:polygon(0 0, calc(100% - 34px) 0, 100% 59px, 100% 100%, 34px 100%, 0 calc(100% - 59px))">
         <div style="display:flex;flex-direction:column;gap:8px">
-          <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#5C7590">DISPATCH LINE</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#7395B3">DISPATCH LINE</span>
           <span style="font-size: 22px; font-weight: 600; color: #F2A93B; letter-spacing: .02em; border-bottom: 1px dashed #24405C; padding-bottom: 8px">(281) 758-8676</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:8px">
-          <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#5C7590">QUOTES</span>
-          <a href="mailto:cj@avsfreight.com" style="font-size:22px;font-weight:600;color:#EEF4FA;letter-spacing:-.01em" style-hover="color:#6FC2F2">cj@avsfreight.com</a><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#5C7590">CJ SINGH, PRESIDENT</span>
-<span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#5C7590">BILLING INQUIRIES</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#7395B3">QUOTES</span>
+          <a href="mailto:cj@avsfreight.com" style="font-size:22px;font-weight:600;color:#EEF4FA;letter-spacing:-.01em" style-hover="color:#6FC2F2">cj@avsfreight.com</a><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#7395B3">CJ SINGH, PRESIDENT</span>
+<span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#7395B3">BILLING INQUIRIES</span>
 <a href="mailto:billing@avsfreight.com" style="font-size: 22px; font-weight: 600; color: #EEF4FA; letter-spacing: -.01em" style-hover="color:#6FC2F2">billing@avsfreight.com</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:8px">
-          <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#5C7590">Mailing Address</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#7395B3">Mailing Address</span>
           <span style="font-size:17px;color:#A8BCD0">15055 Fairfield Meadows Drive<br>Suite 130-26<br>Cypress, Texas 77433</span>
         </div>
         <div style="display:flex;gap:28px;padding-top:22px;border-top:1px solid #17293C;font-family:'Spline Sans Mono',monospace;font-size:12px;color:#8CA1B8;letter-spacing:.06em">
@@ -2032,12 +2049,13 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
     </div>
   </section>
 
+  </main>
   <footer style="padding:40px clamp(24px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;border-top:1px solid #17293C">
     <div style="display:flex;align-items:center;gap:14px">
       <span style="font-weight:900;font-variation-settings:'wdth' 125;font-size:17px;line-height:1;letter-spacing:-.02em;color:#8CA1B8">AVS</span>
       
       <span style="width: 11px; height: 18px; background: #2196E8; clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); display: block"></span><span style="font-weight:200;font-variation-settings:'wdth' 100;font-size:17px;line-height:1;letter-spacing:.02em;color:#8CA1B8">Freight Services</span>
-      <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;color:#3E5C7A;margin-left:8px">CYPRESS, TEXAS</span>
+      <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;color:#6485A3;margin-left:8px">CYPRESS, TEXAS</span>
     </div>
   </footer>
 

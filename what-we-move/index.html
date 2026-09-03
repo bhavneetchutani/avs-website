@@ -164,6 +164,22 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
 @keyframes avsFade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes avsMarkIn { from { opacity: 0; transform: scale(.72) rotate(-24deg); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* axe link-in-text-block: a link inside prose must not be distinguished by
+   colour alone (WCAG 1.4.1). The global `a { text-decoration: none }` strips
+   every underline, which is right for nav and buttons and wrong for body copy.
+   Scoped to prose only, and [data-btn] opts a button-shaped link back out. */
+main p a:not([data-btn]), main li a:not([data-btn]),
+section p a:not([data-btn]), section li a:not([data-btn]) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(111, 194, 242, .55);
+}
+main p a:not([data-btn]):hover, main li a:not([data-btn]):hover,
+section p a:not([data-btn]):hover, section li a:not([data-btn]):hover {
+  text-decoration-color: currentColor;
+}
 </style>
 </head>
 <body>
@@ -190,7 +206,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
     <h1 style="margin:0 0 18px 0;font-size:clamp(32px,4vw,52px);line-height:1.08;font-weight:800;letter-spacing:-.03em">What We Move</h1>
     <p style="margin:0 0 16px 0;font-size:18px;line-height:1.6;color:#A8BCD0;max-width:700px">We run flatbed, hotshot, dry van, reefer, step-deck, LTL, expedited and sprinter, drayage and power-only — construction materials, mostly, out of the Houston and Gulf Coast corridor, onto live jobsites in every one of the 48 contiguous states. Flatbed and hotshot lead, because that's what the freight calls for most.</p>
     <p style="margin:0;font-size:18px;line-height:1.6;color:#A8BCD0;max-width:700px">Most of what we haul is going to a live jobsite, not a warehouse — a highway or heavy-civil site with an appointment window and no dock. That shapes which equipment gets picked as much as the mode does.</p>
-  </main>
+  
 
   <section id="service-list" style="padding:clamp(48px,6vw,80px) clamp(24px,4vw,56px);max-width:1500px;margin:0 auto;border-top:1px solid #17293C">
     <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:36px">
@@ -205,13 +221,13 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-bottom:36px">
       <div style="background:#0A1523;border:1px solid #2A4A69;padding:28px 26px 30px;display:flex;flex-direction:column;gap:12px;clip-path:polygon(0 0, calc(100% - 22px) 0, 100% 38px, 100% 100%, 0 100%)">
-        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#5C7590">WHAT WE RUN MOST</span>
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#7395B3">WHAT WE RUN MOST</span>
         <h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.01em">Flatbed</h3>
         <p style="margin:0;font-size:15px;line-height:1.7;color:#8CA1B8">Tarped and strapped, rated up to 48,000 lb — MSE wall panels, structural steel, precast concrete, staged for a highway or heavy-civil site.</p>
         <p style="margin:0;font-size:15px;line-height:1.7;color:#F2A93B">Median reply to a quote: 20 minutes. Over 90% of loads covered on one day's notice or less.</p>
       </div>
       <div style="background:#0A1523;border:1px solid #2A4A69;padding:28px 26px 30px;display:flex;flex-direction:column;gap:12px;clip-path:polygon(0 0, calc(100% - 22px) 0, 100% 38px, 100% 100%, 0 100%)">
-        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#5C7590">ROUGHLY A THIRD OF THE WORK</span>
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;color:#7395B3">ROUGHLY A THIRD OF THE WORK</span>
         <h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.01em">Hotshot</h3>
         <p style="margin:0;font-size:15px;line-height:1.7;color:#8CA1B8">Lighter and faster — around 7,000 lb, not a full trailer — for the load that can't wait for the next truckload run: a part, a repair, a jobsite that called this morning.</p>
         <p style="margin:0;font-size:15px;line-height:1.7;color:#6FC2F2">Hardly anyone in this market leads with hotshot. We do.</p>
@@ -273,13 +289,14 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
       <a href="/contact/" style="display:inline-flex;align-items:center;gap:12px;background:#2196E8;color:#050A12;font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:16px 28px;clip-path:polygon(0 0, calc(100% - 13px) 0, 100% 23px, 100% 100%, 13px 100%, 0 calc(100% - 23px))">Get a quote</a>
     </div>
   </section>
+  </main>
 
   <footer style="padding:40px clamp(24px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;border-top:1px solid #17293C">
     <div style="display:flex;align-items:center;gap:14px">
       <span style="font-weight:900;font-variation-settings:'wdth' 125;font-size:17px;line-height:1;letter-spacing:-.02em;color:#8CA1B8">AVS</span>
       
       <span style="width: 11px; height: 18px; background: #2196E8; clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); display: block"></span><span style="font-weight:200;font-variation-settings:'wdth' 100;font-size:17px;line-height:1;letter-spacing:.02em;color:#8CA1B8">Freight Services</span>
-      <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;color:#3E5C7A;margin-left:8px">CYPRESS, TEXAS</span>
+      <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;color:#6485A3;margin-left:8px">CYPRESS, TEXAS</span>
     </div>
   </footer>
 

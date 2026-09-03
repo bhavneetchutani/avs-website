@@ -167,6 +167,22 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
 
 @media (max-width: 900px) { [data-setup-grid] { grid-template-columns: 1fr !important; } }
 #setup ol li h3 { letter-spacing: -.01em; }
+
+/* axe link-in-text-block: a link inside prose must not be distinguished by
+   colour alone (WCAG 1.4.1). The global `a { text-decoration: none }` strips
+   every underline, which is right for nav and buttons and wrong for body copy.
+   Scoped to prose only, and [data-btn] opts a button-shaped link back out. */
+main p a:not([data-btn]), main li a:not([data-btn]),
+section p a:not([data-btn]), section li a:not([data-btn]) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(111, 194, 242, .55);
+}
+main p a:not([data-btn]):hover, main li a:not([data-btn]):hover,
+section p a:not([data-btn]):hover, section li a:not([data-btn]):hover {
+  text-decoration-color: currentColor;
+}
 </style>
 </head>
 <body>
@@ -192,17 +208,17 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
   <main style="padding:clamp(126px,15vw,168px) clamp(24px,4vw,56px) clamp(96px,10vw,140px);max-width:1500px;margin:0 auto">
 
     <div style="max-width:760px">
-      <p style="margin:0 0 14px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Carrier &amp; owner-operator</p>
+      <p style="margin:0 0 14px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Carrier &amp; owner-operator</p>
       <h1 style="margin:0 0 20px;font-size:clamp(32px,4vw,52px);line-height:1.06;font-weight:800;letter-spacing:-.03em">Run for us</h1>
       <p style="margin:0 0 18px;font-size:18px;line-height:1.6;color:#A8BCD0">Flatbed and hotshot out of Houston and the Gulf Coast, into all 48 contiguous states. Most of it is construction material going to a live jobsite &mdash; wall panels, structural steel, precast &mdash; so it loads from the side and comes off with a crane, not a dock.</p>
       <p style="margin:0;font-size:18px;line-height:1.6;color:#A8BCD0">If that's your kind of freight, get set up once and we'll call you when it fits.</p>
     </div>
 
-    <p style="margin:34px 0 0"><a href="mailto:kk@avsfreight.com?subject=Carrier%20setup" style="display:inline-flex;align-items:center;gap:10px;background:#2196E8;color:#050A12;font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:16px 30px;clip-path:polygon(0 0, calc(100% - 11px) 0, 100% 19px, 100% 100%, 11px 100%, 0 calc(100% - 19px))">Start setup &rarr;</a></p>
+    <p style="margin:34px 0 0"><a data-btn href="mailto:kk@avsfreight.com?subject=Carrier%20setup" style="display:inline-flex;align-items:center;gap:10px;background:#2196E8;color:#050A12;font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:16px 30px;clip-path:polygon(0 0, calc(100% - 11px) 0, 100% 19px, 100% 100%, 11px 100%, 0 calc(100% - 19px))">Start setup &rarr;</a></p>
 
     <!-- ── HOW WE PAY ─────────────────────────────────────────────────── -->
     <section id="pay" style="margin-top:clamp(72px,9vw,116px)">
-      <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Settlement</p>
+      <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Settlement</p>
       <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,38px);line-height:1.12;font-weight:800;letter-spacing:-.03em">How we pay</h2>
       <p style="margin:0 0 40px;font-size:17px;line-height:1.6;color:#A8BCD0;max-width:680px">Every term below is what we actually do, not a target. Ask a carrier who has run for us.</p>
 
@@ -235,7 +251,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
     <!-- ── WHAT WE NEED ───────────────────────────────────────────────── -->
     <section id="setup" style="margin-top:clamp(72px,9vw,116px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:start" data-setup-grid>
       <div>
-        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">Getting set up</p>
+        <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Getting set up</p>
         <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,38px);line-height:1.12;font-weight:800;letter-spacing:-.03em">What we need from you</h2>
         <p style="margin:0 0 16px;font-size:17px;line-height:1.6;color:#A8BCD0">One packet, once. We refresh it annually rather than asking you to re-send everything every quarter.</p>
         <p style="margin:0;font-size:17px;line-height:1.6;color:#A8BCD0">Send it to <a href="mailto:kk@avsfreight.com?subject=Carrier%20setup">kk@avsfreight.com</a> and Preet will come back to you.</p>
@@ -267,7 +283,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
 
     <!-- ── ON THE LOAD ────────────────────────────────────────────────── -->
     <section id="onload" style="margin-top:clamp(72px,9vw,116px);padding-top:clamp(40px,5vw,60px);border-top:1px solid #17293C">
-      <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3E5C7A">On the load</p>
+      <p style="margin:0 0 12px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">On the load</p>
       <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,38px);line-height:1.12;font-weight:800;letter-spacing:-.03em">What the freight is actually like</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:clamp(24px,3vw,44px);margin-top:34px">
         <div>
@@ -297,7 +313,7 @@ section[id], [id="top"] { scroll-margin-top: 96px; }
       <span style="font-weight:900;font-variation-settings:'wdth' 125;font-size:17px;line-height:1;letter-spacing:-.02em;color:#8CA1B8">AVS</span>
       
       <span style="width: 11px; height: 18px; background: #2196E8; clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); display: block"></span><span style="font-weight:200;font-variation-settings:'wdth' 100;font-size:17px;line-height:1;letter-spacing:.02em;color:#8CA1B8">Freight Services</span>
-      <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;color:#3E5C7A;margin-left:8px">CYPRESS, TEXAS</span>
+      <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;color:#6485A3;margin-left:8px">CYPRESS, TEXAS</span>
     </div>
   </footer>
 
