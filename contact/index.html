@@ -248,6 +248,9 @@ footer a { transition: color .18s; }
 footer a:hover { color: #6FC2F2; }
 @media (max-width: 1040px) { [data-foot-grid] { grid-template-columns: 1fr 1fr !important; row-gap: 40px !important; } }
 @media (max-width: 620px)  { [data-foot-grid] { grid-template-columns: 1fr !important; row-gap: 34px !important; } }
+
+@media (max-width: 1100px) { [data-people-grid] { grid-template-columns: 1fr 1fr !important; } }
+@media (max-width: 620px)  { [data-people-grid] { grid-template-columns: 1fr !important; } }
 </style>
 </head>
 <body>
@@ -362,14 +365,13 @@ footer a:hover { color: #6FC2F2; }
       <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,38px);line-height:1.12;font-weight:800;letter-spacing:-.03em">Reach the right person first</h2>
       <p style="margin:0 0 40px;font-size:17px;line-height:1.6;color:#A8BCD0;max-width:640px">Small company, so nothing gets routed. Pick whoever fits and you're already talking to the person who can act.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:1px;background:#17293C;border:1px solid #17293C">
+      <div data-people-grid style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#17293C;border:1px solid #17293C">
 
         <div style="background:#050A12;padding:clamp(22px,2.4vw,30px)">
           <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2196E8">Quotes &amp; dispatch</p>
           <p style="margin:0 0 3px;font-size:20px;font-weight:700;letter-spacing:-.01em">CJ Singh</p>
           <p style="margin:0 0 16px;font-size:14px;color:#6485A3">President</p>
-          <p style="margin:0 0 6px;font-size:15px;line-height:1.6"><a href="mailto:cj@avsfreight.com">cj@avsfreight.com</a></p>
-          <p style="margin:0 0 14px;font-size:15px;line-height:1.6"><a href="tel:+12817588676">(281) 758-8676</a></p>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.6"><a href="mailto:cj@avsfreight.com">cj@avsfreight.com</a></p>
           <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">New loads, rates, and anything happening on a load that's already moving.</p>
         </div>
 
@@ -395,6 +397,12 @@ footer a:hover { color: #6FC2F2; }
           <p style="margin:0 0 16px;font-size:14px;color:#6485A3">Growth</p>
           <p style="margin:0 0 14px;font-size:15px;line-height:1.6"><a href="mailto:vinnie@avsfreight.com">vinnie@avsfreight.com</a></p>
           <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">Ongoing lanes, contract freight, and anything that needs a longer conversation than a single load.</p>
+        </div>
+
+        <div style="grid-column:1 / -1;background:#050A12;padding:clamp(22px,2.4vw,28px) clamp(22px,2.4vw,30px);display:flex;align-items:baseline;gap:clamp(16px,3vw,34px);flex-wrap:wrap">
+          <p style="margin:0;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2196E8;flex:0 0 auto">Or just call</p>
+          <p style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.02em;line-height:1.1;flex:0 0 auto"><a href="tel:+12817588676" data-btn style="color:#EEF4FA">(281) 758-8676</a></p>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#8CA1B8">7am to 6pm Central, Monday to Friday. Whoever picks up can quote the load.</p>
         </div>
       </div>
     </section>
@@ -426,7 +434,7 @@ footer a:hover { color: #6FC2F2; }
 
       <div>
         <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Talk to us</p>
-        <p style="margin:0 0 6px;font-size:20px;font-weight:700;letter-spacing:-.01em"><a href="tel:+12817588676" style="color:#EEF4FA">(281) 758-8676</a></p>
+        <p style="margin:0 0 6px;font-size:20px;font-weight:700;letter-spacing:-.01em"><a href="tel:+12817588676" data-btn style="color:#EEF4FA">(281) 758-8676</a></p>
         <p style="margin:0 0 18px;font-size:14px;line-height:1.6;color:#6485A3">7am to 6pm Central, Monday to Friday</p>
         <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:13px;font-size:14px;line-height:1.4">
           <li><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3;display:block;margin-bottom:3px">Quotes</span><a href="mailto:cj@avsfreight.com" style="color:#8CA1B8">cj@avsfreight.com</a></li>
