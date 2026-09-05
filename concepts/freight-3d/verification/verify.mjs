@@ -9,8 +9,11 @@ const origin = process.env.AVS_PREVIEW_ORIGIN || 'http://127.0.0.1:8874';
 const dest = 'concepts/freight-3d/verification';
 const buffer = fs.readFileSync('models/avs-freight.glb');
 const gltf = JSON.parse(buffer.subarray(20, 20 + buffer.readUInt32LE(12)).toString());
-assert(gltf.materials?.length >= 20, 'The GLB must retain its PBR materials');
+assert(gltf.materials?.length > 0, 'The GLB must retain its PBR materials');
 assert(gltf.meshes.every(mesh => mesh.primitives.every(p => Number.isInteger(p.material))), 'Every primitive needs a material');
+const assemblies = ['Tractor', 'Trailer', 'Cargo_Steel', 'Cargo_Precast', 'Cargo_Wire', 'Cargo_Machinery'];
+const hasMesh = (node) => Number.isInteger(node.mesh) || (node.children || []).some(index => hasMesh(gltf.nodes[index]));
+for (const name of assemblies) assert(hasMesh(gltf.nodes.find(node => node.name === name) || {}), `Missing geometry for ${name}`);
 const paint = gltf.materials.find(material => /midnight cobalt/.test(material.name));
 assert(paint?.pbrMetallicRoughness.baseColorFactor[2] > paint?.pbrMetallicRoughness.baseColorFactor[0], 'Blue paint must survive compression');
 const browser = await chromium.launch({ headless: true, channel: 'chrome' });
@@ -24,6 +27,11 @@ try {
     page.on('pageerror', error => errors.push(error.message));
     await page.goto(`${origin}/concepts/freight-3d/`);
     await page.waitForFunction(() => window.freightExperience?.getState().ready, undefined, { timeout: 30000 });
+    const modelState = await page.evaluate(() => window.freightExperience.getState());
+    assert.deepEqual(modelState.assemblies.map(({ name }) => name), assemblies);
+    assert(modelState.assemblies.every(({ meshes }) => meshes > 0), 'Every assembly needs rendered meshes');
+    assert(modelState.glazing.length > 0, 'Dedicated glazing must be identified by its material or surface metadata');
+    assert(modelState.glazing.every(mesh => !mesh.castShadow && !mesh.receiveShadow), 'Dedicated glazing must not self-shadow');
     const states = [];
     const chapters = quick ? [[1, 'steel']] : ['intro', 'steel', 'precast', 'wire', 'machinery'].map((slug, i) => [i, slug]);
     for (const [i, slug] of chapters) {

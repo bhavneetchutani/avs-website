@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-05T18:49:35.082Z",
+  "date": "2026-09-05T19:02:51.469Z",
   "browser": "152.0.7977.77",
   "model": {
     "bytes": 1390480,
@@ -30,12 +30,45 @@
           "cargo": [
             "Cargo_Steel"
           ],
-          "calls": 58,
-          "triangles": 324778,
+          "calls": 57,
+          "triangles": 323750,
           "width": 1065.609375,
           "height": 684,
           "reducedMotion": false,
-          "paused": false
+          "paused": false,
+          "assemblies": [
+            {
+              "name": "Tractor",
+              "meshes": 13
+            },
+            {
+              "name": "Trailer",
+              "meshes": 10
+            },
+            {
+              "name": "Cargo_Steel",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Precast",
+              "meshes": 6
+            },
+            {
+              "name": "Cargo_Wire",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Machinery",
+              "meshes": 6
+            }
+          ],
+          "glazing": [
+            {
+              "name": "Tractor_|_Cab_|_blue_smoked_glazing",
+              "castShadow": false,
+              "receiveShadow": false
+            }
+          ]
         }
       ],
       "dimensions": {

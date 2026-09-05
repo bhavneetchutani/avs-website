@@ -21,9 +21,12 @@ const chapterStates = [
   { group: 'Cargo_Wire', title: 'WIRE & REINFORCEMENT / OPEN DECK', eye: [-5, 14, 30], target: [-0.3, 1.5, 0] },
   { group: 'Cargo_Machinery', title: 'INDUSTRIAL EQUIPMENT / OPEN DECK', eye: [-16, 12, 28], target: [-0.3, 1.6, 0] },
 ];
+const assemblyNames = ['Tractor', 'Trailer', ...chapterStates.slice(1).map(({ group }) => group)];
 
 let renderer, scene, camera, rig;
 let groups = [];
+const glazingMeshes = [];
+const assemblyDiagnostics = [];
 let current = 0;
 let desired = 0;
 let frame = 0;
@@ -204,7 +207,26 @@ async function initialize() {
       if (!object.isMesh) return;
       object.castShadow = true;
       object.receiveShadow = true;
+      const materials = Array.isArray(object.material) ? object.material : [object.material];
+      const isGlass = (material) => material?.userData.surface === 'glass'
+        || /\b(?:glass|glazing|windscreen|windshield)\b/i.test(material?.name || '');
+      const dedicatedGlazing = materials.length > 0 && (materials.every(isGlass)
+        || (materials.length === 1 && object.userData.surface === 'glass'));
+      if (dedicatedGlazing) {
+        // Thin glazing and nearby seals should not shadow each other. Keep
+        // shadows on mixed body/glass meshes until their glazing is separated.
+        object.castShadow = false;
+        object.receiveShadow = false;
+        glazingMeshes.push(object);
+      }
     });
+    for (const name of assemblyNames) {
+      const assembly = rig.getObjectByName(name);
+      let meshes = 0;
+      assembly?.traverse((object) => { if (object.isMesh) meshes++; });
+      if (!meshes) throw new Error(`Model is missing geometry for ${name}`);
+      assemblyDiagnostics.push({ name, meshes });
+    }
     // Calculate once, before hiding cargo. Preserve the Blender group hierarchy.
     const box = new THREE.Box3().setFromObject(rig);
     const center = box.getCenter(new THREE.Vector3());
@@ -246,7 +268,7 @@ async function initialize() {
     new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; if (inView) renderSoon(); }, { rootMargin: '100px' }).observe(experience);
     // Read-only diagnostics for local verification, not visible product copy.
     window.freightExperience = {
-      getState: () => ({ ready, desired, current, chapter: activeChapter, camera: camera.position.toArray(), cargo: groups.filter(({ object }) => object.visible).map(({ object }) => object.name), calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, width: viewportWidth, height: viewportHeight, reducedMotion: reduceMotion.matches, paused }),
+      getState: () => ({ ready, desired, current, chapter: activeChapter, camera: camera.position.toArray(), cargo: groups.filter(({ object }) => object.visible).map(({ object }) => object.name), calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, width: viewportWidth, height: viewportHeight, reducedMotion: reduceMotion.matches, paused, assemblies: assemblyDiagnostics, glazing: glazingMeshes.map(({ name, castShadow, receiveShadow }) => ({ name, castShadow, receiveShadow })) }),
     };
   } catch (error) {
     staticFallback(error.message);
