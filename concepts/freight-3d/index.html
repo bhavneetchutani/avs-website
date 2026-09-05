@@ -9,9 +9,37 @@
   <title>What We Move · AVS Freight Services</title>
   <link rel="icon" href="../../assets/ca127996-399d-4732-b567-cf3dbe49d203.svg">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./loader.css">
   <script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js","three/addons/":"./vendor/three/addons/"}}</script>
 </head>
 <body class="is-static">
+  <div class="freight-loader" id="freight-loader" role="dialog" aria-modal="true" hidden aria-label="Preparing the freight experience">
+    <svg class="loader-curtain" id="loader-curtain" aria-hidden="true" width="100%" height="100%">
+      <defs><mask id="loader-aperture" maskUnits="userSpaceOnUse"><rect width="100%" height="100%" fill="white"/><polygon id="loader-opening" fill="black"/></mask></defs>
+      <rect width="100%" height="100%" fill="#050A12" mask="url(#loader-aperture)"/>
+    </svg>
+    <div class="loader-top mono"><span>AVS FREIGHT SERVICES</span><span>WHAT WE MOVE</span></div>
+    <div class="loader-center">
+      <div class="loader-mark" id="loader-mark" aria-hidden="true">
+        <svg viewBox="-360 -490 720 980" class="loader-diamond">
+          <defs><clipPath id="loader-fill"><rect id="loader-fill-level" x="-360" y="391" width="720" height="0"/></clipPath></defs>
+          <path class="loader-outline" d="M0 -465 268.5 0 0 465 -268.5 0Z"/>
+          <path class="loader-axis" d="M0 -490V490M-310 0H310"/>
+          <g id="loader-facets-base"></g>
+          <g id="loader-facets-fill" clip-path="url(#loader-fill)"></g>
+          <path class="loader-registration" d="M-15 -465H15M-15 465H15M-283.5 -15V15M283.5 -15V15"/>
+        </svg>
+        <span class="loader-datum mono">01 / IN MOTION</span>
+      </div>
+      <div class="loader-copy">
+        <p class="loader-eyebrow mono">FREIGHT, IN FOCUS</p>
+        <p class="loader-title">A closer look.</p>
+        <div class="loader-readout mono"><span class="loader-beacon" aria-hidden="true"></span><span id="loader-message" role="status">Loading the truck</span><span id="loader-percent" aria-hidden="true">—</span></div>
+        <div id="loader-progress" class="loader-progress" role="progressbar" aria-label="Truck download" aria-valuemin="0" aria-valuemax="100"><span></span></div>
+      </div>
+    </div>
+    <div class="loader-bottom mono"><span>EVERY LOAD. A WAY FORWARD.</span><button id="loader-skip" type="button">View without 3D <span aria-hidden="true">→</span></button></div>
+  </div>
   <a class="skip" href="#freight-details">Skip the freight experience</a>
   <header class="header">
     <a class="wordmark" href="/" aria-label="AVS Freight Services home"><b>AVS</b><img src="../../assets/2f89641a-46df-4c9d-9813-53bb64e70e51.svg" alt=""><span>Freight Services</span></a>
@@ -28,7 +56,7 @@
           </div>
           <div class="detail-callout mono" aria-hidden="true"><span class="viewfinder"></span><span id="detail-label">THE RIGHT FIT STARTS HERE</span></div>
           <div class="scene-caption mono"><span class="signal"></span><span id="scene-label">FLATBED / READY TO LOAD</span><span class="caption-rule"></span><span id="scene-number">00 / 04</span></div>
-          <div class="view-controls"><span class="model-status mono" id="model-status" role="status">LOADING THE TRUCK</span><button class="motion mono" id="motion-toggle" type="button" aria-pressed="false">Pause motion</button></div>
+          <div class="view-controls"><span class="model-status mono" id="model-status" role="status">FREIGHT AT A GLANCE</span><button class="motion mono" id="motion-toggle" type="button" aria-pressed="false">Pause motion</button></div>
         </div>
         <div class="story-panel">
           <div class="story-heading mono"><span>WHAT WE MOVE</span><span class="story-heading-rule"></span><span>AVS / FIELD NOTES</span></div>
@@ -102,6 +130,7 @@
     <section class="contact"><div><p class="eyebrow mono"><span></span> YOUR NEXT MOVE</p><h2>Something big<br><em>on the horizon?</em></h2></div><div class="contact-actions"><a class="quote" href="/contact/">Let's get it moving <span aria-hidden="true">↗</span></a><a class="phone" href="tel:+12817588676">(281) 758-8676</a></div></section>
   </main>
   <footer class="mono"><span>© 2026 AVS FREIGHT SERVICES INC.</span><span>TRACTOR: <a href="https://sketchfab.com/3d-models/1978-peterbilt-359-standard-0599b3d7f9a5437fa905b20674d16d17">1978 PETERBILT 359 STANDARD</a> BY <a href="https://sketchfab.com/hans1240">HANS1240</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · MODIFIED FOR AVS</span><span>3D DESIGN CONCEPT · LOCAL PREVIEW</span></footer>
-  <script type="module" src="./scene.js"></script>
+  <script src="./loader.js"></script>
+  <script type="module" src="./scene.js" onerror="window.freightLoader?.unavailable()"></script>
 </body>
 </html>

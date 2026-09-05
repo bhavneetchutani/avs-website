@@ -40,6 +40,20 @@ layout also includes the fuller supporting copy.
 
 ## Timeline and interaction
 
+The loading screen is an independent SVG octahedron based on AVS's authored
+Diamond Spin / Transition B specimen and the imported visual identity guide.
+Its 60° tips, 1:√3 front silhouette, #2196E8 blue facets, Spline Sans Mono labels,
+and (.2,.7,.3,1) reveal curve follow that reference. The mark turns slowly and
+fills upward with actual GLB download progress; parsing is labelled separately.
+After the first rendered truck frame, a diamond aperture opens onto the scene.
+The SVG needs neither Three.js nor the model, so it can display immediately.
+
+Reduced motion uses a still mark with no aperture animation. “View without 3D”
+opens the poster and complete copy; a stalled transfer/import does the same after
+20 seconds without progress. A late download cannot interrupt that reading mode.
+Without JavaScript the loader stays hidden. Background navigation is inert only
+while loading, and is restored as soon as the loader leaves.
+
 The sticky stage contains the viewer and story panels. Five scroll stops provide
 native document space; each lasts 135svh, plus a final viewport of trailing space.
 The timeline is continuous from 0 to 4.999. Its integer selects a freight chapter;

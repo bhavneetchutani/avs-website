@@ -57,6 +57,7 @@ const assemblyNames = ['Tractor','Trailer',...shots.slice(1).map(s=>s.group)];
 const assemblyDiagnostics=[], glazingMeshes=[], groups=[];
 let renderer, scene, camera, rig, portal, deckGuide;
 let ready=false, failed=false, paused=false, inView=true;
+let firstFrameDrawn=false;
 let current=0, desired=0, renderProgress=0, activeChapter=-1, activeVisualChapter=-1, frame=0, lastTime=0;
 let viewportWidth=0, viewportHeight=0, scrollStops=[], shotLabel='', loadAmount=0;
 let modelBounds;
@@ -186,9 +187,14 @@ function render(time) {
   if(!paused || isStatic()) renderProgress=current;
   pose(renderProgress);
   renderer.render(scene,camera);
+  if(!firstFrameDrawn) {
+    firstFrameDrawn=true;
+    requestAnimationFrame(()=>window.freightLoader?.finish());
+  }
   if(current!==desired) renderSoon();
 }
 function staticFallback(reason) {
+  window.freightLoader?.finish(false);
   failed=true;
   ready=false;
   if(frame) cancelAnimationFrame(frame);
@@ -229,6 +235,7 @@ function addSurveyLines() {
   portal.visible=false;scene.add(portal);
 }
 async function initialize() {
+  if(window.freightLoader?.cancelled) { staticFallback('Loading skipped');return; }
   try {
     renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
     renderer.setClearColor(0x050a12,0);
@@ -255,8 +262,11 @@ async function initialize() {
     addSurveyLines();
     const loader=new GLTFLoader();loader.setMeshoptDecoder(MeshoptDecoder);
     const gltf=await loader.loadAsync('/models/avs-freight.glb',event=>{
+      if(failed || window.freightLoader?.cancelled) return;
+      window.freightLoader?.update(event.loaded,event.total);
       if(event.total) text('#model-status','PREPARING YOUR VIEW / '+Math.round(event.loaded/event.total*100)+'%');
     });
+    if(failed || window.freightLoader?.cancelled) { renderer.dispose();return; }
     rig=gltf.scene;
     rig.traverse(object=>{
       if(object.isLight || object.isCamera) object.visible=false;
@@ -345,5 +355,6 @@ chapterLinks.forEach((link,index)=>link.addEventListener('click',event=>{
   scrollTo({top:stop.top+(index ? .43 : 0)*stop.height,behavior:'smooth'});
 }));
 canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();staticFallback('WebGL context lost');});
+window.addEventListener('freight:skip',()=>staticFallback('Loading skipped'));
 $('#poster').addEventListener('error',event=>{event.currentTarget.hidden=true;});
 initialize();
