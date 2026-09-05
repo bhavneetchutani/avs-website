@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-05T18:49:35.082Z",
+  "browser": "152.0.7977.77",
+  "model": {
+    "bytes": 1390480,
+    "materials": 26,
+    "extensions": [
+      "EXT_meshopt_compression",
+      "KHR_materials_clearcoat",
+      "KHR_mesh_quantization"
+    ]
+  },
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "states": [
+        {
+          "slug": "steel",
+          "ready": true,
+          "desired": 1,
+          "current": 1,
+          "chapter": 1,
+          "camera": [
+            -13.244534764439361,
+            11.420993797563014,
+            28.345696564465758
+          ],
+          "cargo": [
+            "Cargo_Steel"
+          ],
+          "calls": 58,
+          "triangles": 324778,
+          "width": 1065.609375,
+          "height": 684,
+          "reducedMotion": false,
+          "paused": false
+        }
+      ],
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440
+      },
+      "errors": [],
+      "axeViolations": "not repeated",
+      "pauseButton": true
+    }
+  ],
+  "fallbacks": [
+    {
+      "name": "model-unavailable",
+      "staticLayout": true,
+      "headingVisible": true,
+      "poster": {
+        "loaded": true,
+        "hidden": false
+      }
+    }
+  ]
+}

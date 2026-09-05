@@ -1,0 +1,298 @@
+{
+  "date": "2026-09-05T18:39:42.880Z",
+  "browser": "152.0.7977.77",
+  "model": {
+    "bytes": 1937380,
+    "materials": 26,
+    "extensions": [
+      "EXT_meshopt_compression",
+      "KHR_materials_clearcoat",
+      "KHR_mesh_quantization"
+    ]
+  },
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "states": [
+        {
+          "slug": "intro",
+          "ready": true,
+          "desired": 0,
+          "current": 0,
+          "chapter": 0,
+          "camera": [
+            -17.007417938679453,
+            9.50922331412484,
+            26.45598346016804
+          ],
+          "cargo": [],
+          "calls": 48,
+          "triangles": 438530,
+          "width": 1065.609375,
+          "height": 684,
+          "reducedMotion": false,
+          "paused": false
+        },
+        {
+          "slug": "steel",
+          "ready": true,
+          "desired": 1,
+          "current": 1,
+          "chapter": 1,
+          "camera": [
+            -13.244534764439361,
+            11.420993797563014,
+            28.345696564465758
+          ],
+          "cargo": [
+            "Cargo_Steel"
+          ],
+          "calls": 58,
+          "triangles": 450722,
+          "width": 1065.609375,
+          "height": 684,
+          "reducedMotion": false,
+          "paused": false
+        },
+        {
+          "slug": "precast",
+          "ready": true,
+          "desired": 2,
+          "current": 2,
+          "chapter": 2,
+          "camera": [
+            -8.52025200369507,
+            10.476137245414156,
+            29.290553116614614
+          ],
+          "cargo": [
+            "Cargo_Precast"
+          ],
+          "calls": 60,
+          "triangles": 445362,
+          "width": 1065.609375,
+          "height": 684,
+          "reducedMotion": false,
+          "paused": false
+        },
+        {
+          "slug": "wire",
+          "ready": true,
+          "desired": 3,
+          "current": 3,
+          "chapter": 3,
+          "camera": [
+            -4.740825795099635,
+            13.310706901860732,
+            28.345696564465758
+          ],
+          "cargo": [
+            "Cargo_Wire"
+          ],
+          "calls": 58,
+          "triangles": 504770,
+          "width": 1065.609375,
+          "height": 684,
+          "reducedMotion": false,
+          "paused": false
+        },
+        {
+          "slug": "machinery",
+          "ready": true,
+          "desired": 4,
+          "current": 4,
+          "chapter": 4,
+          "camera": [
+            -15.134247868737079,
+            11.426508142348128,
+            26.45598346016804
+          ],
+          "cargo": [
+            "Cargo_Machinery"
+          ],
+          "calls": 60,
+          "triangles": 466514,
+          "width": 1065.609375,
+          "height": 684,
+          "reducedMotion": false,
+          "paused": false
+        }
+      ],
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440
+      },
+      "errors": [],
+      "axeViolations": [],
+      "pauseButton": true
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "states": [
+        {
+          "slug": "intro",
+          "ready": true,
+          "desired": 0,
+          "current": 0,
+          "chapter": 0,
+          "camera": [
+            -21.16811429867332,
+            11.566456514344031,
+            32.92817779793628
+          ],
+          "cargo": [],
+          "calls": 48,
+          "triangles": 438530,
+          "width": 413.390625,
+          "height": 303.84375,
+          "reducedMotion": false,
+          "paused": false
+        },
+        {
+          "slug": "steel",
+          "ready": true,
+          "desired": 1,
+          "current": 1,
+          "chapter": 1,
+          "camera": [
+            -16.41128699399025,
+            13.848066674226104,
+            35.280190497788865
+          ],
+          "cargo": [
+            "Cargo_Steel"
+          ],
+          "calls": 58,
+          "triangles": 450722,
+          "width": 413.390625,
+          "height": 303.84375,
+          "reducedMotion": false,
+          "paused": false
+        },
+        {
+          "slug": "precast",
+          "ready": true,
+          "desired": 2,
+          "current": 2,
+          "chapter": 2,
+          "camera": [
+            -10.531255244358771,
+            12.672060324299808,
+            36.45619684771516
+          ],
+          "cargo": [
+            "Cargo_Precast"
+          ],
+          "calls": 60,
+          "triangles": 445362,
+          "width": 413.390625,
+          "height": 303.84375,
+          "reducedMotion": false,
+          "paused": false
+        },
+        {
+          "slug": "wire",
+          "ready": true,
+          "desired": 3,
+          "current": 3,
+          "chapter": 3,
+          "camera": [
+            -5.82722984465359,
+            16.200079374078697,
+            35.280190497788865
+          ],
+          "cargo": [
+            "Cargo_Wire"
+          ],
+          "calls": 58,
+          "triangles": 504770,
+          "width": 413.390625,
+          "height": 303.84375,
+          "reducedMotion": false,
+          "paused": false
+        },
+        {
+          "slug": "machinery",
+          "ready": true,
+          "desired": 4,
+          "current": 4,
+          "chapter": 4,
+          "camera": [
+            -18.76329969384284,
+            13.830466039233475,
+            32.92817779793628
+          ],
+          "cargo": [
+            "Cargo_Machinery"
+          ],
+          "calls": 60,
+          "triangles": 466514,
+          "width": 413.390625,
+          "height": 303.84375,
+          "reducedMotion": false,
+          "paused": false
+        }
+      ],
+      "dimensions": {
+        "viewport": 390,
+        "document": 390
+      },
+      "errors": [],
+      "axeViolations": [],
+      "pauseButton": true
+    }
+  ],
+  "fallbacks": [
+    {
+      "name": "reduced-motion",
+      "staticLayout": true,
+      "headingVisible": true,
+      "poster": {
+        "loaded": true,
+        "hidden": true
+      },
+      "state": {
+        "ready": true,
+        "desired": 1,
+        "current": 1,
+        "chapter": 1,
+        "camera": [
+          -12.904,
+          11.16,
+          27.6
+        ],
+        "cargo": [
+          "Cargo_Steel"
+        ],
+        "calls": 58,
+        "triangles": 450722,
+        "width": 1396.8125,
+        "height": 472.5,
+        "reducedMotion": true,
+        "paused": true
+      }
+    },
+    {
+      "name": "no-javascript",
+      "staticLayout": true,
+      "headingVisible": true,
+      "poster": {
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "model-unavailable",
+      "staticLayout": true,
+      "headingVisible": true,
+      "poster": {
+        "loaded": true,
+        "hidden": false
+      }
+    }
+  ]
+}

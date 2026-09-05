@@ -1,0 +1,6 @@
+models/*.raw.glb
+assets/model-source/*.blend1
+assets/model-source/*.blend2
+assets/model-source/references/*.png
+assets/model-source/references/*.jpg
+assets/model-source/__pycache__/
