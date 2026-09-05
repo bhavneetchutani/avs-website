@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-05T19:36:31.108Z",
+  "date": "2026-09-05T19:57:33.362Z",
   "browser": "152.0.7977.77",
   "model": {
     "bytes": 2498972,
@@ -8,7 +8,8 @@
       "EXT_meshopt_compression",
       "KHR_materials_clearcoat",
       "KHR_mesh_quantization"
-    ]
+    ],
+    "paint": "#2196E8"
   },
   "viewports": [
     {
@@ -19,20 +20,31 @@
         {
           "slug": "intro",
           "ready": true,
-          "desired": 0,
-          "current": 0,
+          "desired": 0.5497942386831276,
+          "current": 0.5492659201544996,
+          "renderProgress": 0.5492659201544996,
           "chapter": 0,
+          "phase": 0.5492659201544996,
+          "shot": "track",
+          "load": 0,
           "camera": [
-            -17.007417938679453,
-            9.50922331412484,
-            26.45598346016804
+            0.3228002425280909,
+            7.990915893254517,
+            16.165769457639332
+          ],
+          "cameraTarget": [
+            4.149500009245492,
+            1.543143749653294,
+            0
           ],
           "cargo": [],
-          "calls": 51,
-          "triangles": 391622,
-          "width": 1065.609375,
-          "height": 684,
+          "calls": 49,
+          "triangles": 385877,
+          "width": 906.203125,
+          "height": 822,
+          "mobile": false,
           "reducedMotion": false,
+          "static": false,
           "paused": false,
           "assemblies": [
             {
@@ -60,33 +72,83 @@
               "meshes": 6
             }
           ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
           "glazing": [
             {
               "name": "Tractor_|_Tractor_|_smoked_glazing",
               "castShadow": false,
               "receiveShadow": false
             }
-          ]
+          ],
+          "layout": {
+            "viewport": 1440,
+            "document": 1440,
+            "view": {
+              "x": 533.796875,
+              "y": 78,
+              "width": 906.203125,
+              "height": 822,
+              "right": 1440,
+              "bottom": 900
+            },
+            "panel": {
+              "x": 0,
+              "y": 78,
+              "width": 532.796875,
+              "height": 822,
+              "right": 532.796875,
+              "bottom": 900
+            },
+            "panelBackground": "rgb(5, 10, 18)",
+            "heading": {
+              "x": 43.1875,
+              "y": 287.28125,
+              "right": 489.609375,
+              "bottom": 445.125
+            }
+          }
         },
         {
           "slug": "steel",
           "ready": true,
-          "desired": 1,
-          "current": 1,
+          "desired": 1.5497942386831276,
+          "current": 1.5492398253163333,
+          "renderProgress": 1.5492398253163333,
           "chapter": 1,
+          "phase": 0.5492398253163333,
+          "shot": "detail",
+          "load": 1,
           "camera": [
-            -13.244534764439361,
-            11.420993797563014,
-            28.345696564465758
+            0.20070302069566193,
+            6.534098931066611,
+            13.288219260590276
+          ],
+          "cameraTarget": [
+            6.45049387194659,
+            2.1086527067872534,
+            0
           ],
           "cargo": [
             "Cargo_Steel"
           ],
-          "calls": 61,
-          "triangles": 403814,
-          "width": 1065.609375,
-          "height": 684,
+          "calls": 53,
+          "triangles": 375991,
+          "width": 906.203125,
+          "height": 822,
+          "mobile": false,
           "reducedMotion": false,
+          "static": false,
           "paused": false,
           "assemblies": [
             {
@@ -114,33 +176,83 @@
               "meshes": 6
             }
           ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
           "glazing": [
             {
               "name": "Tractor_|_Tractor_|_smoked_glazing",
               "castShadow": false,
               "receiveShadow": false
             }
-          ]
+          ],
+          "layout": {
+            "viewport": 1440,
+            "document": 1440,
+            "view": {
+              "x": 533.796875,
+              "y": 78,
+              "width": 906.203125,
+              "height": 822,
+              "right": 1440,
+              "bottom": 900
+            },
+            "panel": {
+              "x": 0,
+              "y": 78,
+              "width": 532.796875,
+              "height": 822,
+              "right": 532.796875,
+              "bottom": 900
+            },
+            "panelBackground": "rgb(5, 10, 18)",
+            "heading": {
+              "x": 43.1875,
+              "y": 274.58221435546875,
+              "right": 489.609375,
+              "bottom": 394.42596435546875
+            }
+          }
         },
         {
           "slug": "precast",
           "ready": true,
-          "desired": 2,
-          "current": 2,
+          "desired": 2.549794238683128,
+          "current": 2.549794238683128,
+          "renderProgress": 2.549794238683128,
           "chapter": 2,
+          "phase": 0.5497942386831278,
+          "shot": "detail",
+          "load": 1,
           "camera": [
-            -8.52025200369507,
-            10.476137245414156,
-            29.290553116614614
+            11.65227841034745,
+            9.09752542125166,
+            11.972277954913684
+          ],
+          "cameraTarget": [
+            9.282535668707915,
+            1.981877972392326,
+            0
           ],
           "cargo": [
             "Cargo_Precast"
           ],
-          "calls": 63,
-          "triangles": 398454,
-          "width": 1065.609375,
-          "height": 684,
+          "calls": 50,
+          "triangles": 314977,
+          "width": 906.203125,
+          "height": 822,
+          "mobile": false,
           "reducedMotion": false,
+          "static": false,
           "paused": false,
           "assemblies": [
             {
@@ -168,33 +280,83 @@
               "meshes": 6
             }
           ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
           "glazing": [
             {
               "name": "Tractor_|_Tractor_|_smoked_glazing",
               "castShadow": false,
               "receiveShadow": false
             }
-          ]
+          ],
+          "layout": {
+            "viewport": 1440,
+            "document": 1440,
+            "view": {
+              "x": 533.796875,
+              "y": 78,
+              "width": 906.203125,
+              "height": 822,
+              "right": 1440,
+              "bottom": 900
+            },
+            "panel": {
+              "x": 0,
+              "y": 78,
+              "width": 532.796875,
+              "height": 822,
+              "right": 532.796875,
+              "bottom": 900
+            },
+            "panelBackground": "rgb(5, 10, 18)",
+            "heading": {
+              "x": 43.1875,
+              "y": 271.703125,
+              "right": 489.609375,
+              "bottom": 391.546875
+            }
+          }
         },
         {
           "slug": "wire",
           "ready": true,
-          "desired": 3,
-          "current": 3,
+          "desired": 3.549794238683128,
+          "current": 3.5492398253163335,
+          "renderProgress": 3.5492398253163335,
           "chapter": 3,
+          "phase": 0.5492398253163335,
+          "shot": "detail",
+          "load": 1,
           "camera": [
-            -4.740825795099635,
-            13.310706901860732,
-            28.345696564465758
+            11.35967344436162,
+            9.883189780628237,
+            9.664453666062881
+          ],
+          "cameraTarget": [
+            10.818326845341401,
+            1.8376778762865786,
+            0
           ],
           "cargo": [
             "Cargo_Wire"
           ],
-          "calls": 61,
-          "triangles": 457862,
-          "width": 1065.609375,
-          "height": 684,
+          "calls": 47,
+          "triangles": 336036,
+          "width": 906.203125,
+          "height": 822,
+          "mobile": false,
           "reducedMotion": false,
+          "static": false,
           "paused": false,
           "assemblies": [
             {
@@ -222,33 +384,83 @@
               "meshes": 6
             }
           ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
           "glazing": [
             {
               "name": "Tractor_|_Tractor_|_smoked_glazing",
               "castShadow": false,
               "receiveShadow": false
             }
-          ]
+          ],
+          "layout": {
+            "viewport": 1440,
+            "document": 1440,
+            "view": {
+              "x": 533.796875,
+              "y": 78,
+              "width": 906.203125,
+              "height": 822,
+              "right": 1440,
+              "bottom": 900
+            },
+            "panel": {
+              "x": 0,
+              "y": 78,
+              "width": 532.796875,
+              "height": 822,
+              "right": 532.796875,
+              "bottom": 900
+            },
+            "panelBackground": "rgb(5, 10, 18)",
+            "heading": {
+              "x": 43.1875,
+              "y": 274.58221435546875,
+              "right": 489.609375,
+              "bottom": 394.42596435546875
+            }
+          }
         },
         {
           "slug": "machinery",
           "ready": true,
-          "desired": 4,
-          "current": 4,
+          "desired": 4.549794238683128,
+          "current": 4.54924043483574,
+          "renderProgress": 4.54924043483574,
           "chapter": 4,
+          "phase": 0.54924043483574,
+          "shot": "detail",
+          "load": 1,
           "camera": [
-            -15.134247868737079,
-            11.426508142348128,
-            26.45598346016804
+            7.260268036771225,
+            5.567638058849658,
+            10.137857834443
+          ],
+          "cameraTarget": [
+            7.025897437990087,
+            2.431981352361834,
+            0
           ],
           "cargo": [
             "Cargo_Machinery"
           ],
-          "calls": 63,
-          "triangles": 419606,
-          "width": 1065.609375,
-          "height": 684,
+          "calls": 50,
+          "triangles": 336129,
+          "width": 906.203125,
+          "height": 822,
+          "mobile": false,
           "reducedMotion": false,
+          "static": false,
           "paused": false,
           "assemblies": [
             {
@@ -276,22 +488,364 @@
               "meshes": 6
             }
           ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
           "glazing": [
             {
               "name": "Tractor_|_Tractor_|_smoked_glazing",
               "castShadow": false,
               "receiveShadow": false
             }
-          ]
+          ],
+          "layout": {
+            "viewport": 1440,
+            "document": 1440,
+            "view": {
+              "x": 533.796875,
+              "y": 78,
+              "width": 906.203125,
+              "height": 822,
+              "right": 1440,
+              "bottom": 900
+            },
+            "panel": {
+              "x": 0,
+              "y": 78,
+              "width": 532.796875,
+              "height": 822,
+              "right": 532.796875,
+              "bottom": 900
+            },
+            "panelBackground": "rgb(5, 10, 18)",
+            "heading": {
+              "x": 43.1875,
+              "y": 243.07823181152344,
+              "right": 489.609375,
+              "bottom": 362.9219970703125
+            }
+          }
         }
       ],
-      "dimensions": {
-        "viewport": 1440,
-        "document": 1440
+      "approach": {
+        "ready": true,
+        "desired": 0.02962962962962963,
+        "current": 0.02962962962962963,
+        "renderProgress": 0.02962962962962963,
+        "chapter": 0,
+        "phase": 0.02962962962962963,
+        "shot": "approach",
+        "load": 0,
+        "camera": [
+          -12.69520994600547,
+          3.690532772507283,
+          6.975241078974682
+        ],
+        "cameraTarget": [
+          -4.001398995887271,
+          1.9445998884319189,
+          0
+        ],
+        "cargo": [],
+        "calls": 52,
+        "triangles": 391622,
+        "width": 906.203125,
+        "height": 822,
+        "mobile": false,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
       },
+      "pan": {
+        "ready": true,
+        "desired": 0.8,
+        "current": 0.7994873329143463,
+        "renderProgress": 0.7994873329143463,
+        "chapter": 0,
+        "phase": 0.7994873329143463,
+        "shot": "empty-deck",
+        "load": 0,
+        "camera": [
+          2.9516092713586173,
+          9.309114628878914,
+          19.30012351316915
+        ],
+        "cameraTarget": [
+          6.420231465760731,
+          1.5,
+          0
+        ],
+        "cargo": [],
+        "calls": 47,
+        "triangles": 379674,
+        "width": 906.203125,
+        "height": 822,
+        "mobile": false,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "loading": {
+        "ready": true,
+        "desired": 1.2,
+        "current": 1.1994551553690638,
+        "renderProgress": 1.1994551553690638,
+        "chapter": 1,
+        "phase": 0.19945515536906377,
+        "shot": "loading",
+        "load": 0.465047773272643,
+        "camera": [
+          2.8439653542568895,
+          9.408891435206566,
+          19.74388275939321
+        ],
+        "cameraTarget": [
+          7.838812348346017,
+          1.7686460860899722,
+          0
+        ],
+        "cargo": [
+          "Cargo_Steel"
+        ],
+        "calls": 54,
+        "triangles": 375991,
+        "width": 906.203125,
+        "height": 822,
+        "mobile": false,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "loaded": {
+        "ready": true,
+        "desired": 1.6502057613168724,
+        "current": 1.6496859010777085,
+        "renderProgress": 1.6496859010777085,
+        "chapter": 1,
+        "phase": 0.6496859010777085,
+        "shot": "detail",
+        "load": 1,
+        "camera": [
+          -0.697091075563609,
+          5.047156816469945,
+          10.296286148268383
+        ],
+        "cameraTarget": [
+          5.552699775687319,
+          2.1867217586358856,
+          0
+        ],
+        "cargo": [
+          "Cargo_Steel"
+        ],
+        "calls": 53,
+        "triangles": 375991,
+        "width": 906.203125,
+        "height": 822,
+        "mobile": false,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "reverseScroll": true,
+      "chapterLink": true,
+      "pause": {
+        "cameraFrozen": true,
+        "copyContinues": true,
+        "resumedChapter": 3
+      },
+      "resize": true,
       "errors": [],
-      "axeViolations": [],
-      "pauseButton": true
+      "axeViolations": []
     },
     {
       "name": "mobile",
@@ -301,20 +855,31 @@
         {
           "slug": "intro",
           "ready": true,
-          "desired": 0,
-          "current": 0,
+          "desired": 0.5504828797190519,
+          "current": 0.5499642702482687,
+          "renderProgress": 0.5499642702482687,
           "chapter": 0,
+          "phase": 0.5499642702482687,
+          "shot": "track",
+          "load": 0,
           "camera": [
-            -21.16811429867332,
-            11.566456514344031,
-            32.92817779793628
+            0.5201567582433353,
+            7.702139662889339,
+            15.434764482410749
+          ],
+          "cameraTarget": [
+            4.16549117291165,
+            1.542544081015813,
+            0
           ],
           "cargo": [],
-          "calls": 51,
-          "triangles": 391622,
-          "width": 413.390625,
-          "height": 303.84375,
+          "calls": 49,
+          "triangles": 385877,
+          "width": 390,
+          "height": 359.625,
+          "mobile": true,
           "reducedMotion": false,
+          "static": false,
           "paused": false,
           "assemblies": [
             {
@@ -342,33 +907,83 @@
               "meshes": 6
             }
           ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
           "glazing": [
             {
               "name": "Tractor_|_Tractor_|_smoked_glazing",
               "castShadow": false,
               "receiveShadow": false
             }
-          ]
+          ],
+          "layout": {
+            "viewport": 390,
+            "document": 390,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 390,
+              "height": 359.625,
+              "right": 390,
+              "bottom": 419.625
+            },
+            "panel": {
+              "x": 0,
+              "y": 420.625,
+              "width": 390,
+              "height": 423.375,
+              "right": 390,
+              "bottom": 844
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 24,
+              "y": 513.65625,
+              "right": 366,
+              "bottom": 598.46875
+            }
+          }
         },
         {
           "slug": "steel",
           "ready": true,
-          "desired": 1,
-          "current": 1,
+          "desired": 1.5501399253731343,
+          "current": 1.5495959698172392,
+          "renderProgress": 1.5495959698172392,
           "chapter": 1,
+          "phase": 0.5495959698172392,
+          "shot": "detail",
+          "load": 1,
           "camera": [
-            -16.41128699399025,
-            13.848066674226104,
-            35.280190497788865
+            0.48426941712900273,
+            6.324566922736933,
+            12.665003522362806
+          ],
+          "cameraTarget": [
+            6.446667494052079,
+            2.1089854352998194,
+            0
           ],
           "cargo": [
             "Cargo_Steel"
           ],
-          "calls": 61,
-          "triangles": 403814,
-          "width": 413.390625,
-          "height": 303.84375,
+          "calls": 53,
+          "triangles": 375991,
+          "width": 390,
+          "height": 359.625,
+          "mobile": true,
           "reducedMotion": false,
+          "static": false,
           "paused": false,
           "assemblies": [
             {
@@ -396,33 +1011,83 @@
               "meshes": 6
             }
           ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
           "glazing": [
             {
               "name": "Tractor_|_Tractor_|_smoked_glazing",
               "castShadow": false,
               "receiveShadow": false
             }
-          ]
+          ],
+          "layout": {
+            "viewport": 390,
+            "document": 390,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 390,
+              "height": 359.625,
+              "right": 390,
+              "bottom": 419.625
+            },
+            "panel": {
+              "x": 0,
+              "y": 420.625,
+              "width": 390,
+              "height": 423.375,
+              "right": 390,
+              "bottom": 844
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 24,
+              "y": 532.8790893554688,
+              "right": 366,
+              "bottom": 604.2540893554688
+            }
+          }
         },
         {
           "slug": "precast",
           "ready": true,
-          "desired": 2,
-          "current": 2,
+          "desired": 2.5497969710272166,
+          "current": 2.5492530154713213,
+          "renderProgress": 2.5492530154713213,
           "chapter": 2,
+          "phase": 0.5492530154713213,
+          "shot": "detail",
+          "load": 1,
           "camera": [
-            -10.531255244358771,
-            12.672060324299808,
-            36.45619684771516
+            11.535059739293295,
+            8.784868270157187,
+            11.433969100604072
+          ],
+          "cameraTarget": [
+            9.277985281336388,
+            1.981498773444699,
+            0
           ],
           "cargo": [
             "Cargo_Precast"
           ],
-          "calls": 63,
-          "triangles": 398454,
-          "width": 413.390625,
-          "height": 303.84375,
+          "calls": 52,
+          "triangles": 367693,
+          "width": 390,
+          "height": 359.625,
+          "mobile": true,
           "reducedMotion": false,
+          "static": false,
           "paused": false,
           "assemblies": [
             {
@@ -450,33 +1115,83 @@
               "meshes": 6
             }
           ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
           "glazing": [
             {
               "name": "Tractor_|_Tractor_|_smoked_glazing",
               "castShadow": false,
               "receiveShadow": false
             }
-          ]
+          ],
+          "layout": {
+            "viewport": 390,
+            "document": 390,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 390,
+              "height": 359.625,
+              "right": 390,
+              "bottom": 419.625
+            },
+            "panel": {
+              "x": 0,
+              "y": 420.625,
+              "width": 390,
+              "height": 423.375,
+              "right": 390,
+              "bottom": 844
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 24,
+              "y": 532.8751220703125,
+              "right": 366,
+              "bottom": 604.2501220703125
+            }
+          }
         },
         {
           "slug": "wire",
           "ready": true,
-          "desired": 3,
-          "current": 3,
+          "desired": 3.550331979806848,
+          "current": 3.5497875465141915,
+          "renderProgress": 3.5497875465141915,
           "chapter": 3,
+          "phase": 0.5497875465141915,
+          "shot": "detail",
+          "load": 1,
           "camera": [
-            -5.82722984465359,
-            16.200079374078697,
-            35.280190497788865
+            11.320949705230305,
+            9.49922764443687,
+            9.210382360499318
+          ],
+          "cameraTarget": [
+            10.82166525237682,
+            1.8380355627546592,
+            0
           ],
           "cargo": [
             "Cargo_Wire"
           ],
-          "calls": 61,
-          "triangles": 457862,
-          "width": 413.390625,
-          "height": 303.84375,
+          "calls": 47,
+          "triangles": 336036,
+          "width": 390,
+          "height": 359.625,
+          "mobile": true,
           "reducedMotion": false,
+          "static": false,
           "paused": false,
           "assemblies": [
             {
@@ -504,33 +1219,83 @@
               "meshes": 6
             }
           ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
           "glazing": [
             {
               "name": "Tractor_|_Tractor_|_smoked_glazing",
               "castShadow": false,
               "receiveShadow": false
             }
-          ]
+          ],
+          "layout": {
+            "viewport": 390,
+            "document": 390,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 390,
+              "height": 359.625,
+              "right": 390,
+              "bottom": 419.625
+            },
+            "panel": {
+              "x": 0,
+              "y": 420.625,
+              "width": 390,
+              "height": 423.375,
+              "right": 390,
+              "bottom": 844
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 24,
+              "y": 532.8751220703125,
+              "right": 366,
+              "bottom": 604.2501220703125
+            }
+          }
         },
         {
           "slug": "machinery",
           "ready": true,
-          "desired": 4,
-          "current": 4,
+          "desired": 4.54998902546093,
+          "current": 4.549445069905036,
+          "renderProgress": 4.549445069905036,
           "chapter": 4,
+          "phase": 0.5494450699050359,
+          "shot": "detail",
+          "load": 1,
           "camera": [
-            -18.76329969384284,
-            13.830466039233475,
-            32.92817779793628
+            7.2566622295197565,
+            5.421129527570333,
+            9.667622171879518
+          ],
+          "cameraTarget": [
+            7.027830384163261,
+            2.432332797120593,
+            0
           ],
           "cargo": [
             "Cargo_Machinery"
           ],
-          "calls": 63,
-          "triangles": 419606,
-          "width": 413.390625,
-          "height": 303.84375,
+          "calls": 50,
+          "triangles": 336129,
+          "width": 390,
+          "height": 359.625,
+          "mobile": true,
           "reducedMotion": false,
+          "static": false,
           "paused": false,
           "assemblies": [
             {
@@ -558,51 +1323,2110 @@
               "meshes": 6
             }
           ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
           "glazing": [
             {
               "name": "Tractor_|_Tractor_|_smoked_glazing",
               "castShadow": false,
               "receiveShadow": false
             }
-          ]
+          ],
+          "layout": {
+            "viewport": 390,
+            "document": 390,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 390,
+              "height": 359.625,
+              "right": 390,
+              "bottom": 419.625
+            },
+            "panel": {
+              "x": 0,
+              "y": 420.625,
+              "width": 390,
+              "height": 423.375,
+              "right": 390,
+              "bottom": 844
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 24,
+              "y": 532.8751220703125,
+              "right": 366,
+              "bottom": 604.2501220703125
+            }
+          }
         }
       ],
-      "dimensions": {
-        "viewport": 390,
-        "document": 390
+      "approach": {
+        "ready": true,
+        "desired": 0.029850746268656716,
+        "current": 0.029850746268656716,
+        "renderProgress": 0.029850746268656716,
+        "chapter": 0,
+        "phase": 0.029850746268656716,
+        "shot": "approach",
+        "load": 0,
+        "camera": [
+          -12.293482336093696,
+          3.6106638761491103,
+          6.656349764903682
+        ],
+        "cameraTarget": [
+          -4.000701168522974,
+          1.944522352058108,
+          0
+        ],
+        "cargo": [],
+        "calls": 52,
+        "triangles": 391622,
+        "width": 390,
+        "height": 359.625,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
       },
+      "pan": {
+        "ready": true,
+        "desired": 0.800702370500439,
+        "current": 0.8001983327393037,
+        "renderProgress": 0.8001983327393037,
+        "chapter": 0,
+        "phase": 0.8001983327393037,
+        "shot": "empty-deck",
+        "load": 0,
+        "camera": [
+          3.1186810557303923,
+          8.954953747272382,
+          18.427428549509454
+        ],
+        "cameraTarget": [
+          6.428129895292141,
+          1.5,
+          0
+        ],
+        "cargo": [],
+        "calls": 47,
+        "triangles": 379674,
+        "width": 390,
+        "height": 359.625,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "loading": {
+        "ready": true,
+        "desired": 1.1998326382791924,
+        "current": 1.199288988543228,
+        "renderProgress": 1.199288988543228,
+        "chapter": 1,
+        "phase": 0.19928898854322807,
+        "shot": "loading",
+        "load": 0.46432691284481054,
+        "camera": [
+          3.07553964650487,
+          9.058630903543028,
+          18.83906413459829
+        ],
+        "cameraTarget": [
+          7.839008646056357,
+          1.768318923239406,
+          0
+        ],
+        "cargo": [
+          "Cargo_Steel"
+        ],
+        "calls": 54,
+        "triangles": 375991,
+        "width": 390,
+        "height": 359.625,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "loaded": {
+        "ready": true,
+        "desired": 1.650227721685689,
+        "current": 1.6497172779386262,
+        "renderProgress": 1.6497172779386262,
+        "chapter": 1,
+        "phase": 0.6497172779386262,
+        "shot": "detail",
+        "load": 1,
+        "camera": [
+          -0.40987755835317063,
+          4.915338956360069,
+          9.822247874605655
+        ],
+        "cameraTarget": [
+          5.5525205185699065,
+          2.186737346211313,
+          0
+        ],
+        "cargo": [
+          "Cargo_Steel"
+        ],
+        "calls": 53,
+        "triangles": 375991,
+        "width": 390,
+        "height": 359.625,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "reverseScroll": true,
+      "chapterLink": true,
+      "pause": {
+        "cameraFrozen": true,
+        "copyContinues": true,
+        "resumedChapter": 3
+      },
+      "resize": false,
       "errors": [],
-      "axeViolations": [],
-      "pauseButton": true
+      "axeViolations": []
+    },
+    {
+      "name": "small-mobile",
+      "width": 360,
+      "height": 740,
+      "states": [
+        {
+          "slug": "intro",
+          "ready": true,
+          "desired": 0.5495495495495496,
+          "current": 0.5490308731293916,
+          "renderProgress": 0.5490308731293916,
+          "chapter": 0,
+          "phase": 0.5490308731293916,
+          "shot": "track",
+          "load": 0,
+          "camera": [
+            0.788200758273935,
+            7.192439970809773,
+            14.165968822196708
+          ],
+          "cameraTarget": [
+            4.1440987065678945,
+            1.543346298503704,
+            0
+          ],
+          "cargo": [],
+          "calls": 49,
+          "triangles": 385877,
+          "width": 360,
+          "height": 305,
+          "mobile": true,
+          "reducedMotion": false,
+          "static": false,
+          "paused": false,
+          "assemblies": [
+            {
+              "name": "Tractor",
+              "meshes": 15
+            },
+            {
+              "name": "Trailer",
+              "meshes": 10
+            },
+            {
+              "name": "Cargo_Steel",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Precast",
+              "meshes": 6
+            },
+            {
+              "name": "Cargo_Wire",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Machinery",
+              "meshes": 6
+            }
+          ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
+          "glazing": [
+            {
+              "name": "Tractor_|_Tractor_|_smoked_glazing",
+              "castShadow": false,
+              "receiveShadow": false
+            }
+          ],
+          "layout": {
+            "viewport": 360,
+            "document": 360,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 360,
+              "height": 305,
+              "right": 360,
+              "bottom": 365
+            },
+            "panel": {
+              "x": 0,
+              "y": 366,
+              "width": 360,
+              "height": 374,
+              "right": 360,
+              "bottom": 740
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 20,
+              "y": 442.28125,
+              "right": 340,
+              "bottom": 519.03125
+            }
+          }
+        },
+        {
+          "slug": "steel",
+          "ready": true,
+          "desired": 1.5495495495495497,
+          "current": 1.5490060056050357,
+          "renderProgress": 1.5490060056050357,
+          "chapter": 1,
+          "phase": 0.5490060056050357,
+          "shot": "detail",
+          "load": 1,
+          "camera": [
+            0.9748676558315363,
+            5.991316701410298,
+            11.654883187666734
+          ],
+          "cameraTarget": [
+            6.453006544720425,
+            2.108434213502572,
+            0
+          ],
+          "cargo": [
+            "Cargo_Steel"
+          ],
+          "calls": 53,
+          "triangles": 375991,
+          "width": 360,
+          "height": 305,
+          "mobile": true,
+          "reducedMotion": false,
+          "static": false,
+          "paused": false,
+          "assemblies": [
+            {
+              "name": "Tractor",
+              "meshes": 15
+            },
+            {
+              "name": "Trailer",
+              "meshes": 10
+            },
+            {
+              "name": "Cargo_Steel",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Precast",
+              "meshes": 6
+            },
+            {
+              "name": "Cargo_Wire",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Machinery",
+              "meshes": 6
+            }
+          ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
+          "glazing": [
+            {
+              "name": "Tractor_|_Tractor_|_smoked_glazing",
+              "castShadow": false,
+              "receiveShadow": false
+            }
+          ],
+          "layout": {
+            "viewport": 360,
+            "document": 360,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 360,
+              "height": 305,
+              "right": 360,
+              "bottom": 365
+            },
+            "panel": {
+              "x": 0,
+              "y": 366,
+              "width": 360,
+              "height": 374,
+              "right": 360,
+              "bottom": 740
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 20,
+              "y": 461.2384338378906,
+              "right": 340,
+              "bottom": 526.4884033203125
+            }
+          }
+        },
+        {
+          "slug": "precast",
+          "ready": true,
+          "desired": 2.5495495495495497,
+          "current": 2.549005407377732,
+          "renderProgress": 2.549005407377732,
+          "chapter": 2,
+          "phase": 0.5490054073777322,
+          "shot": "detail",
+          "load": 1,
+          "camera": [
+            11.348105829733317,
+            8.238410590937217,
+            10.510456942838369
+          ],
+          "cameraTarget": [
+            9.275902889971274,
+            1.9813252408309392,
+            0
+          ],
+          "cargo": [
+            "Cargo_Precast"
+          ],
+          "calls": 52,
+          "triangles": 367693,
+          "width": 360,
+          "height": 305,
+          "mobile": true,
+          "reducedMotion": false,
+          "static": false,
+          "paused": false,
+          "assemblies": [
+            {
+              "name": "Tractor",
+              "meshes": 15
+            },
+            {
+              "name": "Trailer",
+              "meshes": 10
+            },
+            {
+              "name": "Cargo_Steel",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Precast",
+              "meshes": 6
+            },
+            {
+              "name": "Cargo_Wire",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Machinery",
+              "meshes": 6
+            }
+          ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
+          "glazing": [
+            {
+              "name": "Tractor_|_Tractor_|_smoked_glazing",
+              "castShadow": false,
+              "receiveShadow": false
+            }
+          ],
+          "layout": {
+            "viewport": 360,
+            "document": 360,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 360,
+              "height": 305,
+              "right": 360,
+              "bottom": 365
+            },
+            "panel": {
+              "x": 0,
+              "y": 366,
+              "width": 360,
+              "height": 374,
+              "right": 360,
+              "bottom": 740
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 20,
+              "y": 461.2344970703125,
+              "right": 340,
+              "bottom": 526.4844970703125
+            }
+          }
+        },
+        {
+          "slug": "wire",
+          "ready": true,
+          "desired": 3.5495495495495497,
+          "current": 3.549005407377732,
+          "renderProgress": 3.549005407377732,
+          "chapter": 3,
+          "phase": 0.5490054073777322,
+          "shot": "detail",
+          "load": 1,
+          "camera": [
+            11.298159427648349,
+            8.89531632284498,
+            8.47499814677348
+          ],
+          "cameraTarget": [
+            10.81689729017451,
+            1.8375247096615546,
+            0
+          ],
+          "cargo": [
+            "Cargo_Wire"
+          ],
+          "calls": 47,
+          "triangles": 336036,
+          "width": 360,
+          "height": 305,
+          "mobile": true,
+          "reducedMotion": false,
+          "static": false,
+          "paused": false,
+          "assemblies": [
+            {
+              "name": "Tractor",
+              "meshes": 15
+            },
+            {
+              "name": "Trailer",
+              "meshes": 10
+            },
+            {
+              "name": "Cargo_Steel",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Precast",
+              "meshes": 6
+            },
+            {
+              "name": "Cargo_Wire",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Machinery",
+              "meshes": 6
+            }
+          ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
+          "glazing": [
+            {
+              "name": "Tractor_|_Tractor_|_smoked_glazing",
+              "castShadow": false,
+              "receiveShadow": false
+            }
+          ],
+          "layout": {
+            "viewport": 360,
+            "document": 360,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 360,
+              "height": 305,
+              "right": 360,
+              "bottom": 365
+            },
+            "panel": {
+              "x": 0,
+              "y": 366,
+              "width": 360,
+              "height": 374,
+              "right": 360,
+              "bottom": 740
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 20,
+              "y": 461.2344970703125,
+              "right": 340,
+              "bottom": 526.4844970703125
+            }
+          }
+        },
+        {
+          "slug": "machinery",
+          "ready": true,
+          "desired": 4.54954954954955,
+          "current": 4.549005407377732,
+          "renderProgress": 4.549005407377732,
+          "chapter": 4,
+          "phase": 0.5490054073777317,
+          "shot": "detail",
+          "load": 1,
+          "camera": [
+            7.22356709366318,
+            5.182900749682227,
+            8.890437242304033
+          ],
+          "cameraTarget": [
+            7.023672959730996,
+            2.431576901769272,
+            0
+          ],
+          "cargo": [
+            "Cargo_Machinery"
+          ],
+          "calls": 52,
+          "triangles": 388845,
+          "width": 360,
+          "height": 305,
+          "mobile": true,
+          "reducedMotion": false,
+          "static": false,
+          "paused": false,
+          "assemblies": [
+            {
+              "name": "Tractor",
+              "meshes": 15
+            },
+            {
+              "name": "Trailer",
+              "meshes": 10
+            },
+            {
+              "name": "Cargo_Steel",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Precast",
+              "meshes": 6
+            },
+            {
+              "name": "Cargo_Wire",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Machinery",
+              "meshes": 6
+            }
+          ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
+          "glazing": [
+            {
+              "name": "Tractor_|_Tractor_|_smoked_glazing",
+              "castShadow": false,
+              "receiveShadow": false
+            }
+          ],
+          "layout": {
+            "viewport": 360,
+            "document": 360,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 360,
+              "height": 305,
+              "right": 360,
+              "bottom": 365
+            },
+            "panel": {
+              "x": 0,
+              "y": 366,
+              "width": 360,
+              "height": 374,
+              "right": 360,
+              "bottom": 740
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 20,
+              "y": 461.2344970703125,
+              "right": 340,
+              "bottom": 526.4844970703125
+            }
+          }
+        }
+      ],
+      "approach": {
+        "ready": true,
+        "desired": 0.03003003003003003,
+        "current": 0.03003003003003003,
+        "renderProgress": 0.03003003003003003,
+        "chapter": 0,
+        "phase": 0.03003003003003003,
+        "shot": "approach",
+        "load": 0,
+        "camera": [
+          -11.618446125204052,
+          3.4756489003245337,
+          6.11712297685082
+        ],
+        "cameraTarget": [
+          -4.000132048886808,
+          1.9444591165429788,
+          0
+        ],
+        "cargo": [],
+        "calls": 52,
+        "triangles": 391622,
+        "width": 360,
+        "height": 305,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "pan": {
+        "ready": true,
+        "desired": 0.7997997997997998,
+        "current": 0.7992970227912596,
+        "renderProgress": 0.7992970227912596,
+        "chapter": 0,
+        "phase": 0.7992970227912596,
+        "shot": "empty-deck",
+        "load": 0,
+        "camera": [
+          3.377842623505145,
+          8.343722081404447,
+          16.91352735532445
+        ],
+        "cameraTarget": [
+          6.41811854004322,
+          1.5,
+          0
+        ],
+        "cargo": [],
+        "calls": 47,
+        "triangles": 379674,
+        "width": 360,
+        "height": 305,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "loading": {
+        "ready": true,
+        "desired": 1.2002002002002001,
+        "current": 1.1996548243315015,
+        "renderProgress": 1.1996548243315015,
+        "chapter": 1,
+        "phase": 0.1996548243315015,
+        "shot": "loading",
+        "load": 0.46591405750727644,
+        "camera": [
+          3.4585665222129354,
+          8.464411368229868,
+          17.302723332399946
+        ],
+        "cameraTarget": [
+          7.838576496269049,
+          1.769039172884919,
+          0
+        ],
+        "cargo": [
+          "Cargo_Steel"
+        ],
+        "calls": 54,
+        "triangles": 375991,
+        "width": 360,
+        "height": 305,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "loaded": {
+        "ready": true,
+        "desired": 1.6496496496496498,
+        "current": 1.649131803252826,
+        "renderProgress": 1.649131803252826,
+        "chapter": 1,
+        "phase": 0.6491318032528259,
+        "shot": "detail",
+        "load": 1,
+        "camera": [
+          0.07774142909968074,
+          4.6985664765759445,
+          9.034310303264558
+        ],
+        "cameraTarget": [
+          5.55588031798857,
+          2.1864451897401245,
+          0
+        ],
+        "cargo": [
+          "Cargo_Steel"
+        ],
+        "calls": 53,
+        "triangles": 375991,
+        "width": 360,
+        "height": 305,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "reverseScroll": true,
+      "chapterLink": true,
+      "pause": {
+        "cameraFrozen": true,
+        "copyContinues": true,
+        "resumedChapter": 3
+      },
+      "resize": false,
+      "errors": [],
+      "axeViolations": []
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "states": [
+        {
+          "slug": "intro",
+          "ready": true,
+          "desired": 0.5499276410998553,
+          "current": 0.5494086078289421,
+          "renderProgress": 0.5494086078289421,
+          "chapter": 0,
+          "phase": 0.5494086078289421,
+          "shot": "track",
+          "load": 0,
+          "camera": [
+            0.9086065197148798,
+            7.012429054522173,
+            13.711282294079984
+          ],
+          "cameraTarget": [
+            4.1527742459345225,
+            1.5430209657774554,
+            0
+          ],
+          "cargo": [],
+          "calls": 52,
+          "triangles": 391622,
+          "width": 768,
+          "height": 442.4375,
+          "mobile": true,
+          "reducedMotion": false,
+          "static": false,
+          "paused": false,
+          "assemblies": [
+            {
+              "name": "Tractor",
+              "meshes": 15
+            },
+            {
+              "name": "Trailer",
+              "meshes": 10
+            },
+            {
+              "name": "Cargo_Steel",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Precast",
+              "meshes": 6
+            },
+            {
+              "name": "Cargo_Wire",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Machinery",
+              "meshes": 6
+            }
+          ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
+          "glazing": [
+            {
+              "name": "Tractor_|_Tractor_|_smoked_glazing",
+              "castShadow": false,
+              "receiveShadow": false
+            }
+          ],
+          "layout": {
+            "viewport": 768,
+            "document": 768,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 768,
+              "height": 442.4375,
+              "right": 768,
+              "bottom": 502.4375
+            },
+            "panel": {
+              "x": 0,
+              "y": 503.4375,
+              "width": 768,
+              "height": 520.5625,
+              "right": 768,
+              "bottom": 1024
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 99,
+              "y": 639.5,
+              "right": 669,
+              "bottom": 736.4375
+            }
+          }
+        },
+        {
+          "slug": "steel",
+          "ready": true,
+          "desired": 1.5503685781476122,
+          "current": 1.5503685781476122,
+          "renderProgress": 1.5503685781476122,
+          "chapter": 1,
+          "phase": 0.5503685781476122,
+          "shot": "detail",
+          "load": 1,
+          "camera": [
+            1.138370249251178,
+            5.844689042436421,
+            11.234524617448981
+          ],
+          "cameraTarget": [
+            6.438370249251178,
+            2.1097069348477238,
+            0
+          ],
+          "cargo": [
+            "Cargo_Steel"
+          ],
+          "calls": 56,
+          "triangles": 391826,
+          "width": 768,
+          "height": 442.4375,
+          "mobile": true,
+          "reducedMotion": false,
+          "static": false,
+          "paused": false,
+          "assemblies": [
+            {
+              "name": "Tractor",
+              "meshes": 15
+            },
+            {
+              "name": "Trailer",
+              "meshes": 10
+            },
+            {
+              "name": "Cargo_Steel",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Precast",
+              "meshes": 6
+            },
+            {
+              "name": "Cargo_Wire",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Machinery",
+              "meshes": 6
+            }
+          ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
+          "glazing": [
+            {
+              "name": "Tractor_|_Tractor_|_smoked_glazing",
+              "castShadow": false,
+              "receiveShadow": false
+            }
+          ],
+          "layout": {
+            "viewport": 768,
+            "document": 768,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 768,
+              "height": 442.4375,
+              "right": 768,
+              "bottom": 502.4375
+            },
+            "panel": {
+              "x": 0,
+              "y": 503.4375,
+              "width": 768,
+              "height": 520.5625,
+              "right": 768,
+              "bottom": 1024
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 99,
+              "y": 656.6094970703125,
+              "right": 669,
+              "bottom": 744.3282470703125
+            }
+          }
+        },
+        {
+          "slug": "precast",
+          "ready": true,
+          "desired": 2.5500859261939217,
+          "current": 2.5500859261939217,
+          "renderProgress": 2.5500859261939217,
+          "chapter": 2,
+          "phase": 0.5500859261939217,
+          "shot": "detail",
+          "load": 1,
+          "camera": [
+            11.296366986588986,
+            8.009202699482637,
+            10.146974825053988
+          ],
+          "cameraTarget": [
+            9.28498728253554,
+            1.9820822735446282,
+            0
+          ],
+          "cargo": [
+            "Cargo_Precast"
+          ],
+          "calls": 56,
+          "triangles": 386024,
+          "width": 768,
+          "height": 442.4375,
+          "mobile": true,
+          "reducedMotion": false,
+          "static": false,
+          "paused": false,
+          "assemblies": [
+            {
+              "name": "Tractor",
+              "meshes": 15
+            },
+            {
+              "name": "Trailer",
+              "meshes": 10
+            },
+            {
+              "name": "Cargo_Steel",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Precast",
+              "meshes": 6
+            },
+            {
+              "name": "Cargo_Wire",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Machinery",
+              "meshes": 6
+            }
+          ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
+          "glazing": [
+            {
+              "name": "Tractor_|_Tractor_|_smoked_glazing",
+              "castShadow": false,
+              "receiveShadow": false
+            }
+          ],
+          "layout": {
+            "viewport": 768,
+            "document": 768,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 768,
+              "height": 442.4375,
+              "right": 768,
+              "bottom": 502.4375
+            },
+            "panel": {
+              "x": 0,
+              "y": 503.4375,
+              "width": 768,
+              "height": 520.5625,
+              "right": 768,
+              "bottom": 1024
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 99,
+              "y": 656.609375,
+              "right": 669,
+              "bottom": 744.328125
+            }
+          }
+        },
+        {
+          "slug": "wire",
+          "ready": true,
+          "desired": 3.5498032742402317,
+          "current": 3.549249432008425,
+          "renderProgress": 3.549249432008425,
+          "chapter": 3,
+          "phase": 0.5492494320084251,
+          "shot": "detail",
+          "load": 1,
+          "camera": [
+            11.277194927128036,
+            8.660282724213157,
+            8.195580347532186
+          ],
+          "cameraTarget": [
+            10.81838542040415,
+            1.8376841521861589,
+            0
+          ],
+          "cargo": [
+            "Cargo_Wire"
+          ],
+          "calls": 49,
+          "triangles": 380945,
+          "width": 768,
+          "height": 442.4375,
+          "mobile": true,
+          "reducedMotion": false,
+          "static": false,
+          "paused": false,
+          "assemblies": [
+            {
+              "name": "Tractor",
+              "meshes": 15
+            },
+            {
+              "name": "Trailer",
+              "meshes": 10
+            },
+            {
+              "name": "Cargo_Steel",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Precast",
+              "meshes": 6
+            },
+            {
+              "name": "Cargo_Wire",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Machinery",
+              "meshes": 6
+            }
+          ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
+          "glazing": [
+            {
+              "name": "Tractor_|_Tractor_|_smoked_glazing",
+              "castShadow": false,
+              "receiveShadow": false
+            }
+          ],
+          "layout": {
+            "viewport": 768,
+            "document": 768,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 768,
+              "height": 442.4375,
+              "right": 768,
+              "bottom": 502.4375
+            },
+            "panel": {
+              "x": 0,
+              "y": 503.4375,
+              "width": 768,
+              "height": 520.5625,
+              "right": 768,
+              "bottom": 1024
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 99,
+              "y": 656.6094970703125,
+              "right": 669,
+              "bottom": 744.3282470703125
+            }
+          }
+        },
+        {
+          "slug": "machinery",
+          "ready": true,
+          "desired": 4.550244211287988,
+          "current": 4.549699829183727,
+          "renderProgress": 4.549699829183727,
+          "chapter": 4,
+          "phase": 0.5496998291837274,
+          "shot": "detail",
+          "load": 1,
+          "camera": [
+            7.239426370043823,
+            5.086575913186561,
+            8.589113584376044
+          ],
+          "cameraTarget": [
+            7.030231735212855,
+            2.432769406402337,
+            0
+          ],
+          "cargo": [
+            "Cargo_Machinery"
+          ],
+          "calls": 55,
+          "triangles": 391783,
+          "width": 768,
+          "height": 442.4375,
+          "mobile": true,
+          "reducedMotion": false,
+          "static": false,
+          "paused": false,
+          "assemblies": [
+            {
+              "name": "Tractor",
+              "meshes": 15
+            },
+            {
+              "name": "Trailer",
+              "meshes": 10
+            },
+            {
+              "name": "Cargo_Steel",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Precast",
+              "meshes": 6
+            },
+            {
+              "name": "Cargo_Wire",
+              "meshes": 5
+            },
+            {
+              "name": "Cargo_Machinery",
+              "meshes": 6
+            }
+          ],
+          "modelBounds": {
+            "min": [
+              -5.603466244735442,
+              0.013001006956441241,
+              -1.4046625250027118
+            ],
+            "max": [
+              16.27750015258789,
+              3.67978409273302,
+              1.4046625250027118
+            ]
+          },
+          "glazing": [
+            {
+              "name": "Tractor_|_Tractor_|_smoked_glazing",
+              "castShadow": false,
+              "receiveShadow": false
+            }
+          ],
+          "layout": {
+            "viewport": 768,
+            "document": 768,
+            "view": {
+              "x": 0,
+              "y": 60,
+              "width": 768,
+              "height": 442.4375,
+              "right": 768,
+              "bottom": 502.4375
+            },
+            "panel": {
+              "x": 0,
+              "y": 503.4375,
+              "width": 768,
+              "height": 520.5625,
+              "right": 768,
+              "bottom": 1024
+            },
+            "panelBackground": "rgb(8, 15, 25)",
+            "heading": {
+              "x": 99,
+              "y": 656.6094970703125,
+              "right": 669,
+              "bottom": 744.3282470703125
+            }
+          }
+        }
+      ],
+      "approach": {
+        "ready": true,
+        "desired": 0.029667149059334298,
+        "current": 0.029667149059334298,
+        "renderProgress": 0.029667149059334298,
+        "chapter": 0,
+        "phase": 0.029667149059334298,
+        "shot": "approach",
+        "load": 0,
+        "camera": [
+          -11.373691237181092,
+          3.4252617525637814,
+          5.91548229743443
+        ],
+        "cameraTarget": [
+          -4.00128090576985,
+          1.944586767307761,
+          0
+        ],
+        "cargo": [],
+        "calls": 52,
+        "triangles": 391622,
+        "width": 768,
+        "height": 442.4375,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "pan": {
+        "ready": true,
+        "desired": 0.8002894356005789,
+        "current": 0.7997766008694209,
+        "renderProgress": 0.7997766008694209,
+        "chapter": 0,
+        "phase": 0.7997766008694209,
+        "shot": "empty-deck",
+        "load": 0,
+        "camera": [
+          3.481835021927049,
+          8.124135589573298,
+          16.37240676871989
+        ],
+        "cameraTarget": [
+          6.423444061231935,
+          1.5,
+          0
+        ],
+        "cargo": [],
+        "calls": 52,
+        "triangles": 391622,
+        "width": 768,
+        "height": 442.4375,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "loading": {
+        "ready": true,
+        "desired": 1.200151501447178,
+        "current": 1.1996074430229382,
+        "renderProgress": 1.1996074430229382,
+        "chapter": 1,
+        "phase": 0.1996074430229382,
+        "shot": "loading",
+        "load": 0.46570848049139674,
+        "camera": [
+          3.6014813333486124,
+          8.246951487187713,
+          16.740854461563142
+        ],
+        "cameraTarget": [
+          7.838632461540224,
+          1.768945897432959,
+          0
+        ],
+        "cargo": [
+          "Cargo_Steel"
+        ],
+        "calls": 62,
+        "triangles": 399268,
+        "width": 768,
+        "height": 442.4375,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "loaded": {
+        "ready": true,
+        "desired": 1.6502238603473227,
+        "current": 1.6497041541501951,
+        "renderProgress": 1.6497041541501951,
+        "chapter": 1,
+        "phase": 0.6497041541501951,
+        "shot": "detail",
+        "load": 1,
+        "camera": [
+          0.25259548417062483,
+          4.612306760585218,
+          8.731248107438724
+        ],
+        "cameraTarget": [
+          5.5525954841706255,
+          2.186730827463424,
+          0
+        ],
+        "cargo": [
+          "Cargo_Steel"
+        ],
+        "calls": 53,
+        "triangles": 375991,
+        "width": 768,
+        "height": 442.4375,
+        "mobile": true,
+        "reducedMotion": false,
+        "static": false,
+        "paused": false,
+        "assemblies": [
+          {
+            "name": "Tractor",
+            "meshes": 15
+          },
+          {
+            "name": "Trailer",
+            "meshes": 10
+          },
+          {
+            "name": "Cargo_Steel",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Precast",
+            "meshes": 6
+          },
+          {
+            "name": "Cargo_Wire",
+            "meshes": 5
+          },
+          {
+            "name": "Cargo_Machinery",
+            "meshes": 6
+          }
+        ],
+        "modelBounds": {
+          "min": [
+            -5.603466244735442,
+            0.013001006956441241,
+            -1.4046625250027118
+          ],
+          "max": [
+            16.27750015258789,
+            3.67978409273302,
+            1.4046625250027118
+          ]
+        },
+        "glazing": [
+          {
+            "name": "Tractor_|_Tractor_|_smoked_glazing",
+            "castShadow": false,
+            "receiveShadow": false
+          }
+        ]
+      },
+      "reverseScroll": true,
+      "chapterLink": true,
+      "pause": {
+        "cameraFrozen": true,
+        "copyContinues": true,
+        "resumedChapter": 3
+      },
+      "resize": false,
+      "errors": [],
+      "axeViolations": []
+    },
+    {
+      "name": "landscape",
+      "width": 844,
+      "height": 390,
+      "staticLayout": true,
+      "dimensions": {
+        "viewport": 844,
+        "document": 844
+      },
+      "errors": []
     }
   ],
   "fallbacks": [
     {
       "name": "reduced-motion",
+      "width": 390,
+      "height": 844,
       "staticLayout": true,
-      "headingVisible": true,
+      "allCopyVisible": true,
       "poster": {
         "loaded": true,
         "hidden": true
+      },
+      "dimensions": {
+        "viewport": 390,
+        "document": 390
       }
     },
     {
       "name": "no-javascript",
+      "width": 390,
+      "height": 844,
       "staticLayout": true,
-      "headingVisible": true,
+      "allCopyVisible": true,
       "poster": {
         "loaded": true,
         "hidden": false
+      },
+      "dimensions": {
+        "viewport": 390,
+        "document": 390
       }
     },
     {
       "name": "model-unavailable",
+      "width": 1440,
+      "height": 900,
       "staticLayout": true,
-      "headingVisible": true,
+      "allCopyVisible": true,
       "poster": {
         "loaded": true,
         "hidden": false
+      },
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440
       }
+    }
+  ],
+  "navigation": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/contact/",
+      "status": 200
+    },
+    {
+      "path": "/carriers/",
+      "status": 200
+    },
+    {
+      "path": "/what-we-move/",
+      "status": 200
     }
   ]
 }

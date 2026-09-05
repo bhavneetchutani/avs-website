@@ -1,32 +1,90 @@
-# What We Move — dimensional freight concept
+# What We Move — cinematic freight experience
 
-Local, independent prototype. Nothing in the live four-page site is replaced. No deploy has been made.
+Local prototype in the existing AVS website worktree. The live four-page site has not
+been replaced or deployed. Open http://127.0.0.1:8874/concepts/freight-3d/ after starting
+the local server with:
 
-Serve this worktree over HTTP and open `/concepts/freight-3d/`. This site is static: no build, account or external JavaScript service is needed. Three.js 0.185.1 and its meshoptimizer 1.1 decoder are vendored with their MIT licenses; fonts are the existing AVS files.
+```sh
+node concepts/freight-3d/serve.mjs
+```
 
-From the worktree, run `node concepts/freight-3d/serve.mjs`, then open
-`http://127.0.0.1:8874/concepts/freight-3d/`. The server binds to this computer only.
+The static website uses the existing AVS fonts, exact primary blue #2196E8, local
+Three.js 0.185.1 and Meshopt decoder. No frontend build or remote script service is
+required. The licensed Peterbilt remains unchanged in models/avs-freight.glb; source
+and attribution are documented in assets/model-source/README.md.
 
-The model lives at `/models/avs-freight.glb`; its static poster is `/models/avs-freight-poster.jpg`. Source assets and model provenance live under `assets/model-source/`.
+## Experience
 
-## Scroll behavior
+The opening shot starts close to the grille, travels past the cab and reveals the
+empty deck. Four freight chapters each have a loading sequence, a detail view, and
+a transition toward the next composition:
 
-Normal document scrolling supplies a five-position timeline. A sticky Three.js canvas reveals the tractor and trailer, then adds steel, precast, wire and crated equipment in turn. Scroll also interpolates the camera. Chapter links, the keyboard, touch and the scrollbar all use the same timeline; there is no wheel interception or scrolling library. Render frames stop once the view settles.
+- Steel: a front-to-back survey line reveals long sections; the camera closes in on
+  pipe profiles and beams.
+- Precast: an elevated view reveals the arrangement, then descends toward individual
+  castings.
+- Wire: the camera travels toward the open mesh sheets and reinforcement.
+- Equipment: a close view of the pump skid tracks toward the crate, then pulls back
+  to the complete rig.
 
-The model's group names are `Tractor`, `Trailer`, `Cargo_Steel`, `Cargo_Precast`, `Cargo_Wire`, and `Cargo_Machinery`. The GLB follows Blender's normal glTF conversion: Blender X is Three X, Blender Z is Three Y, and Blender Y is negative Three Z. Its bounding box is centered once on load. Cargo materials are cloned within their group so fading one never changes the tractor or another chapter.
+Supports, cargo and restraint details settle in sequence. This is a visual reveal,
+not a depiction of real securement procedures. The camera intentionally crops
+unrelated parts of the truck when the freight is the subject.
 
-Reduced-motion preference presents a static composition and ordinary content sections, without a scroll orbit or lifting freight. The pause button removes interpolation and switches chapters directly. If WebGL, the model or the module cannot load, the initial HTML is already the static layout, with a poster and fully readable freight text. Narrow screens retain native scrolling and cap pixel density. The concept uses AVS's Archivo/Spline Sans Mono type, color tokens, and square/60-degree geometry.
+Desktop uses a large cinematic viewer beside an editorial text panel. At widths
+up to 850px, the viewer occupies the upper part of the screen and an opaque story
+panel occupies the lower part. The text never scrolls over the model. Short landscape
+windows use the ordinary readable layout. Mobile controls have 44px touch targets.
+The compact story retains the essential freight description; the static reading
+layout also includes the fuller supporting copy.
 
-The illustrations describe cargo, not a promise of a specific tractor, trailer or securement configuration. The full original equipment list stays blended underneath the experience; the model is a flatbed demonstration and does not pretend a hotshot is a semi.
+## Timeline and interaction
+
+The sticky stage contains the viewer and story panels. Five scroll stops provide
+native document space; each lasts 135svh, plus a final viewport of trailing space.
+The timeline is continuous from 0 to 4.999. Its integer selects a freight chapter;
+its fraction scrubs that chapter's camera and loading sequence. There is no wheel,
+touch or keyboard interception and no mandatory scroll snapping.
+
+The camera uses authored eye/target/FOV keyframes in real model coordinates. Local
+cargo clipping planes follow the survey line and clip the matching shadows.
+Cargo materials are cloned, preserving the truck's materials and exact brand paint.
+The renderer shifts its composition upward to keep the caption area clear.
+Browser glazing uses softer environment reflections for the closer camera views.
+
+Chapter links select a loaded composition at phase 0.43 (introduction starts at 0).
+Scrolling by hand plays every step and works in either direction. The pause button
+freezes the 3D composition while the text remains navigable; resume catches up with
+the current chapter. Rendering stops after scroll interpolation settles and while
+the page is hidden or the experience is offscreen.
+
+Reduced motion and short landscape show a fixed composition with all text in ordinary
+document flow. If JavaScript, WebGL or the model is unavailable, the initial HTML
+already contains the poster and complete freight copy. Anchor IDs move between the
+timeline and readable sections so navigation works in both modes.
+
+## Verification
+
+See verification/README.md and verification/results.json for viewport sizes,
+screenshots and checks. Coverage includes the mobile panel separation, scene
+framing, loading, reverse scrolling, chapter links, pause, resizing, accessibility,
+and static fallbacks. These browser viewport checks are not a physical-device GPU
+benchmark.
+
+Read-only window.freightExperience.getState() exposes the scroll phase, camera/target,
+cargo visibility, loading fraction and render counts for verification. It does not
+provide product controls or modify the scene.
 
 ## Technical references
 
-Verified 5 September 2026:
+- [Three.js material clipping planes](https://threejs.org/docs/pages/Material.html#clippingPlanes)
+  describe world-space planes and optional shadow clipping.
+- [Three.js PerspectiveCamera](https://threejs.org/docs/pages/PerspectiveCamera.html)
+  documents the FOV and view-offset controls used for subject framing.
+- [Three.js rendering on demand](https://threejs.org/manual/en/rendering-on-demand.html)
+  covers rendering only when input or scene state changes.
+- [MDN prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion)
+  documents the visitor preference honored by the static layout.
 
-- [MDN Document scroll event](https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event): page scrolling is observable with standard browser events.
-- [Three.js GLTFLoader](https://threejs.org/docs/pages/GLTFLoader.html): loads glTF/GLB scenes and their hierarchy.
-- [Three.js AnimationMixer.setTime](https://threejs.org/docs/pages/AnimationMixer.html#method:setTime): an authored Blender animation can also be scrubbed to an exact time, if a later version uses baked animation instead of these group transforms.
-- [Three.js rendering on demand](https://threejs.org/manual/en/rendering-on-demand.html): render when the model, camera or input changes, avoiding a permanent idle loop.
-- [MDN prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion): follows the user's operating-system preference.
-
-AVS copy and equipment are drawn from the existing `/what-we-move/index.html` and the previous concept's freight research. No customer name, size statistic or performance percentage was added. This remains a concept for visual review.
+The equipment list and business details come from the existing AVS site. Tractor
+attribution remains accessible in the footer; no AVS logo was reintroduced on the truck.

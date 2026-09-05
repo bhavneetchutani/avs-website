@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#050a12">
-  <meta name="description" content="Explore the freight AVS moves, from structural steel and precast to wire and industrial equipment.">
-  <title>What We Move · AVS Freight Services · 3D concept</title>
+  <meta name="description" content="A closer look at the freight AVS moves. Explore structural steel, precast, wire and industrial equipment, and find the right fit for your load.">
+  <title>What We Move · AVS Freight Services</title>
   <link rel="icon" href="../../assets/ca127996-399d-4732-b567-cf3dbe49d203.svg">
   <link rel="stylesheet" href="./style.css">
   <script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js","three/addons/":"./vendor/three/addons/"}}</script>
@@ -20,82 +20,86 @@
   <main>
     <div class="experience" id="experience">
       <div class="stage" id="stage">
-        <div class="stage-top mono"><span>WHAT WE MOVE</span><span class="edition">HOUSTON, TX &nbsp; / &nbsp; 48 CONTIGUOUS STATES</span></div>
-        <div class="model-view" id="model-view" role="img" aria-label="Detailed blue semi truck with a flatbed trailer.">
-          <img class="poster" id="poster" src="/models/avs-freight-poster.jpg" alt="Blue AVS semi truck and flatbed trailer" fetchpriority="high">
-          <canvas id="truck-canvas" aria-hidden="true"></canvas>
+        <div class="visual-region">
+          <div class="stage-top mono"><span id="shot-label">01 / THE APPROACH</span><span class="edition">FREIGHT, IN FOCUS</span></div>
+          <div class="model-view" id="model-view" role="img" aria-label="Detailed blue semi truck with a flatbed trailer.">
+            <img class="poster" id="poster" src="/models/avs-freight-poster.jpg" alt="Blue semi truck and flatbed trailer" fetchpriority="high">
+            <canvas id="truck-canvas" aria-hidden="true"></canvas>
+          </div>
+          <div class="detail-callout mono" aria-hidden="true"><span class="viewfinder"></span><span id="detail-label">THE RIGHT FIT STARTS HERE</span></div>
+          <div class="scene-caption mono"><span class="signal"></span><span id="scene-label">FLATBED / READY TO LOAD</span><span class="caption-rule"></span><span id="scene-number">00 / 04</span></div>
+          <div class="view-controls"><span class="model-status mono" id="model-status" role="status">LOADING THE TRUCK</span><button class="motion mono" id="motion-toggle" type="button" aria-pressed="false">Pause motion</button></div>
         </div>
-        <div class="scene-caption mono"><span class="signal"></span><span id="scene-label">FLATBED / READY TO LOAD</span><span class="caption-rule"></span><span id="scene-number">00 / 04</span></div>
-        <div class="stage-bottom">
-          <a class="scroll-cue mono" href="#steel"><span aria-hidden="true">↓</span> SCROLL TO EXPLORE</a>
-          <span class="model-status mono" id="model-status" role="status">LOADING THE TRUCK</span>
-          <button class="motion mono" id="motion-toggle" type="button" aria-pressed="false">Pause motion</button>
+        <div class="story-panel">
+          <div class="story-heading mono"><span>WHAT WE MOVE</span><span class="story-heading-rule"></span><span>AVS / FIELD NOTES</span></div>
+          <div class="chapters">
+            <section class="chapter intro is-active" id="intro" data-chapter="0">
+              <div class="chapter-copy">
+                <p class="eyebrow mono"><span></span> A CLOSER LOOK AT WHAT MOVES US</p>
+                <h1>Big things.<br><em>In motion.</em></h1>
+                <p class="lede">The steel. The structure. The next big thing. Every load has a way forward.</p>
+                <p class="description">From the Gulf Coast to jobsites across the country, we build the transportation plan around your freight.</p>
+                <a class="text-link mono" href="#steel">TAKE A WALK AROUND <span aria-hidden="true">↘</span></a>
+              </div>
+            </section>
+            <section class="chapter" id="steel" data-chapter="1">
+              <div class="chapter-copy">
+                <p class="eyebrow mono"><span></span> 01 / STRUCTURAL STEEL</p>
+                <h2>The backbone<br><em>of the build.</em></h2>
+                <p class="lede">Long sections. Heavy bundles. Space for the materials that hold it all together.</p>
+                <p class="description">Open decks give cranes and forklifts access from above or alongside. The fit starts with your dimensions and delivery site.</p>
+                <dl class="details"><div><dt>ON THE DECK</dt><dd>Beams · sections · fabricated steel</dd></div><div><dt>THE FIT</dt><dd>Open deck. Access from every side.</dd></div></dl>
+              </div>
+            </section>
+            <section class="chapter" id="precast" data-chapter="2">
+              <div class="chapter-copy">
+                <p class="eyebrow mono"><span></span> 02 / PRECAST CONCRETE</p>
+                <h2>Made offsite.<br><em>Needed onsite.</em></h2>
+                <p class="lede">Ready-made pieces. A carefully planned arrival. Building starts before the truck gets there.</p>
+                <p class="description">We work back from the crew's unloading sequence and appointment window, so the delivery plan fits the jobsite.</p>
+                <dl class="details"><div><dt>ON THE DECK</dt><dd>MSE wall panels · precast concrete</dd></div><div><dt>THE FIT</dt><dd>Flatbed. Staged for the job ahead.</dd></div></dl>
+              </div>
+            </section>
+            <section class="chapter" id="wire" data-chapter="3">
+              <div class="chapter-copy">
+                <p class="eyebrow mono"><span></span> 03 / WIRE & REINFORCEMENT</p>
+                <h2>Strength,<br><em>before the pour.</em></h2>
+                <p class="lede">The layers beneath the surface. Wire and reinforcement, ready for what comes next.</p>
+                <p class="description">Bundle dimensions, unloading access and the crew's schedule shape the booking. Every detail belongs in the plan.</p>
+                <dl class="details"><div><dt>ON THE DECK</dt><dd>Wire mesh · reinforcement bundles</dd></div><div><dt>THE FIT</dt><dd>Open deck. Timed for the crew.</dd></div></dl>
+              </div>
+            </section>
+            <section class="chapter" id="machinery" data-chapter="4">
+              <div class="chapter-copy">
+                <p class="eyebrow mono"><span></span> 04 / INDUSTRIAL EQUIPMENT</p>
+                <h2>The next shift<br><em>starts here.</em></h2>
+                <p class="lede">The machine. The component. The part that keeps the whole job moving.</p>
+                <p class="description">Give us the dimensions, weight and pickup details. We'll match the equipment to your load and the timing to your job.</p>
+                <dl class="details"><div><dt>ON THE DECK</dt><dd>Crated equipment · industrial components</dd></div><div><dt>THE FIT</dt><dd>Your dimensions. The right equipment.</dd></div></dl>
+                <a class="text-link mono" href="/contact/">LET'S MOVE YOUR NEXT LOAD <span aria-hidden="true">↗</span></a>
+              </div>
+            </section>
+          </div>
+          <div class="stage-bottom">
+            <div class="journey-caption mono"><span id="journey-step">EXPLORE THE LOAD</span><a class="scroll-cue" href="#steel">SCROLL TO DISCOVER <span aria-hidden="true">↓</span></a></div>
+            <nav class="chapter-nav" aria-label="Freight chapters">
+              <a href="#intro" data-step="0" aria-label="Introduction" aria-current="step"><span>00</span><b>Start</b><i></i></a>
+              <a href="#steel" data-step="1" aria-label="Structural steel"><span>01</span><b>Steel</b><i></i></a>
+              <a href="#precast" data-step="2" aria-label="Precast concrete"><span>02</span><b>Precast</b><i></i></a>
+              <a href="#wire" data-step="3" aria-label="Wire and reinforcement"><span>03</span><b>Wire</b><i></i></a>
+              <a href="#machinery" data-step="4" aria-label="Industrial equipment"><span>04</span><b>Equipment</b><i></i></a>
+            </nav>
+          </div>
         </div>
-        <nav class="chapter-nav" aria-label="Freight chapters">
-          <a href="#intro" data-step="0" aria-label="Introduction" aria-current="step"><span>00</span><i></i></a>
-          <a href="#steel" data-step="1" aria-label="Structural steel"><span>01</span><i></i></a>
-          <a href="#precast" data-step="2" aria-label="Precast concrete"><span>02</span><i></i></a>
-          <a href="#wire" data-step="3" aria-label="Wire and reinforcement"><span>03</span><i></i></a>
-          <a href="#machinery" data-step="4" aria-label="Industrial equipment"><span>04</span><i></i></a>
-        </nav>
-        <div class="progress-track"><div id="scroll-progress"></div></div>
+        <div class="progress-track" aria-hidden="true"><div id="scroll-progress"></div></div>
       </div>
-      <div class="chapters">
-        <section class="chapter intro" id="intro" data-chapter="0">
-          <div class="chapter-copy">
-            <p class="eyebrow mono"><span></span> THE FREIGHT COMES FIRST</p>
-            <h1>Built around <br>your load.</h1>
-            <p class="lede">Steel. Precast. Wire. The materials that become something bigger.</p>
-            <p class="description">From the Houston and Gulf Coast corridor to live jobsites across the country. Whatever your freight needs to ride on, we find its fit.</p>
-            <a class="text-link mono" href="#steel">EXPLORE WHAT WE MOVE <span aria-hidden="true">↘</span></a>
-          </div>
-        </section>
-        <section class="chapter" id="steel" data-chapter="1">
-          <div class="chapter-copy">
-            <p class="eyebrow mono"><span></span> 01 / STRUCTURAL STEEL</p>
-            <h2>The backbone <br>of the build.</h2>
-            <p class="lede">Long sections. Heavy bundles. A load that needs room to work.</p>
-            <p class="description">An open deck gives a crane or forklift access from the side or above. We choose equipment around the dimensions, the weight and the delivery site.</p>
-            <dl class="details"><div><dt>FREIGHT</dt><dd>Beams · sections · fabricated steel</dd></div><div><dt>THE FIT</dt><dd>Open deck / side & top access</dd></div></dl>
-          </div>
-        </section>
-        <section class="chapter" id="precast" data-chapter="2">
-          <div class="chapter-copy">
-            <p class="eyebrow mono"><span></span> 02 / PRECAST CONCRETE</p>
-            <h2>Made offsite. <br>Needed onsite.</h2>
-            <p class="lede">Wall panels and precast, headed for highway and heavy-civil work.</p>
-            <p class="description">The loading plan starts at the delivery end. Pieces need to come off in the order the crew needs them, within the site's appointment window.</p>
-            <dl class="details"><div><dt>FREIGHT</dt><dd>MSE wall panels · precast concrete</dd></div><div><dt>THE FIT</dt><dd>Flatbed / staged for unloading</dd></div></dl>
-          </div>
-        </section>
-        <section class="chapter" id="wire" data-chapter="3">
-          <div class="chapter-copy">
-            <p class="eyebrow mono"><span></span> 03 / WIRE & REINFORCEMENT</p>
-            <h2>Strength, <br>before the pour.</h2>
-            <p class="lede">Wire and reinforcement for the work taking shape on the ground.</p>
-            <p class="description">Bundle dimensions, unloading access and the crew's schedule all shape the booking. The right truck is the one that fits the whole job.</p>
-            <dl class="details"><div><dt>FREIGHT</dt><dd>Wire mesh · reinforcement bundles</dd></div><div><dt>THE FIT</dt><dd>Open deck / jobsite delivery</dd></div></dl>
-          </div>
-        </section>
-        <section class="chapter" id="machinery" data-chapter="4">
-          <div class="chapter-copy">
-            <p class="eyebrow mono"><span></span> 04 / INDUSTRIAL EQUIPMENT</p>
-            <h2>Keep the <br>job moving.</h2>
-            <p class="lede">The machine, the component, the part the next shift is waiting on.</p>
-            <p class="description">Send us the dimensions, weight and pickup details. We match the load to the equipment and work the plan around when it needs to be there.</p>
-            <dl class="details"><div><dt>FREIGHT</dt><dd>Crated equipment · industrial components</dd></div><div><dt>THE FIT</dt><dd>Selected for your dimensions & timing</dd></div></dl>
-            <a class="text-link mono" href="/contact/">TELL US WHAT'S MOVING <span aria-hidden="true">↗</span></a>
-          </div>
-        </section>
-      </div>
+      <div class="timeline" aria-hidden="true"><div class="scroll-stop" id="scroll-intro" data-stop="0"></div><div class="scroll-stop" id="scroll-steel" data-stop="1"></div><div class="scroll-stop" id="scroll-precast" data-stop="2"></div><div class="scroll-stop" id="scroll-wire" data-stop="3"></div><div class="scroll-stop" id="scroll-machinery" data-stop="4"></div></div>
     </div>
     <section class="equipment" id="freight-details">
-      <div class="section-heading"><p class="eyebrow mono"><span></span> WHATEVER IT NEEDS TO RIDE ON</p><h2>One load. <br>The right equipment.</h2><p>Start with what you're moving. We'll help work out how it gets there.</p></div>
-      <div class="equipment-list">
-        <p>Flatbed <span>01</span></p><p>Hotshot <span>02</span></p><p>Conestoga <span>03</span></p><p>Step-deck <span>04</span></p><p>Dry van <span>05</span></p><p>Reefer <span>06</span></p><p>LTL <span>07</span></p><p>Partial truckload <span>08</span></p><p>Expedited & sprinter <span>09</span></p><p>Drayage <span>10</span></p><p>Intermodal <span>11</span></p><p>Power-only <span>12</span></p>
-      </div>
+      <div class="section-heading"><p class="eyebrow mono"><span></span> THE FREIGHT SETS THE PLAN</p><h2>One load.<br><em>The right fit.</em></h2><p>Different freight. Different ways to get there. Start with what you're moving, and we'll work out the equipment.</p><a class="text-link mono" href="/contact/">BUILD YOUR TRANSPORTATION PLAN <span aria-hidden="true">↗</span></a></div>
+      <div class="equipment-list"><p>Flatbed <span>01</span></p><p>Hotshot <span>02</span></p><p>Conestoga <span>03</span></p><p>Step-deck <span>04</span></p><p>Dry van <span>05</span></p><p>Reefer <span>06</span></p><p>LTL <span>07</span></p><p>Partial truckload <span>08</span></p><p>Expedited & sprinter <span>09</span></p><p>Drayage <span>10</span></p><p>Intermodal <span>11</span></p><p>Power-only <span>12</span></p></div>
     </section>
-    <section class="contact"><p class="eyebrow mono">LET'S GET IT MOVING</p><h2>What are you <br>working on?</h2><a class="quote" href="/contact/">Get a quote <span aria-hidden="true">↗</span></a><a class="phone" href="tel:+12817588676">(281) 758-8676</a></section>
+    <section class="contact"><div><p class="eyebrow mono"><span></span> YOUR NEXT MOVE</p><h2>Something big<br><em>on the horizon?</em></h2></div><div class="contact-actions"><a class="quote" href="/contact/">Let's get it moving <span aria-hidden="true">↗</span></a><a class="phone" href="tel:+12817588676">(281) 758-8676</a></div></section>
   </main>
   <footer class="mono"><span>© 2026 AVS FREIGHT SERVICES INC.</span><span>TRACTOR: <a href="https://sketchfab.com/3d-models/1978-peterbilt-359-standard-0599b3d7f9a5437fa905b20674d16d17">1978 PETERBILT 359 STANDARD</a> BY <a href="https://sketchfab.com/hans1240">HANS1240</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · MODIFIED FOR AVS</span><span>3D DESIGN CONCEPT · LOCAL PREVIEW</span></footer>
   <script type="module" src="./scene.js"></script>

@@ -3,287 +3,347 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
-const canvas = document.querySelector('#truck-canvas');
-const view = document.querySelector('#model-view');
-const experience = document.querySelector('#experience');
+const $ = (s) => document.querySelector(s);
+const canvas = $('#truck-canvas'), view = $('#model-view'), experience = $('#experience');
 const chapters = [...document.querySelectorAll('[data-chapter]')];
 const chapterLinks = [...document.querySelectorAll('[data-step]')];
-const toggle = document.querySelector('#motion-toggle');
-const status = document.querySelector('#model-status');
+const stops = [...document.querySelectorAll('[data-stop]')];
+const toggle = $('#motion-toggle'), status = $('#model-status');
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
-const compact = matchMedia('(max-width: 700px)');
-const clamp = (x, min = 0, max = 1) => Math.min(max, Math.max(min, x));
-const ease = (x) => x * x * (3 - 2 * x);
-const chapterStates = [
-  { group: null, title: 'FLATBED / READY TO LOAD', eye: [-18, 10, 28], target: [0, 1.1, 0] },
-  { group: 'Cargo_Steel', title: 'STRUCTURAL STEEL / OPEN DECK', eye: [-14, 12, 30], target: [-0.3, 1.5, 0] },
-  { group: 'Cargo_Precast', title: 'PRECAST CONCRETE / OPEN DECK', eye: [-9, 11, 31], target: [-0.3, 1.5, 0] },
-  { group: 'Cargo_Wire', title: 'WIRE & REINFORCEMENT / OPEN DECK', eye: [-5, 14, 30], target: [-0.3, 1.5, 0] },
-  { group: 'Cargo_Machinery', title: 'INDUSTRIAL EQUIPMENT / OPEN DECK', eye: [-16, 12, 28], target: [-0.3, 1.6, 0] },
+const compact = matchMedia('(max-width: 850px)');
+const shortScreen = matchMedia('(max-height: 540px) and (max-width: 1000px)');
+const clamp = (x, a=0, b=1) => Math.min(b, Math.max(a,x));
+const smooth = (x) => { x=clamp(x); return x*x*(3-2*x); };
+const ramp = (x,a,b) => smooth((x-a)/(b-a));
+const lerp = THREE.MathUtils.lerp;
+const isStatic = () => reduceMotion.matches || shortScreen.matches || failed;
+
+// Coordinates are the original model's metres: nose -5.6, deck 0..16.15,
+// height Y. Each chapter moves from context to detail and back to the next load.
+const shots = [
+  {group:null, title:'THE OPEN ROAD', detail:'A closer look. A better fit.', keys:[
+    [0,[-11.5,3.4,5.8],[-4.05,1.95,0],35],
+    [.26,[-8,4.1,9],[-2.7,1.8,0],36],
+    [.64,[2.4,7.5,14.5],[5.3,1.5,0],39],
+    [1,[5,9,19],[8,1.5,0],40],
+  ]},
+  {group:'Cargo_Steel', title:'STRUCTURAL STEEL', detail:'Long sections. Open access.', keys:[
+    [0,[5,9,19],[8,1.5,0],40],
+    [.38,[2.4,7.6,14.8],[7.7,2,0],39],
+    [.70,[.1,4.4,8.3],[5.4,2.2,0],38],
+    [1,[6.4,10.4,16],[8,1.6,0],40],
+  ]},
+  {group:'Cargo_Precast', title:'PRECAST CONCRETE', detail:'Every piece has its place.', keys:[
+    [0,[6.4,10.4,16],[8,1.6,0],40],
+    [.38,[9.6,10.8,12.5],[8.3,1.9,0],39],
+    [.70,[12.7,5.7,8.2],[10.1,2.05,0],38],
+    [1,[14.8,9.8,14.8],[8.5,1.6,0],40],
+  ]},
+  {group:'Cargo_Wire', title:'WIRE & REINFORCEMENT', detail:'Small details. Lasting strength.', keys:[
+    [0,[14.8,9.8,14.8],[8.5,1.6,0],40],
+    [.36,[14.2,11.7,10.3],[10,1.75,0],39],
+    [.7,[9.2,6.5,6.7],[11.4,1.9,0],38],
+    [1,[5.8,9.4,17],[7.6,1.6,0],40],
+  ]},
+  {group:'Cargo_Machinery', title:'INDUSTRIAL EQUIPMENT', detail:'From the factory to what comes next.', keys:[
+    [0,[5.8,9.4,17],[7.6,1.6,0],40],
+    [.35,[1,7,12],[5.2,2.1,0],39],
+    [.62,[8.5,4.7,7.9],[7.4,2.5,0],38],
+    [.82,[13.5,5.5,8.8],[11.8,2.5,0],38],
+    [1,[-7,11,26],[5.1,1.8,0],42],
+  ]},
 ];
-const assemblyNames = ['Tractor', 'Trailer', ...chapterStates.slice(1).map(({ group }) => group)];
+const assemblyNames = ['Tractor','Trailer',...shots.slice(1).map(s=>s.group)];
+const assemblyDiagnostics=[], glazingMeshes=[], groups=[];
+let renderer, scene, camera, rig, portal, deckGuide;
+let ready=false, failed=false, paused=false, inView=true;
+let current=0, desired=0, renderProgress=0, activeChapter=-1, activeVisualChapter=-1, frame=0, lastTime=0;
+let viewportWidth=0, viewportHeight=0, scrollStops=[], shotLabel='', loadAmount=0;
+let modelBounds;
+const eye = new THREE.Vector3(), target=new THREE.Vector3(), scratch=new THREE.Vector3();
 
-let renderer, scene, camera, rig;
-let groups = [];
-const glazingMeshes = [];
-const assemblyDiagnostics = [];
-let current = 0;
-let desired = 0;
-let frame = 0;
-let lastTime = 0;
-let ready = false;
-let paused = reduceMotion.matches;
-let activeChapter = -1;
-let inView = true;
-let viewportWidth = 0;
-let viewportHeight = 0;
-const cameraPosition = new THREE.Vector3();
-const cameraTarget = new THREE.Vector3();
-const scratch = new THREE.Vector3();
-
-function renderSoon() {
-  if (!frame && ready && !document.hidden && inView) frame = requestAnimationFrame(render);
+function text(id,value) { const element=$(id); if(element && element.textContent!==value) element.textContent=value; }
+function measureTimeline() {
+  scrollStops=stops.map(stop=>({top:stop.getBoundingClientRect().top+scrollY,height:stop.offsetHeight}));
 }
-
+function renderSoon() {
+  if(!frame && ready && !document.hidden && inView) frame=requestAnimationFrame(render);
+}
 function updateScroll() {
-  if (!ready) return;
-  if (reduceMotion.matches) {
-    desired = 1;
-  } else {
-    // Native scroll position is the timeline; wheel and touch events are never intercepted.
-    const range = chapters[chapters.length - 1].offsetTop - chapters[0].offsetTop;
-    const travelled = -experience.getBoundingClientRect().top;
-    desired = range > 0 ? clamp(travelled / range) * 4 : 0;
+  if(!ready) return;
+  if(isStatic()) desired=1.55;
+  else {
+    let i=0;
+    for(let j=1;j<scrollStops.length;j++) if(scrollY>=scrollStops[j].top) i=j;
+    const stop=scrollStops[i];
+    desired=stop ? clamp(i+(scrollY-stop.top)/stop.height,0,4.999) : 0;
   }
-  if (paused) current = desired;
+  if(paused) { current=desired; updateStory(desired); }
   renderSoon();
 }
-
-function setChapter(index) {
-  if (index === activeChapter) return;
-  activeChapter = index;
-  document.querySelector('#scene-label').textContent = chapterStates[index].title;
-  document.querySelector('#scene-number').textContent = `${String(index).padStart(2, '0')} / 04`;
-  chapterLinks.forEach((link, i) => {
-    if (i === index) link.setAttribute('aria-current', 'step');
-    else link.removeAttribute('aria-current');
-  });
-  view.setAttribute('aria-label', `Detailed blue AVS semi truck with a flatbed trailer. ${index ? chapterStates[index].title.toLowerCase().replace(' / ', ', ') : 'Ready to load'}.`);
+function updateStory(progress) {
+  const selected=Math.min(4,Math.floor(progress));
+  const phase=progress-selected;
+  if(activeChapter!==selected || isStatic()) {
+    activeChapter=selected;
+    chapters.forEach((chapter,i)=>{
+      chapter.classList.toggle('is-active',i===selected);
+      chapter.inert=!isStatic() && i!==selected;
+      if(isStatic()) chapter.removeAttribute('aria-hidden');
+      else chapter.setAttribute('aria-hidden',String(i!==selected));
+    });
+    chapterLinks.forEach((link,i)=>{
+      if(i===selected) link.setAttribute('aria-current','step');
+      else link.removeAttribute('aria-current');
+    });
+    experience.dataset.chapter=String(selected);
+  }
+  text('#journey-step',paused?'MOTION PAUSED / KEEP READING':selected===0?'SCROLL TO FOLLOW THE TRUCK':phase<.38?'SCROLL TO LOAD':phase<.84?'SCROLL TO LOOK CLOSER':'KEEP THE JOURNEY MOVING');
+  const fill=$('#scroll-progress');
+  if(fill) fill.style.transform='scaleX('+(progress/4.999)+')';
+  chapterLinks.forEach((link,i)=>link.style.setProperty('--chapter-progress',i<selected?1:i===selected?phase:0));
 }
-
 function sizeRenderer() {
-  const { width, height } = view.getBoundingClientRect();
-  if (width === viewportWidth && height === viewportHeight) return;
-  viewportWidth = width;
-  viewportHeight = height;
-  renderer.setSize(width, height, false);
-  camera.aspect = width / height;
+  const {width,height}=view.getBoundingClientRect();
+  if(width<1 || height<1 || width===viewportWidth && height===viewportHeight) return;
+  viewportWidth=width;viewportHeight=height;
+  renderer.setPixelRatio(Math.min(devicePixelRatio,compact.matches?1.5:1.75));
+  renderer.setSize(width,height,false);
+  camera.aspect=width/height;
+  // Shift the composition up, leaving the lower edge clear for its caption.
+  camera.setViewOffset(width,height,0,height*(compact.matches ? .09 : .035),width,height);
   camera.updateProjectionMatrix();
 }
-
+function sampleCamera(progress) {
+  const selected=Math.min(4,Math.floor(progress)), phase=progress-selected;
+  const keys=shots[selected].keys;
+  let index=0;
+  for(let i=1;i<keys.length-1;i++) if(phase>=keys[i][0]) index=i;
+  const a=keys[index], b=keys[index+1], t=smooth((phase-a[0])/(b[0]-a[0]));
+  eye.fromArray(a[1]).lerp(scratch.fromArray(b[1]),t);
+  target.fromArray(a[2]).lerp(scratch.fromArray(b[2]),t);
+  // Mobile frames the subject, not the entire 72-foot silhouette. Wider cargo
+  // shots pull back slightly; detail shots keep their close-up crop intentionally.
+  const fit=compact.matches ? Math.max(1,1.22/camera.aspect) : Math.max(1,1.30/camera.aspect);
+  eye.sub(target).multiplyScalar(fit).add(target);
+  camera.position.copy(eye);
+  camera.fov=lerp(a[3],b[3],t)+(compact.matches?3:0);
+  camera.updateProjectionMatrix();
+  camera.lookAt(target);
+}
 function pose(progress) {
-  const lower = Math.min(3, Math.floor(progress));
-  const blend = ease(progress - lower);
-  const a = chapterStates[lower];
-  const b = chapterStates[lower + 1];
-  const selected = Math.round(progress);
-  setChapter(selected);
-  cameraPosition.fromArray(paused ? chapterStates[selected].eye : a.eye);
-  cameraTarget.fromArray(paused ? chapterStates[selected].target : a.target);
-  if (!paused) {
-    cameraPosition.lerp(scratch.fromArray(b.eye), blend);
-    cameraTarget.lerp(scratch.fromArray(b.target), blend);
+  const selected=Math.min(4,Math.floor(progress)), phase=progress-selected;
+  if(selected!==activeVisualChapter) {
+    activeVisualChapter=selected;
+    text('#scene-label',shots[selected].title);
+    text('#scene-number',String(selected).padStart(2,'0')+' / 04');
+    text('#detail-label',shots[selected].detail);
+    view.setAttribute('aria-label','Blue Peterbilt tractor and flatbed. '+(selected?shots[selected].title.toLowerCase()+'.':'Front-to-trailer view.'));
   }
-  // On a narrow screen, fit the long trailer inside the wider-than-tall model area.
-  const fit = (compact.matches ? 1 : 0.92) * Math.max(1, 1.6 / camera.aspect);
-  cameraPosition.sub(cameraTarget).multiplyScalar(fit).add(cameraTarget);
-  camera.position.copy(cameraPosition);
-  camera.lookAt(cameraTarget);
-
-  groups.forEach(({ object, home, materials, chapter }) => {
-    const distance = Math.abs(progress - chapter);
-    const amount = paused ? +(selected === chapter) : 1 - ease(clamp((distance - 0.28) / 0.42));
-    object.visible = amount > 0.003;
+  const part=selected===0 ? (phase<.3?'THE APPROACH':phase<.7?'FOLLOW THE FRAME':'ROOM FOR WHAT’S NEXT') :
+    phase<.38?'BUILDING THE LOAD':phase<.84?'IN THE DETAILS':'THE NEXT MOVE';
+  text('#shot-label',String(selected+1).padStart(2,'0')+' / '+(paused?'VIEW PAUSED':part));
+  sampleCamera(progress);
+  loadAmount=selected ? ramp(phase,.035,.38) : 0;
+  groups.forEach(({object,home,parts,plane,chapter})=>{
+    const showing=chapter===selected;
+    const exit=selected===4?1:1-ramp(phase,.88,1);
+    object.visible=showing && loadAmount>.0005 && exit>.001;
+    if(!showing) return;
     object.position.copy(home);
-    object.position.y += paused ? 0 : (1 - amount) * 1.7;
-    for (const material of materials) {
-      material.opacity = amount * material.userData.originalOpacity;
-      material.transparent = amount < 0.995 || material.userData.originalTransparent;
-      material.depthWrite = amount > 0.995 && material.userData.originalDepthWrite;
+    // A blue survey line walks from the headboard toward the rear, revealing
+    // each load. Supports settle first, freight next, then its restraint details.
+    plane.constant=lerp(.8,16.4,loadAmount);
+    for(const part of parts) {
+      const arrive=ramp(phase,.03+part.delay,.32+part.delay);
+      part.mesh.position.copy(part.home);
+      part.mesh.position.y+=(1-arrive)*part.lift+(1-exit)*.6;
+      for(const material of part.materials) {
+        const opacity=ramp(phase,.02,.09)*exit;
+        material.opacity=opacity*material.userData.originalOpacity;
+        material.transparent=opacity<.999 || material.userData.originalTransparent;
+        material.depthWrite=opacity>.999 && material.userData.originalDepthWrite;
+      }
     }
   });
-  document.querySelector('#scroll-progress').style.transform = `scaleX(${progress / 4})`;
+  portal.visible=!isStatic() && selected>0 && phase>.035 && phase<.40;
+  portal.position.x=lerp(.8,16.4,loadAmount);
+  portal.material.opacity=.7*Math.sin(Math.PI*loadAmount);
+  deckGuide.material.opacity=selected===0?ramp(phase,.42,.68)*.4:(1-ramp(phase,.4,.62))*.25;
+  const meter=$('#load-meter');
+  if(meter) meter.style.transform='scaleX('+(selected?loadAmount:phase)+')';
+  shotLabel=selected===0?(phase<.3?'approach':phase<.7?'track':'empty-deck'):(phase<.38?'loading':phase<.84?'detail':'transition');
 }
-
 function render(time) {
-  frame = 0;
+  frame=0;
+  if(!ready || document.hidden || !inView) return;
   sizeRenderer();
-  const delta = Math.min((time - (lastTime || time)) / 1000, 0.06);
-  lastTime = time;
-  current += (desired - current) * (1 - Math.exp(-delta * 13));
-  if (Math.abs(desired - current) < 0.0005) current = desired;
-  pose(current);
-  renderer.render(scene, camera);
-  // Stop rendering once the scroll interpolation settles; no idle animation loop.
-  if (current !== desired) renderSoon();
+  const delta=Math.min((time-(lastTime||time))/1000,.065);
+  lastTime=time;
+  current+=(desired-current)*(1-Math.exp(-delta*11));
+  if(Math.abs(desired-current)<.0005) current=desired;
+  updateStory(current);
+  if(!paused || isStatic()) renderProgress=current;
+  pose(renderProgress);
+  renderer.render(scene,camera);
+  if(current!==desired) renderSoon();
 }
-
 function staticFallback(reason) {
+  failed=true;
+  ready=false;
+  if(frame) cancelAnimationFrame(frame);
+  frame=0;
   document.body.classList.add('is-static');
-  status.textContent = 'STATIC VIEW';
-  toggle.hidden = true;
-  document.querySelector('#scene-label').textContent = 'AVS FREIGHT / FLATBED';
+  text('#model-status','FREIGHT AT A GLANCE');
+  toggle.hidden=true;
+  text('#scene-label','OPEN DECK / FOUR POSSIBILITIES');
   view.classList.remove('is-ready');
-  const poster = document.querySelector('#poster');
-  poster.hidden = poster.complete && !poster.naturalWidth;
-  console.warn(`Freight experience uses its static fallback: ${reason}`);
+  $('#poster').hidden=false;
+  chapters.forEach(c=>{c.inert=false;c.removeAttribute('aria-hidden');});
+  // Static anchor targets must live on the readable sections, not a hidden track.
+  setAnchorMode(true);
+  console.warn('Freight experience uses its static fallback: '+reason);
 }
-
+function setAnchorMode(staticMode) {
+  const slugs=['intro','steel','precast','wire','machinery'];
+  chapters.forEach((chapter,i)=>chapter.id=staticMode?slugs[i]:'story-'+slugs[i]);
+  stops.forEach((stop,i)=>stop.id=staticMode?'scroll-'+slugs[i]:slugs[i]);
+}
 function updateMotionPreference() {
-  paused = reduceMotion.matches;
-  document.body.classList.toggle('is-static', reduceMotion.matches);
-  toggle.textContent = paused ? 'Motion reduced' : 'Pause motion';
-  toggle.setAttribute('aria-pressed', String(paused));
-  toggle.disabled = reduceMotion.matches;
-  updateScroll();
+  document.body.classList.toggle('is-static',isStatic());
+  setAnchorMode(isStatic());
+  toggle.hidden=isStatic();
+  paused=false;toggle.setAttribute('aria-pressed','false');toggle.textContent='Pause motion';
+  measureTimeline();updateScroll();
 }
-
+function addSurveyLines() {
+  const lineMaterial=new THREE.LineBasicMaterial({color:0x2196e8,transparent:true,opacity:0,toneMapped:false});
+  const points=[0,1.58,-1.47,0,1.58,1.47, 0,1.58,-1.47,16.15,1.58,-1.47, 0,1.58,1.47,16.15,1.58,1.47, 16.15,1.58,-1.47,16.15,1.58,1.47];
+  for(let x=0;x<=16;x+=1) points.push(x,1.58,1.47,x,1.58,1.62);
+  const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(points,3));
+  deckGuide=new THREE.LineSegments(geometry,lineMaterial);scene.add(deckGuide);
+  const portalGeometry=new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0,1.59,-1.45),new THREE.Vector3(0,4.5,-1.45),new THREE.Vector3(0,4.5,1.45),new THREE.Vector3(0,1.59,1.45),
+  ]);
+  portal=new THREE.Line(portalGeometry,new THREE.LineBasicMaterial({color:0x6fc2f2,transparent:true,opacity:0,toneMapped:false}));
+  portal.visible=false;scene.add(portal);
+}
 async function initialize() {
   try {
-    renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
-    renderer.setPixelRatio(Math.min(devicePixelRatio, compact.matches ? 1.5 : 1.75));
-    renderer.setClearColor(0x050a12, 0);
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 0.98;
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(34, 1, 0.1, 160);
-
-    const pmrem = new THREE.PMREMGenerator(renderer);
-    const room = new RoomEnvironment();
-    const environment = pmrem.fromScene(room, 0.04);
-    scene.environment = environment.texture;
-    scene.environmentIntensity = 0.75;
-    room.dispose();
-    pmrem.dispose();
-
-    scene.add(new THREE.HemisphereLight(0xb5d9ff, 0x142033, 1.3));
-    const key = new THREE.DirectionalLight(0xe5f1ff, 2.7);
-    key.position.set(-12, 18, 12);
-    key.castShadow = true;
-    key.shadow.mapSize.set(2048, 2048);
-    Object.assign(key.shadow.camera, { left: -21, right: 21, top: 20, bottom: -20, near: 0.5, far: 70 });
-    key.shadow.bias = -0.0003;
-    key.shadow.normalBias = 0.02;
-    scene.add(key);
-    const rim = new THREE.DirectionalLight(0x4b9cff, 2.0);
-    rim.position.set(8, 8, -14);
-    scene.add(rim);
-    const fill = new THREE.DirectionalLight(0xffe3c4, 0.9);
-    fill.position.set(-18, 4, -3);
-    scene.add(fill);
-
-    const ground = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), new THREE.ShadowMaterial({ color: 0x000000, opacity: 0.44 }));
-    ground.rotation.x = -Math.PI / 2;
-    ground.position.y = -0.012;
-    ground.receiveShadow = true;
-    scene.add(ground);
-
-    const grid = new THREE.GridHelper(70, 35, 0x1a3550, 0x183045);
-    grid.position.y = -0.025;
-    grid.material.transparent = true;
-    grid.material.opacity = 0.11;
-    scene.add(grid);
-
-    const loader = new GLTFLoader();
-    loader.setMeshoptDecoder(MeshoptDecoder);
-    const gltf = await loader.loadAsync('/models/avs-freight.glb', (event) => {
-      if (event.total) status.textContent = `LOADING THE TRUCK / ${Math.round(event.loaded / event.total * 100)}%`;
+    renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
+    renderer.setClearColor(0x050a12,0);
+    renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.88;
+    renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+    renderer.localClippingEnabled=true;
+    scene=new THREE.Scene();
+    camera=new THREE.PerspectiveCamera(38,1,.1,140);
+    const pmrem=new THREE.PMREMGenerator(renderer), room=new RoomEnvironment();
+    scene.environment=pmrem.fromScene(room,.04).texture;scene.environmentIntensity=.62;
+    room.dispose();pmrem.dispose();
+    scene.add(new THREE.HemisphereLight(0xc2deff,0x142033,.85));
+    const key=new THREE.DirectionalLight(0xe5f1ff,2.15);
+    key.position.set(-8,18,12);key.target.position.set(5,0,0);key.castShadow=true;
+    key.shadow.mapSize.set(compact.matches?1024:2048,compact.matches?1024:2048);
+    Object.assign(key.shadow.camera,{left:-18,right:18,top:19,bottom:-19,near:.5,far:65});
+    key.shadow.bias=-.0003;key.shadow.normalBias=.02;scene.add(key,key.target);
+    const rim=new THREE.DirectionalLight(0x4b9cff,1.6);rim.position.set(8,8,-14);scene.add(rim);
+    const fill=new THREE.DirectionalLight(0xffe3c4,.65);fill.position.set(-18,4,-3);scene.add(fill);
+    const ground=new THREE.Mesh(new THREE.PlaneGeometry(80,80),new THREE.ShadowMaterial({color:0x000000,opacity:.42}));
+    ground.rotation.x=-Math.PI/2;ground.position.y=-.016;ground.receiveShadow=true;scene.add(ground);
+    const grid=new THREE.GridHelper(80,40,0x16344d,0x153046);
+    grid.position.set(5,-.025,0);grid.material.transparent=true;grid.material.opacity=.15;scene.add(grid);
+    addSurveyLines();
+    const loader=new GLTFLoader();loader.setMeshoptDecoder(MeshoptDecoder);
+    const gltf=await loader.loadAsync('/models/avs-freight.glb',event=>{
+      if(event.total) text('#model-status','PREPARING YOUR VIEW / '+Math.round(event.loaded/event.total*100)+'%');
     });
-    rig = gltf.scene;
-    rig.traverse((object) => {
-      if (object.isLight || object.isCamera) object.visible = false;
-      if (!object.isMesh) return;
-      object.castShadow = true;
-      object.receiveShadow = true;
-      const materials = Array.isArray(object.material) ? object.material : [object.material];
-      const isGlass = (material) => material?.userData.surface === 'glass'
-        || /\b(?:glass|glazing|windscreen|windshield)\b/i.test(material?.name || '');
-      const dedicatedGlazing = materials.length > 0 && (materials.every(isGlass)
-        || (materials.length === 1 && object.userData.surface === 'glass'));
-      if (dedicatedGlazing) {
-        // Thin glazing and nearby seals should not shadow each other. Keep
-        // shadows on mixed body/glass meshes until their glazing is separated.
-        object.castShadow = false;
-        object.receiveShadow = false;
+    rig=gltf.scene;
+    rig.traverse(object=>{
+      if(object.isLight || object.isCamera) object.visible=false;
+      if(!object.isMesh) return;
+      const materials=Array.isArray(object.material)?object.material:[object.material];
+      const glass=materials.every(m=>m?.userData.surface==='glass'||/\b(glass|glazing|windscreen|windshield)\b/i.test(m?.name||''));
+      object.castShadow=!glass;object.receiveShadow=!glass;
+      if(glass) {
+        // A broad showroom reflection looked like a white window in close-up.
+        // Keep tinted, opaque glazing with softer reflections as the camera moves.
+        materials.forEach(material=>{
+          material.roughness=.28;material.metalness=.08;material.envMapIntensity=.06;
+          if('clearcoat' in material) material.clearcoat=0;
+          if('specularIntensity' in material) material.specularIntensity=.25;
+        });
         glazingMeshes.push(object);
       }
     });
-    for (const name of assemblyNames) {
-      const assembly = rig.getObjectByName(name);
-      let meshes = 0;
-      assembly?.traverse((object) => { if (object.isMesh) meshes++; });
-      if (!meshes) throw new Error(`Model is missing geometry for ${name}`);
-      assemblyDiagnostics.push({ name, meshes });
+    for(const name of assemblyNames) {
+      const object=rig.getObjectByName(name);let meshes=0;
+      object?.traverse(o=>{if(o.isMesh) meshes++;});
+      if(!meshes) throw new Error('Missing geometry for '+name);
+      assemblyDiagnostics.push({name,meshes});
     }
-    // Calculate once, before hiding cargo. Preserve the Blender group hierarchy.
-    const box = new THREE.Box3().setFromObject(rig);
-    const center = box.getCenter(new THREE.Vector3());
-    rig.position.x -= center.x;
-    rig.position.z -= center.z;
-    rig.position.y -= box.min.y;
     scene.add(rig);
-    for (let chapter = 1; chapter < chapterStates.length; chapter++) {
-      const object = rig.getObjectByName(chapterStates[chapter].group);
-      if (!object) throw new Error(`Model is missing ${chapterStates[chapter].group}`);
-      const materials = new Set();
-      const copies = new Map();
-      object.traverse((mesh) => {
-        if (!mesh.isMesh) return;
-        const cloneMaterial = (material) => {
-          if (!copies.has(material)) {
-            const copy = material.clone();
-            copy.userData.originalOpacity = material.opacity;
-            copy.userData.originalTransparent = material.transparent;
-            copy.userData.originalDepthWrite = material.depthWrite;
-            copies.set(material, copy);
-            materials.add(copy);
-          }
-          return copies.get(material);
-        };
-        mesh.material = Array.isArray(mesh.material) ? mesh.material.map(cloneMaterial) : cloneMaterial(mesh.material);
+    const bounds=new THREE.Box3().setFromObject(rig);
+    modelBounds={min:bounds.min.toArray(),max:bounds.max.toArray()};
+    for(let chapter=1;chapter<shots.length;chapter++) {
+      const object=rig.getObjectByName(shots[chapter].group),parts=[];
+      const plane=new THREE.Plane(new THREE.Vector3(-1,0,0),16.4);
+      object.traverse(mesh=>{
+        if(!mesh.isMesh) return;
+        const originals=Array.isArray(mesh.material)?mesh.material:[mesh.material];
+        const materials=originals.map(material=>{
+          const copy=material.clone();
+          Object.assign(copy.userData,{originalOpacity:material.opacity,originalTransparent:material.transparent,originalDepthWrite:material.depthWrite});
+          copy.clippingPlanes=[plane];copy.clipShadows=true;
+          return copy;
+        });
+        mesh.material=Array.isArray(mesh.material)?materials:materials[0];
+        const name=materials.map(m=>m.name).join(' ');
+        const restraint=/webbing/.test(name), support=/hardwood/.test(name);
+        parts.push({mesh,materials,home:mesh.position.clone(),delay:restraint ? .09 : support ? 0 : .035,lift:restraint ? 1.8 : support ? .35 : 1.15});
       });
-      groups.push({ object, materials, home: object.position.clone(), chapter });
+      groups.push({object,parts,plane,home:object.position.clone(),chapter});
     }
-    ready = true;
-    document.querySelector('#poster').hidden = true;
-    view.classList.add('is-ready');
-    status.textContent = 'EXPLORE THE LOAD';
-    updateMotionPreference();
-    sizeRenderer();
-    current = desired;
-    renderSoon();
-    new ResizeObserver(() => { viewportWidth = 0; updateScroll(); renderSoon(); }).observe(view);
-    new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; if (inView) renderSoon(); }, { rootMargin: '100px' }).observe(experience);
-    // Read-only diagnostics for local verification, not visible product copy.
-    window.freightExperience = {
-      getState: () => ({ ready, desired, current, chapter: activeChapter, camera: camera.position.toArray(), cargo: groups.filter(({ object }) => object.visible).map(({ object }) => object.name), calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, width: viewportWidth, height: viewportHeight, reducedMotion: reduceMotion.matches, paused, assemblies: assemblyDiagnostics, glazing: glazingMeshes.map(({ name, castShadow, receiveShadow }) => ({ name, castShadow, receiveShadow })) }),
-    };
-  } catch (error) {
-    staticFallback(error.message);
-  }
+    ready=true;
+    $('#poster').hidden=true;view.classList.add('is-ready');
+    text('#model-status','DRAG THE PAGE. FOLLOW THE LOAD.');
+    updateMotionPreference();sizeRenderer();current=desired;renderProgress=desired;renderSoon();
+    new ResizeObserver(()=>{viewportWidth=0;measureTimeline();updateScroll();renderSoon();}).observe(view);
+    new IntersectionObserver(([entry])=>{inView=entry.isIntersecting;if(inView){lastTime=0;renderSoon();}},{rootMargin:'80px'}).observe(experience);
+    window.freightExperience={getState:()=>({
+      ready,desired,current,renderProgress,chapter:activeChapter,phase:current-Math.floor(current),
+      shot:shotLabel,load:loadAmount,camera:camera.position.toArray(),cameraTarget:target.toArray(),
+      cargo:groups.filter(g=>g.object.visible).map(g=>g.object.name),calls:renderer.info.render.calls,triangles:renderer.info.render.triangles,
+      width:viewportWidth,height:viewportHeight,mobile:compact.matches,reducedMotion:reduceMotion.matches,static:isStatic(),paused,
+      assemblies:assemblyDiagnostics,modelBounds,glazing:glazingMeshes.map(({name,castShadow,receiveShadow})=>({name,castShadow,receiveShadow})),
+    })};
+    // Respect a linked freight chapter after layout changes from static to sticky.
+    if(location.hash) {
+      const anchor=document.getElementById(location.hash.slice(1));
+      if(anchor) anchor.scrollIntoView({behavior:'instant',block:'start'});
+    }
+  } catch(error) { staticFallback(error.message); }
 }
-
-document.addEventListener('scroll', updateScroll, { passive: true });
-document.addEventListener('visibilitychange', () => { if (!document.hidden) renderSoon(); });
-reduceMotion.addEventListener('change', updateMotionPreference);
-toggle.addEventListener('click', () => {
-  paused = !paused;
-  toggle.setAttribute('aria-pressed', String(paused));
-  toggle.textContent = paused ? 'Resume motion' : 'Pause motion';
-  updateScroll();
+document.addEventListener('scroll',updateScroll,{passive:true});
+document.addEventListener('visibilitychange',()=>{lastTime=0;if(!document.hidden) renderSoon();});
+window.addEventListener('resize',()=>{measureTimeline();updateScroll();},{passive:true});
+reduceMotion.addEventListener('change',updateMotionPreference);
+shortScreen.addEventListener('change',updateMotionPreference);
+compact.addEventListener('change',()=>{viewportWidth=0;renderSoon();});
+toggle.addEventListener('click',()=>{
+  paused=!paused;toggle.setAttribute('aria-pressed',String(paused));toggle.textContent=paused?'Resume motion':'Pause motion';
+  text('#model-status',paused?'VIEW PAUSED / SCROLL TO READ':'DRAG THE PAGE. FOLLOW THE LOAD.');
+  if(!paused) {renderProgress=current;lastTime=0;}updateScroll();
 });
-canvas.addEventListener('webglcontextlost', (event) => { event.preventDefault(); staticFallback('WebGL context lost'); });
-document.querySelector('#poster').addEventListener('error', (event) => { event.currentTarget.hidden = true; });
+chapterLinks.forEach((link,index)=>link.addEventListener('click',event=>{
+  if(isStatic() || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  const stop=scrollStops[index];
+  if(!stop) return;
+  // Chapter navigation selects a loaded composition; native scrolling still
+  // plays the full arrival. The underlying anchors work without JavaScript.
+  history.replaceState(null,'',link.getAttribute('href'));
+  scrollTo({top:stop.top+(index ? .43 : 0)*stop.height,behavior:'smooth'});
+}));
+canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();staticFallback('WebGL context lost');});
+$('#poster').addEventListener('error',event=>{event.currentTarget.hidden=true;});
 initialize();

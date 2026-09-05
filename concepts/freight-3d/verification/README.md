@@ -1,10 +1,23 @@
 # Browser verification
 
-`results.json` records the full run in Chrome 152: desktop 1440×900 and mobile 390×844, all five scroll positions, expected cargo visibility, changing camera, pause control, no page errors, no horizontal overflow, and zero axe WCAG 2 A/AA or 2.1 AA violations. Static layouts were exercised with reduced motion, no JavaScript, and a failed model request. These are browser checks, not physical-device frame-rate measurements.
+`results.json` records the cinematic-scroll checks in Chrome 152. The tested layouts are desktop 1440×900, mobile 390×844, small mobile 360×740, tablet 768×1024, and the deliberately static short-landscape layout at 844×390. These are browser viewport checks, not physical-device frame-rate measurements.
 
-Each screenshot is a real browser capture. A later `final-asset-check.json` records a narrower check after the final model export and poster were refreshed.
+The full run checks:
 
-Run from the website worktree with a server on port 8874. The test dependencies were installed in a temporary directory to keep the static site free of a Node build dependency:
+- All five chapters at local phase 0.55, with the correct settled freight and no leftover cargo from another chapter.
+- The close truck approach, the pan back to the deck, and the loading and detail camera positions. Screenshots record actual rendered views at those phases.
+- A solid mobile text panel below the model, no model/text overlap, headings contained in their panel, and no horizontal overflow.
+- Reverse scrolling, chapter navigation, and pause/resume. Pausing freezes the camera and its target while the text continues to follow the page.
+- Desktop-to-mobile-to-desktop resizing, no page errors, and zero axe WCAG 2 A/AA or 2.1 AA violations in the four animated layouts.
+- All five readable chapters under reduced motion, without JavaScript, and when the model request fails. A missing model or missing JavaScript must show the loaded poster image.
+- Reachable home, contact, carriers, and existing What We Move pages.
+- Six GLB assemblies, material assignments, dedicated glazing without self-shadow, and the exact linear RGB equivalent of AVS brand blue `#2196E8`.
+
+Each PNG is a real browser capture. `*-approach.png` shows the initial front view, `*-loading.png` captures the moving reveal, and `*-intro/steel/precast/wire/machinery.png` show settled chapter views. Older `final-asset-check.json` and glazing evidence concern the model replacement before the cinematic page revision.
+
+`cinematic-quick-check.json` is the final targeted check after browser glazing and paused captions were refined. The desktop and mobile approach captures show restrained tinted-glass reflections. A raycast found both windshield panes use the same opaque glazing material, with valid mirrored surface normals; the bright pane was an environment reflection, so no geometry or model asset was rebuilt. The final pause check also confirms that the model caption stays with the frozen load while the story text continues to scroll.
+
+Run from the website worktree with a server on port 8874. The test dependencies are installed outside the repo to keep the static site free of a Node build dependency:
 
 ```sh
 AVS_PLAYWRIGHT_PACKAGE=/tmp/avs-freight-3d-deps/node_modules/playwright/index.mjs \
@@ -12,6 +25,4 @@ AVS_AXE_PACKAGE=/tmp/avs-freight-3d-deps/node_modules/@axe-core/playwright/dist/
 node concepts/freight-3d/verification/verify.mjs
 ```
 
-Add `--quick` for the final asset/material check, the steel chapter, and the missing-model poster fallback. `AVS_PREVIEW_ORIGIN` overrides the local server URL. After a reboot, install `playwright` and `@axe-core/playwright` again in the chosen temporary directory, or make them available through ordinary Node package resolution.
-
-One defect was found by looking at the rendered result: an early compressed export retained mesh geometry and groups but omitted every material and every primitive's material reference. The file loaded without error and displayed as white clay. The corrected export was rechecked for named blue PBR paint, material count, and assignment on every primitive; successful decoding alone is insufficient.
+Add `--quick` for a desktop/mobile smoke check and missing-model fallback; this writes `cinematic-quick-check.json` and omits axe, the full viewport matrix, and the other static fallbacks. `AVS_PREVIEW_ORIGIN` overrides the server URL. If the temporary dependencies are absent, install `playwright` and `@axe-core/playwright` there again, or make them available through ordinary Node package resolution.
