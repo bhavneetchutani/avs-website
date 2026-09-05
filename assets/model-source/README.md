@@ -55,8 +55,8 @@ UVs and custom normals. Website glazing meshes do not cast or receive shadows,
 addressing the earlier window flicker. Chrome trim and body panels keep their shadows.
 
 Current triangle counts, source component counts, mesh batches, material inventory
-and compressed size are recorded in [model-report.json](model-report.json). Settled
-chapters show one cargo variant; transition frames can briefly contain two. Browser
+and compressed size are recorded in [model-report.json](model-report.json). Only
+the selected cargo variant is visible; it fades before the next chapter. Browser
 verification covers desktop and mobile layouts, reduced motion and fallback states;
 it is not a hardware benchmark for every phone or GPU.
 

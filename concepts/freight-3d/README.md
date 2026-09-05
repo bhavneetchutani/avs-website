@@ -1,8 +1,12 @@
 # What We Move — cinematic freight experience
 
-Local prototype in the existing AVS website worktree. The live four-page site has not
-been replaced or deployed. Open http://127.0.0.1:8874/concepts/freight-3d/ after starting
-the local server with:
+**Saved draft — 5 September 2026**, on branch `codex/what-we-move-3d`.
+[Open the private phone preview](https://avs-freight-cinematic-preview.bha.chatgpt.site),
+or read the [draft handoff](../../README.md). The official four-page AVS site has
+not been replaced by this concept. The preview is ready for further visual review;
+it is not a production release.
+
+Open http://127.0.0.1:8874/concepts/freight-3d/ after starting the local server with:
 
 ```sh
 node concepts/freight-3d/serve.mjs
