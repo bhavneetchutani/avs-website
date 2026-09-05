@@ -1,0 +1,94 @@
+{
+  "date": "2026-09-05T19:37:34.868Z",
+  "browser": "152.0.7977.77",
+  "glazing": [
+    {
+      "name": "Tractor_|_Tractor_|_smoked_glazing",
+      "material": [
+        {
+          "name": "Tractor | smoked glazing",
+          "transparent": false,
+          "depthWrite": true,
+          "side": 0,
+          "opacity": 1
+        }
+      ],
+      "castShadow": false,
+      "receiveShadow": false
+    }
+  ],
+  "frames": [
+    {
+      "angle": 41,
+      "camera": [
+        -9.056514962673266,
+        6.1,
+        7.8727083478860855
+      ],
+      "triangles": 243614,
+      "calls": 30
+    },
+    {
+      "angle": 43,
+      "camera": [
+        -8.776244419430046,
+        6.1,
+        8.183980320749981
+      ],
+      "triangles": 243614,
+      "calls": 30
+    },
+    {
+      "angle": 45,
+      "camera": [
+        -8.485281374238571,
+        6.1,
+        8.48528137423857
+      ],
+      "triangles": 243614,
+      "calls": 30
+    },
+    {
+      "angle": 47,
+      "camera": [
+        -8.183980320749981,
+        6.1,
+        8.776244419430046
+      ],
+      "triangles": 243614,
+      "calls": 30
+    },
+    {
+      "angle": 49,
+      "camera": [
+        -7.872708347886087,
+        6.1,
+        9.056514962673264
+      ],
+      "triangles": 243614,
+      "calls": 30
+    },
+    {
+      "angle": 135,
+      "camera": [
+        8.48528137423857,
+        6.1,
+        8.485281374238571
+      ],
+      "triangles": 243614,
+      "calls": 30
+    },
+    {
+      "angle": -45,
+      "camera": [
+        -8.485281374238571,
+        6.1,
+        -8.48528137423857
+      ],
+      "triangles": 243614,
+      "calls": 30
+    }
+  ],
+  "identicalCameraStable": true,
+  "errors": []
+}

@@ -1,5 +1,6 @@
-00:03.501  blend            | Read blend: "/Users/vinniechutani/Claude/Projects/avs-website-3d-preview/assets/model-source/avs-freight.blend"
-SAVED_BLEND_CHECK {"meshes": 45, "materials_survive_reload": true, "editable_source": true}
+00:04.200  blend            | Read blend: "/Users/vinniechutani/Claude/Projects/avs-website-3d-preview/assets/model-source/avs-freight.blend"
+SAVED_BLEND_CHECK {"meshes": 47, "materials": 37, "materials_survive_reload": true, "editable_source": true, "assemblies": ["Tractor", "Trailer", "Cargo_Steel", "Cargo_Precast", "Cargo_Wire", "Cargo_Machinery"]}
+PRESERVED_ASSEMBLIES_CHECK: trailer and four cargo assemblies unchanged
 Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
 
 Blender quit

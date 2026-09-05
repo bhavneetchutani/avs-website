@@ -1,8 +1,8 @@
 # AVS truck study — source and proportion references
 
-Researched and visually inspected 5 September 2026. These images are modeling references, not site photography or textures. The delivered truck is an original generic North American highway tractor, not an exact branded replica or a claim that AVS owns trucks.
+Researched and visually inspected 5 September 2026. These images are modeling references, not site photography or textures. The tractor references below document the rejected procedural first draft; the delivered tractor now adapts the licensed [1978 Peterbilt 359 Standard by hans1240](../vendor/peterbilt-359/LICENSE.md). The flatbed and cargo research still supports the approved assemblies. The illustration does not claim that AVS owns trucks.
 
-## Tractor
+## Tractor — first-draft reference history
 
 - [Kenworth 76-inch mid-roof sleeper](https://www.kenworth.com/about-us/news/mid-roof-sleeper/): Kenworth specifically describes this configuration for flatbed and tanker work. The 76-inch designation converts to 1.9304 m. It offers 6.5 ft of interior headroom; that is not the overall vehicle height.
 - [Kenworth T680 Next Generation launch](https://kenworth.com/about-us/news/the-kenworth-t680-next-generation-kenworth-launches-new-on-highway-flagship/): 125-inch BBC standard (3.175 m), 119-inch BBC MX (3.0226 m); optional 40-, 52- and 76-inch sleepers. BBC means bumper to back of cab, excluding the sleeper. Manufacturer describes a 38–42 inch trailer gap for tightly packaged configurations. Do not add BBC and nominal sleeper depth blindly: body boundaries and catalog sleeper labels can differ.
@@ -36,4 +36,4 @@ Existing AVS draft copy names wall panels, structural steel and precast. AVS res
 2. Fifth wheel sits on chassis above the drive group; trailer kingpin underside meets it. Landing legs must be raised while connected, with daylight below their feet. Red/blue air lines and an electrical line bridge tractor and trailer.
 3. Give metal edges small bevels. Concentrate polygons on hood/fender silhouette, wheels, mirrors and securement; repeated bolts can be merged by material. A good silhouette and separate materials will survive website scale better than hidden engine internals.
 4. Keep cargo, tractor and trailer separate named nodes for scrolling. Cargo swaps should carry their matching dunnage and securement; do not leave straps suspended in air after a load disappears.
-5. References remain outside runtime imports. All geometry and finish for the website should be original; no manufacturer logos, marketing claims or reference-photo pixels need to ship in the GLB.
+5. Reference photographs remain outside runtime imports. The tractor uses the separately licensed source recorded in [the provenance file](../vendor/peterbilt-359/LICENSE.md); the trailer and cargo retain their original modeled geometry. Reference-photo pixels are not shipped in the GLB.

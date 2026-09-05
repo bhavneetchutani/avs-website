@@ -1,8 +1,8 @@
 # Tractor replacement research — 5 September 2026
 
-The user approved the page, scroll behavior and trailer, and requested a complete replacement of the inaccurate power unit. No purchased or login-gated model has been downloaded or imported by this research pass.
+The user approved the page, scroll behavior and trailer, and requested a complete replacement of the inaccurate power unit. The hans1240 Peterbilt below was subsequently downloaded through the official dialog after the user signed in, imported in Blender and adapted for the website. The other entries remain the historical research record; none of those alternatives was purchased or imported.
 
-## Available free candidate: 1978 Peterbilt 359 Standard
+## Selected and imported: 1978 Peterbilt 359 Standard
 
 - Creator: **hans1240** on Sketchfab.
 - [Official model/download page](https://sketchfab.com/3d-models/1978-peterbilt-359-standard-0599b3d7f9a5437fa905b20674d16d17)
@@ -10,9 +10,9 @@ The user approved the page, scroll behavior and trailer, and requested a complet
 - Live browser and [public model API](https://api.sketchfab.com/v3/models/0599b3d7f9a5437fa905b20674d16d17) both verified **CC Attribution 4.0**, commercially usable with attribution; `isDownloadable: true`, `isProtected: false`.
 - Exact API counts: **121,510 triangles, 79,183 vertices, 35 materials, zero textures**, no animations. Published 31 March 2026. The listing contains no authorship description beyond the uploader identity; do not describe this as independently authenticated original authorship.
 - Visual inspection: a classic long-nose American sleeper tractor with distinct hood/fenders, properly framed windshield, paired headlights, mirrors, tanks, steps, exhaust stacks, tandem dual drive wheels, fifth wheel and visible hoses. Better geometry than the procedural first draft, but current colors are bright green/pink and need complete material treatment. This is a classic truck, not a modern aerodynamic T680.
-- **Blocker:** official Download opens a Sketchfab sign-in modal in the current in-app browser. No login, signup, purchase or browser credential access was performed. Available download formats and actual file quality remain unverified until authorized download.
+- **Download completed:** after the user signed in, the official download dialog supplied the GLB retained at `vendor/peterbilt-359/original.glb`. Its mesh geometry was inspected and adapted in Blender; the current tractor has uniform #2196E8 body paint and no added AVS lettering. The source placeholder colors described above no longer appear on the painted body. See [the provenance record](vendor/peterbilt-359/LICENSE.md) and [current model report](model-report.json).
 - Official rear-view thumbnail saved separately as `/tmp/avs-hans-peterbilt359-preview.jpeg`. A browser rotation also confirmed the front-left three-quarter shape. Thumbnail source: https://media.sketchfab.com/models/0599b3d7f9a5437fa905b20674d16d17/thumbnails/247e72f906f84377a86c32ade0cbd7f7/7e2f2b32eef246a98baa18c658451281.jpeg
-- Attribution to retain if used: “1978 Peterbilt 359 Standard” by hans1240, via Sketchfab, licensed CC BY 4.0; modified for AVS Freight. Link model and https://creativecommons.org/licenses/by/4.0/ in site credits and model provenance.
+- Attribution retained in the site footer and model provenance: “1978 Peterbilt 359 Standard” by hans1240, via Sketchfab, licensed CC BY 4.0; modified for AVS Freight, with links to the model and license.
 
 ## Cleaner original-source fallback: Peterbilt 359 by thomaswornall
 
@@ -44,4 +44,4 @@ The user approved the page, scroll behavior and trailer, and requested a complet
 - Fisitron `e5e22d3ca1a0476391f6a33250113643` Peterbilt: search engine cache calls it downloadable CC-BY, but current live listing removed Download/license and now requires a TurboSquid purchase. Cached license is not sufficient.
 - Gelber / liebherr996litronic Cascadia: root agent found an explicit stolen/revenge-upload statement on a related model (`2dd8eb87823c4eacabfb9d145eff5450`); do not use these uploads.
 - Minecraft/Blockbench T680 and Cascadia models were rejected for style and fidelity.
-- No source-format or runtime model binary was added to the project by this research pass.
+- Only the selected hans1240 source GLB and its adapted runtime output were added to the project; the other candidate binaries were not imported.

@@ -14,7 +14,7 @@ assert(gltf.meshes.every(mesh => mesh.primitives.every(p => Number.isInteger(p.m
 const assemblies = ['Tractor', 'Trailer', 'Cargo_Steel', 'Cargo_Precast', 'Cargo_Wire', 'Cargo_Machinery'];
 const hasMesh = (node) => Number.isInteger(node.mesh) || (node.children || []).some(index => hasMesh(gltf.nodes[index]));
 for (const name of assemblies) assert(hasMesh(gltf.nodes.find(node => node.name === name) || {}), `Missing geometry for ${name}`);
-const paint = gltf.materials.find(material => /midnight cobalt/.test(material.name));
+const paint = gltf.materials.find(material => /AVS cobalt enamel/.test(material.name));
 assert(paint?.pbrMetallicRoughness.baseColorFactor[2] > paint?.pbrMetallicRoughness.baseColorFactor[0], 'Blue paint must survive compression');
 const browser = await chromium.launch({ headless: true, channel: 'chrome' });
 const results = { date: new Date().toISOString(), browser: browser.version(), model: { bytes: buffer.length, materials: gltf.materials.length, extensions: gltf.extensionsUsed }, viewports: [], fallbacks: [] };
