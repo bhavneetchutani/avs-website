@@ -38,7 +38,7 @@ Total: 900,161 bytes. All three are below 500 KB. The first two retain the origi
 - Download URL: <https://images.unsplash.com/photo-1629119882508-5e44cd0bf4ec?fm=jpg&w=800&h=1386&q=80&fit=crop&crop=focalpoint&fp-x=0.72&fp-y=0.25&fp-z=1.8>
 - Uncropped source: <https://images.unsplash.com/photo-1629119882508-5e44cd0bf4ec>
 - License: <https://unsplash.com/license>
-- Suggested alt: `Aerial view of a semi-truck travelling along a road bordered by dense trees`.
+- Suggested alt: `Aerial view of a semi-truck traveling along a road bordered by dense trees`.
 - Crop rationale: The source photograph places the truck high and far to the right. The supplied focal crop resolves that before CSS clipping, keeping the cab and trailer within the center of the 1:1.732 diamond. Its diagonal road complements the brand geometry. Use `object-fit:cover; object-position:50% 50%` and avoid substantial extra zoom or parallax; the subject is already composed for the frame. A small existing marking is visible on the trailer; this is editorial transport imagery, not a representation of AVS ownership.
 
 ## Suggested integration treatment

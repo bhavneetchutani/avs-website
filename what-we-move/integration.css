@@ -129,3 +129,13 @@
 @media(min-width:851px){.freight-page .story-heading{font-size:9px}.freight-page .story-heading>span:last-child{font-size:8px}.freight-page .eyebrow{font-size:10px}.freight-page .scene-caption{font-size:10px}.freight-page .details dt{font-size:9px}.freight-page .details dd{font-size:12px}.freight-page .journey-caption{font-size:8px}.freight-page .chapter-nav span{font-size:9px}.freight-page .chapter-nav b{font-size:11px}.freight-page .model-status{font-size:9px}.freight-page .detail-callout{font-size:9px}}
 @media(max-width:850px){.freight-page .chapter-nav a{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;min-height:48px}.freight-page .chapter-nav span{font-size:8px}.freight-page .chapter-nav b{font-size:10px}.freight-page .chapter-nav{gap:7px}.freight-page .chapter-nav b{white-space:nowrap}}
 .freight-page.is-static .chapter,.freight-page #freight-details{scroll-margin-top:0}
+
+/* site.css's `.avs-site a{color:inherit}` out-ranks .skip/.quote (one class each),
+   so the dark ink these buttons ask for became page-white on blue: 2.88:1. */
+.avs-site .skip, .avs-site .quote { color: var(--ground); }
+.avs-site .quote:hover, .avs-site .quote:focus-visible { color: var(--ground); }
+
+/* The loader is a full-screen curtain at z-index 80, the same as the site header,
+   so it covered the nav: 'Get a quote' was unclickable for the whole model load.
+   Lift the header above it — the nav stays usable while the truck loads. */
+body.is-loading .avs-header { z-index: 90; }
