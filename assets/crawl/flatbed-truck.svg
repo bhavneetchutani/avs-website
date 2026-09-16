@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -24 960 252" fill="none" role="img" aria-labelledby="crawlTruckTitle crawlTruckDesc" style="overflow:visible">
+  <title id="crawlTruckTitle">Structural steel, secured for the road.</title>
+  <desc id="crawlTruckDesc">A blue conventional tractor pulls a low flatbed loaded with long steel I-beams. Three dark cargo restraints cross the steel, with small amber trailer markers and carefully drawn wheels.</desc>
+  <defs>
+    <linearGradient id="crawlTruckCab" x1="628" y1="32" x2="710" y2="172" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2196E8"/><stop offset=".5" stop-color="#1272B8"/><stop offset="1" stop-color="#0E3454"/>
+    </linearGradient>
+    <linearGradient id="crawlTruckHood" x1="734" y1="99" x2="800" y2="160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1272B8"/><stop offset=".68" stop-color="#0C4B78"/><stop offset="1" stop-color="#0E3454"/>
+    </linearGradient>
+    <linearGradient id="crawlTruckMetal" x1="0" y1="105" x2="0" y2="138" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#627D90"/><stop offset=".22" stop-color="#27485F"/><stop offset=".78" stop-color="#163043"/><stop offset="1" stop-color="#415C6D"/>
+    </linearGradient>
+    <linearGradient id="crawlTruckSteel" x1="40" y1="60" x2="515" y2="128" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3D586B"/><stop offset=".45" stop-color="#233F53"/><stop offset="1" stop-color="#172F42"/>
+    </linearGradient>
+    <linearGradient id="crawlTruckGlass" x1="658" y1="42" x2="705" y2="98" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#254E6A"/><stop offset=".48" stop-color="#123149"/><stop offset="1" stop-color="#081523"/>
+    </linearGradient>
+    <linearGradient id="crawlTruckChrome" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#1F3546"/><stop offset=".32" stop-color="#7D929F"/><stop offset=".5" stop-color="#B1BCC1"/><stop offset=".66" stop-color="#536A79"/><stop offset="1" stop-color="#172B3B"/>
+    </linearGradient>
+    <linearGradient id="crawlTruckBeamSoft" x1="838" y1="130" x2="1430" y2="130" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2A93B" stop-opacity=".28"/><stop offset=".55" stop-color="#F2A93B" stop-opacity=".09"/><stop offset="1" stop-color="#F2A93B" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="crawlTruckBeamCore" x1="838" y1="130" x2="1270" y2="130" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1D8" stop-opacity=".45"/><stop offset="1" stop-color="#FFE7C2" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="crawlTruckLampGlow"><stop stop-color="#FFF1D8" stop-opacity=".58"/><stop offset="1" stop-color="#F2A93B" stop-opacity="0"/></radialGradient>
+    <radialGradient id="crawlTruckRoadGlow"><stop stop-color="#F2A93B" stop-opacity=".22"/><stop offset="1" stop-color="#F2A93B" stop-opacity="0"/></radialGradient>
+    <g id="crawlTruckWheel">
+      <circle r="34" fill="#050A12"/>
+      <circle r="32" stroke="#142433" stroke-width="2"/>
+      <circle r="27" stroke="#0A1622" stroke-width="5"/>
+      <circle r="18" fill="#142A3B" stroke="#627989" stroke-width="1.25"/>
+      <circle r="14.5" fill="#3B5567"/>
+      <circle r="10.5" fill="#1B3446"/>
+      <g fill="#081522">
+        <circle cy="-11.7" r="2.8"/><circle cx="10.1" cy="-5.85" r="2.8"/><circle cx="10.1" cy="5.85" r="2.8"/>
+        <circle cy="11.7" r="2.8"/><circle cx="-10.1" cy="5.85" r="2.8"/><circle cx="-10.1" cy="-5.85" r="2.8"/>
+      </g>
+      <circle r="5.8" fill="#8196A3"/><circle r="3.5" fill="#3B5567"/>
+      <path d="M-20-19a27.6 27.6 0 0 1 24-8" stroke="#7890A0" stroke-opacity=".25" stroke-width="1.2"/>
+    </g>
+  </defs>
+
+  <!-- Illumination remains tied to the crawl's night progression. -->
+  <g data-beam="" opacity="0" aria-hidden="true">
+    <ellipse cx="1080" cy="205" rx="290" ry="23" fill="url(#crawlTruckRoadGlow)"/>
+    <path d="M839 123 1440 15 1440 232 839 139Z" fill="url(#crawlTruckBeamSoft)"/>
+    <path d="M839 128 1260 70 1260 193 839 137Z" fill="url(#crawlTruckBeamCore)"/>
+    <circle cx="839" cy="131" r="34" fill="url(#crawlTruckLampGlow)"/>
+  </g>
+
+  <!-- The five axles retain the original scene coordinates and road contact. -->
+  <ellipse cx="445" cy="205" rx="420" ry="9" fill="#030811" opacity=".48"/>
+  <g fill="#091522">
+    <path d="M23 151h525v14H235l-25 18H87v-17H23Z"/>
+    <path d="M475 151h357v23H493Z"/>
+    <path d="M90 163h126v14H90Z"/>
+    <rect x="544" y="155" width="109" height="24"/>
+    <path d="M33 156h8v34h35v8H28v-9h5Z"/>
+    <path d="M388 155h10v16h18v7h-34v-7h4Z"/>
+    <path d="M432 155h10v16h18v7h-34v-7h6Z"/>
+  </g>
+  <path d="M249 160h216m-182 0 12 13h140l17-13" stroke="#234052" stroke-width="2"/>
+  <path d="M529 155h131" stroke="#536B7A" stroke-width="3"/>
+  <path d="M570 147h38l10 6h-57Z" fill="#58707F"/>
+
+  <!-- An aluminum deck: thin top lip, deep side rail, recessed tie-down pockets. -->
+  <path d="M20 135h521l24 8H20Z" fill="#A1AFB6"/>
+  <path d="M20 138h539l6 5H20Z" fill="#667F8E"/>
+  <path d="M20 143h545v13H20Z" fill="url(#crawlTruckMetal)"/>
+  <path d="M21 144h542M22 155h540" stroke="#A8BCD0" stroke-width="1" stroke-opacity=".6"/>
+  <path d="M22 153h539" stroke="#0A1827" stroke-width="1"/>
+  <g fill="#0A1927" stroke="#627D90" stroke-width=".8">
+    <path d="M48 146h14v7H48Zm61 0h14v7h-14Zm61 0h14v7h-14Zm61 0h14v7h-14Zm61 0h14v7h-14Zm61 0h14v7h-14Zm61 0h14v7h-14Zm61 0h14v7h-14Zm61 0h14v7h-14Z"/>
+  </g>
+  <g fill="#BBC5CA" opacity=".66">
+    <rect x="76" y="147" width="21" height="3"/><rect x="198" y="147" width="21" height="3"/><rect x="320" y="147" width="21" height="3"/><rect x="442" y="147" width="21" height="3"/>
+  </g>
+  <g fill="#963E34" opacity=".8"><rect x="138" y="147" width="21" height="3"/><rect x="260" y="147" width="21" height="3"/><rect x="382" y="147" width="21" height="3"/></g>
+
+  <!-- Timber dunnage supports the bottom flanges clear of the deck. -->
+  <path d="M77 128h34v7H77Zm159 0h34v7h-34Zm192 0h34v7h-34Z" fill="#6F6654"/>
+  <path d="M77 128h34m125 0h34m158 0h34" stroke="#A59879" stroke-width="1"/>
+
+  <!-- Three staggered I-beams. Fine flange lines and exposed end sections convey mass. -->
+  <g>
+    <path d="M43 103 57 95h488l-14 8Z" fill="#617C8D"/>
+    <path d="M43 103h488v6H43Z" fill="#49677C"/>
+    <path d="M48 109h478v13H48Z" fill="url(#crawlTruckSteel)"/>
+    <path d="M43 122h488v7H43Z" fill="#3F5D72"/>
+    <path d="M43 103h488M43 122h488M43 128h488" stroke="#A8BCD0" stroke-width="1" stroke-opacity=".55"/>
+    <path d="m531 103 14-8v6l-5 3v13l5-3v7l-14 8v-7l5-3v-13l-5 3Z" fill="#8298A5"/>
+    <path d="M55 81 69 73h458l-14 8Z" fill="#708897"/>
+    <path d="M55 81h458v6H55Z" fill="#46677E"/>
+    <path d="M60 87h448v12H60Z" fill="url(#crawlTruckSteel)"/>
+    <path d="M55 99h458v6H55Z" fill="#3D5B71"/>
+    <path d="M55 81h458M55 99h458M55 104h458" stroke="#A8BCD0" stroke-width="1" stroke-opacity=".6"/>
+    <path d="m513 81 14-8v6l-5 3v12l5-3v6l-14 8v-6l5-3V84l-5 3Z" fill="#7992A2"/>
+    <path d="M69 59 83 51h430l-14 8Z" fill="#8296A1"/>
+    <path d="M69 59h430v6H69Z" fill="#506E82"/>
+    <path d="M74 65h420v12H74Z" fill="url(#crawlTruckSteel)"/>
+    <path d="M69 77h430v6H69Z" fill="#456277"/>
+    <path d="M69 59h430M69 77h430M69 82h430" stroke="#C1CED5" stroke-width="1" stroke-opacity=".57"/>
+    <path d="m499 59 14-8v6l-5 3v12l5-3v6l-14 8v-6l5-3V62l-5 3Z" fill="#8FA4B0"/>
+    <path d="M111 68h110m12 0h66m-129 45h94m20 0h71m-33-22h79" stroke="#A8BCD0" stroke-width=".6" stroke-opacity=".18"/>
+    <path d="M69 61h38m250 0h110m-383 22h91m149 22h125" stroke="#D5E0E6" stroke-width=".6" stroke-opacity=".3"/>
+  </g>
+
+  <!-- Broad straps cross the whole stack; buckles terminate at the deck rail. -->
+  <g>
+    <path d="m124 59 14-8h9l-14 8v81h-9Z" fill="#142A3A"/>
+    <path d="m286 59 14-8h9l-14 8v81h-9Z" fill="#142A3A"/>
+    <path d="m458 59 14-8h9l-14 8v81h-9Z" fill="#142A3A"/>
+    <path d="M126 61v75m162-75v75m172-75v75" stroke="#52718A" stroke-width="1.4"/>
+    <g fill="#536B7A" stroke="#B0BCC3" stroke-width=".7">
+      <path d="M123 132h11v12h-11Zm162 0h11v12h-11Zm172 0h11v12h-11Z"/>
+    </g>
+    <path d="M125 136h7m155 0h7m165 0h7" stroke="#142A3A" stroke-width="2"/>
+  </g>
+
+  <!-- Back-of-cab connections and the polished vertical exhaust. -->
+  <path d="M565 109c10-21 16-20 21-2m-20 7c10-14 18-11 21-1" stroke="#314C61" stroke-width="2"/>
+  <path d="M581 45h14v111h-14Z" fill="#0B2236"/>
+  <path d="M577-12h12v92h-12Z" fill="url(#crawlTruckChrome)"/>
+  <path d="M578-12v-7h9v7" fill="#6C8190"/>
+  <path d="M574 28h18v6h-18Zm0 28h18v6h-18Z" fill="#244457"/>
+  <path d="M579 0v21" stroke="#D0D9DC" stroke-width="1" opacity=".6"/>
+
+  <!-- The cab follows the original long-nose profile. Blue is concentrated here. -->
+  <path d="M596 32V13h55l15 19h19l40 68h95l18 42v32H590V32Z" fill="#061423"/>
+  <path d="M598 15h51l15 20h-66Z" fill="#0E3454"/>
+  <path d="M598 15h39l14 18h-53Z" fill="#277EB7"/>
+  <path d="M598 15h51l15 20M598 16h39" stroke="#6FC2F2" stroke-width="1.3" stroke-opacity=".55"/>
+  <path d="M596 35h88l40 67 1 53H596Z" fill="url(#crawlTruckCab)"/>
+  <path d="M598 37h82l4 7h-86Z" fill="#419DD8"/>
+  <path d="M596 36h31v115h-31Z" fill="#0C5890"/>
+  <path d="M600 40h23v97h-23Z" fill="#12669F"/>
+  <path d="M627 37v114" stroke="#06243A" stroke-width="2"/>
+  <path d="M630 41v100" stroke="#6FC2F2" stroke-width="1" opacity=".35"/>
+  <path d="M600 105h22m-22 5h22m-22 5h22m-22 5h22" stroke="#0A426D" stroke-width="2"/>
+  <path d="M598 138h28v11h-28Z" fill="#0E3454"/>
+  <path d="M637 43h43l32 55v46h-75Z" fill="#106BA7" stroke="#0B3D60" stroke-width="1.6"/>
+  <path d="M644 48h32l24 44h-56Z" fill="url(#crawlTruckGlass)"/>
+  <path d="M644 48h32l4 8h-36Z" fill="#376581" opacity=".65"/>
+  <path d="M645 49v40m1 2h50" stroke="#80ADC6" stroke-width="1" stroke-opacity=".42"/>
+  <path d="m680 47 27 44h7l-27-46Z" fill="#0A1A2B"/>
+  <path d="M645 101h17v3h-17" stroke="#A8BCD0" stroke-width="2"/>
+  <path d="M638 139h72" stroke="#6FC2F2" stroke-width="1" opacity=".42"/>
+  <path d="m685 33 36 62h-7l-35-62Z" fill="#2387C9"/>
+  <path d="m685 33 36 62" stroke="#6FC2F2" stroke-width="1.3" stroke-opacity=".65"/>
+
+  <!-- Mirror, hood top plane, long hood and restrained metallic grille. -->
+  <path d="M713 63h20v25m-17-17h15" stroke="#637C8E" stroke-width="2"/>
+  <path d="M728 59h9v19h-9Z" fill="#0A1A29" stroke="#6B879A" stroke-width="1"/>
+  <path d="M721 98h96l10 9H726Z" fill="#327DA8"/>
+  <path d="M724 105h99l15 36v24h-21c-3-28-18-39-39-39-20 0-35 12-39 39h-16Z" fill="url(#crawlTruckHood)"/>
+  <path d="M725 107h94l9 22h-91" stroke="#6FC2F2" stroke-width="1" stroke-opacity=".36"/>
+  <path d="M728 111h6v23h-6m11-23h3v23h-3m8-23h3v15h-3" fill="#093250"/>
+  <path d="M817 106h8l13 33-7 3Z" fill="#213E52"/>
+  <path d="M825 114h7l8 25h-8Z" fill="#647C8B"/>
+  <path d="m827 118 7 20m-4-20 6 20" stroke="#0D2334" stroke-width="1.5"/>
+  <path d="M833 123h10v15h-10Z" fill="#B5C5CB"/>
+  <path d="M835 125h7v9h-7Z" fill="#D2DCDD" opacity=".7"/>
+  <path d="M831 147h25v23h-25Z" fill="url(#crawlTruckChrome)"/>
+  <path d="M833 149h21v3h-21" fill="#BFCCD2" opacity=".7"/>
+  <path d="M726 145h17v6h-17Zm-2 9h15v6h-15" fill="#7D929E"/>
+
+  <!-- Fuel tank, steps and mudguards are distinct from the trailer running gear. -->
+  <path d="M662 145h62v22h-62Z" fill="url(#crawlTruckChrome)"/>
+  <path d="M668 145v22m48-22v22" stroke="#0B2032" stroke-width="3"/>
+  <path d="M665 146h55" stroke="#A8BCD0" stroke-width="1"/>
+  <path d="M644 139h13v7h-13Zm0 13h13v7h-13Z" fill="#7491A4"/>
+  <path d="M525 162c4-28 20-38 41-38 18 0 29 6 37 22 8-16 18-22 35-22 20 0 36 12 40 38" stroke="#061321" stroke-width="8"/>
+  <path d="M531 146c9-17 20-22 35-22 14 0 26 6 32 16m12 0c7-11 15-16 28-16 16 0 29 8 36 22" stroke="#315C7B" stroke-width="2"/>
+  <path d="M737 168c2-28 17-43 41-43 25 0 40 17 42 43" stroke="#082039" stroke-width="10"/>
+  <path d="M740 148c8-16 20-24 38-24 18 0 30 8 38 24" stroke="#3285BD" stroke-width="3"/>
+  <path d="M90 139h121" stroke="#78909E" stroke-width="3"/>
+  <path d="M212 157h9v41h-9Zm450 1h9v40h-9Z" fill="#06111D"/>
+
+  <g data-wheel="" transform="rotate(0 120 172)"><use href="#crawlTruckWheel" transform="translate(120 172)"/></g>
+  <g data-wheel="" transform="rotate(0 188 172)"><use href="#crawlTruckWheel" transform="translate(188 172)"/></g>
+  <g data-wheel="" transform="rotate(0 566 170)"><use href="#crawlTruckWheel" transform="translate(566 170) scale(1.0588235)"/></g>
+  <g data-wheel="" transform="rotate(0 638 170)"><use href="#crawlTruckWheel" transform="translate(638 170) scale(1.0588235)"/></g>
+  <g data-wheel="" transform="rotate(0 778 170)"><use href="#crawlTruckWheel" transform="translate(778 170) scale(1.0588235)"/></g>
+
+  <!-- Visible marker housings by day; illuminated cores turn on with the scene. -->
+  <g fill="#946F35">
+    <rect x="70" y="146" width="5" height="3"/><rect x="231" y="146" width="5" height="3"/><rect x="412" y="146" width="5" height="3"/><rect x="547" y="146" width="5" height="3"/>
+    <path d="M656 31h5v3h-5Zm12 0h5v3h-5Zm12 0h5v3h-5Z"/>
+  </g>
+  <rect x="20" y="145" width="5" height="9" fill="#743F3B"/>
+  <g data-lamps="" opacity="0" aria-hidden="true">
+    <path d="M834 124h9v13h-9Z" fill="#FFF1D8"/>
+    <rect x="20" y="145" width="5" height="9" fill="#F58A63"/>
+    <g fill="#F2A93B">
+      <rect x="70" y="146" width="5" height="3"/><rect x="231" y="146" width="5" height="3"/><rect x="412" y="146" width="5" height="3"/><rect x="547" y="146" width="5" height="3"/>
+      <path d="M656 31h5v3h-5Zm12 0h5v3h-5Zm12 0h5v3h-5Z"/>
+      <rect x="822" y="112" width="4" height="5"/>
+    </g>
+  </g>
+</svg>

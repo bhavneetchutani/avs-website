@@ -1,0 +1,60 @@
+/* The original site's gentle cadence, one composited entrance per content group.
+   JavaScript adds these states only after checking viewport position. */
+[data-avs-reveal="rise"][data-avs-state="pending"] { opacity: 0; translate: 0 24px; }
+[data-avs-reveal="rise"][data-avs-state="running"] {
+  opacity: 1;
+  translate: 0 0;
+  transition: opacity 900ms cubic-bezier(.2,.7,.3,1) var(--avs-reveal-delay, 0ms),
+              translate 950ms cubic-bezier(.2,.7,.3,1) var(--avs-reveal-delay, 0ms);
+}
+
+/* A stationary diamond opens from its centre. Sliding covers preserve the original
+   iris feeling without animating clip-path or moving the parallax frame. */
+[data-avs-reveal="diamond"] .home-diamond-frame::before,
+[data-avs-reveal="diamond"] .home-diamond-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 50.2%;
+  height: 100%;
+  z-index: 2;
+  background: #050A12;
+  pointer-events: none;
+  transform: translateX(-101%);
+}
+[data-avs-reveal="diamond"] .home-diamond-frame::after { left: auto; right: 0; transform: translateX(101%); }
+[data-avs-reveal="diamond"][data-avs-state="pending"] .home-diamond-frame::before,
+[data-avs-reveal="diamond"][data-avs-state="pending"] .home-diamond-frame::after { transform: translateX(0); }
+[data-avs-reveal="diamond"][data-avs-state="running"] .home-diamond-frame::before,
+[data-avs-reveal="diamond"][data-avs-state="running"] .home-diamond-frame::after {
+  transition: transform 1200ms cubic-bezier(.2,.7,.3,1) var(--avs-reveal-delay, 0ms);
+}
+[data-avs-reveal="diamond"][data-avs-state="pending"] figcaption { opacity: 0; translate: 0 16px; }
+[data-avs-reveal="diamond"][data-avs-state="running"] figcaption {
+  opacity: 1;
+  translate: 0 0;
+  transition: opacity 850ms cubic-bezier(.2,.7,.3,1) calc(var(--avs-reveal-delay, 0ms) + 140ms),
+              translate 1050ms cubic-bezier(.2,.7,.3,1) calc(var(--avs-reveal-delay, 0ms) + 140ms);
+}
+
+.avs-button > span[aria-hidden="true"]:last-child,
+.avs-link > span[aria-hidden="true"]:last-child {
+  display: inline-block;
+  transition: translate 400ms cubic-bezier(.2,.7,.3,1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .avs-button:hover > span[aria-hidden="true"]:last-child,
+  .avs-link:hover > span[aria-hidden="true"]:last-child { translate: 2px -3.464px; }
+}
+[data-avs-quiet] [data-avs-reveal],
+[data-avs-quiet] [data-avs-reveal] figcaption { opacity: 1 !important; translate: none !important; transition: none !important; }
+[data-avs-quiet] [data-avs-reveal="diamond"] .home-diamond-frame::before,
+[data-avs-quiet] [data-avs-reveal="diamond"] .home-diamond-frame::after { display: none !important; }
+[data-avs-quiet] .avs-button > span[aria-hidden="true"],
+[data-avs-quiet] .avs-link > span[aria-hidden="true"] { translate: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce), print {
+  [data-avs-reveal], [data-avs-reveal] figcaption { opacity: 1 !important; translate: none !important; transition: none !important; }
+  [data-avs-reveal="diamond"] .home-diamond-frame::before,
+  [data-avs-reveal="diamond"] .home-diamond-frame::after { display: none !important; }
+  .avs-button > span[aria-hidden="true"], .avs-link > span[aria-hidden="true"] { translate: none !important; transition: none !important; }
+}

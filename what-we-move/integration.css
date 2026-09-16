@@ -1,0 +1,131 @@
+/* Site integration only. Authored camera, material and loading choreography stay
+   in scene.js/style.css; these rules connect their edges to the shared AVS site. */
+.freight-page {
+  --light: #6FC2F2;
+  --header: var(--site-header-height, 78px);
+}
+.freight-page .freight-loader { z-index: 200; }
+.freight-page .stage { padding-top: var(--site-header-height, var(--header)); }
+.freight-page .skip { z-index: 210; }
+.freight-page .is-static .chapter,
+.freight-page.is-static .chapter,
+.freight-page #freight-details { scroll-margin-top: calc(var(--site-header-height, var(--header)) + 20px); }
+.freight-page .motion { border-radius: 0; min-height: 44px; }
+.freight-page .text-link { font-size: 10px; }
+.freight-page .equipment {
+  padding: clamp(76px, 9vw, 142px) clamp(24px, 7vw, 112px);
+  gap: clamp(48px, 9vw, 144px);
+  background: #080F1A;
+}
+.freight-page .equipment .eyebrow,
+.freight-page .contact .eyebrow { font-size: 11px; letter-spacing: .13em; }
+.freight-page .equipment .section-heading { position: relative; }
+.freight-page .equipment .section-heading h2 {
+  font-size: clamp(46px, 5.1vw, 82px);
+  font-weight: 560;
+  line-height: 1.02;
+  letter-spacing: -.055em;
+}
+.freight-page .equipment .section-heading > p:not(.eyebrow) {
+  max-width: 34ch;
+  color: #A8BCD0;
+}
+.freight-page .equipment-list {
+  column-gap: clamp(24px, 3.2vw, 52px);
+  align-items: start;
+}
+.freight-page .equipment-option {
+  min-width: 0;
+  border-bottom: 1px solid #2A4055;
+}
+.freight-page .equipment-option summary {
+  display: flex;
+  min-height: 70px;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  list-style: none;
+  font-size: clamp(15px, 1.22vw, 19px);
+  font-weight: 450;
+  letter-spacing: -.015em;
+  color: #D5E1EC;
+  cursor: pointer;
+}
+.freight-page .equipment-option summary::-webkit-details-marker { display: none; }
+.freight-page .equipment-option summary > span { color: inherit; font: inherit; }
+.freight-page .equipment-option summary > i {
+  flex: none;
+  font-family: 'Spline Sans Mono', monospace;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  color: #6485A3;
+  transition: transform .25s cubic-bezier(.2,.7,.3,1), color .25s;
+}
+.freight-page .equipment-option summary:hover { color: #6FC2F2; }
+.freight-page .equipment-option summary:focus-visible { outline: 2px solid #6FC2F2; outline-offset: 5px; }
+.freight-page .equipment-option[open] summary { color: #6FC2F2; }
+.freight-page .equipment-option[open] summary > i { transform: rotate(45deg); color: #2196E8; }
+.freight-page .equipment-option > p {
+  display: block;
+  margin: -4px 0 0;
+  padding: 0 0 24px;
+  border: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #A8BCD0;
+}
+.freight-page .contact {
+  padding: clamp(76px, 9vw, 140px) clamp(24px, 7vw, 112px);
+  align-items: center;
+  background: radial-gradient(ellipse at 82% 100%, rgba(18, 114, 184, .12), transparent 60%), #050A12;
+}
+.freight-page .contact h2 { font-weight: 560; font-size: clamp(48px, 6.3vw, 100px); }
+.freight-page .contact-context { max-width: 38ch; color: #A8BCD0; font-size: 16px; line-height: 1.7; margin: 27px 0 0; }
+.freight-page main .quote {
+  min-height: 56px;
+  font-size: 11px;
+  letter-spacing: .11em;
+  clip-path: polygon(0 0, calc(100% - 11px) 0, 100% 19px, 100% 100%, 11px 100%, 0 calc(100% - 19px));
+}
+.freight-page .contact .phone { min-height: 44px; display: inline-flex; align-items: center; font-size: 17px; }
+.freight-page .freight-attribution {
+  position: relative;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: minmax(180px, .75fr) 1.25fr;
+  gap: 32px;
+  padding: 26px clamp(24px, 7vw, 112px);
+  border-top: 1px solid #17293C;
+  background: #050A12;
+  color: #8CA1B8;
+}
+.freight-page .freight-attribution > span { font-size: 10px; letter-spacing: .11em; text-transform: uppercase; }
+.freight-page .freight-attribution p { margin: 0; max-width: 74ch; font-size: 11px; line-height: 1.7; }
+.freight-page .freight-attribution a { color: #A8BCD0; text-decoration: underline; text-underline-offset: 3px; }
+.freight-page .freight-attribution a:hover { color: #6FC2F2; }
+@media (max-width: 850px) {
+  .freight-page { --header: var(--site-header-height, 60px); }
+  .freight-page .equipment { padding: 76px 25px; }
+  .freight-page .equipment-list { column-gap: 26px; margin-top: 42px; }
+  .freight-page .equipment-option summary { min-height: 66px; font-size: 15px; gap: 14px; }
+  .freight-page .equipment-option > p { font-size: 13px; }
+  .freight-page .equipment .section-heading h2 { font-size: clamp(44px, 7vw, 64px); }
+  .freight-page .equipment .section-heading .text-link { font-size: 10px; }
+  .freight-page .contact { padding: 76px 25px; }
+  .freight-page .contact-context { max-width: 35ch; font-size: 15px; }
+  .freight-page .freight-attribution { display: block; padding: 26px 25px; }
+  .freight-page .freight-attribution > span { display: block; margin-bottom: 10px; }
+}
+@media (max-width: 380px) {
+  .freight-page .equipment-list { grid-template-columns: 1fr; }
+  .freight-page .equipment-option summary { min-height: 60px; }
+}
+/* Utility text shares the site's legible monospace scale. */
+.freight-page .mono{font-family:'AVS Mono',monospace}
+.freight-page .motion{font-family:'AVS Mono',monospace;font-size:10px;letter-spacing:.045em}
+@media(min-width:851px){.freight-page .story-heading{font-size:9px}.freight-page .story-heading>span:last-child{font-size:8px}.freight-page .eyebrow{font-size:10px}.freight-page .scene-caption{font-size:10px}.freight-page .details dt{font-size:9px}.freight-page .details dd{font-size:12px}.freight-page .journey-caption{font-size:8px}.freight-page .chapter-nav span{font-size:9px}.freight-page .chapter-nav b{font-size:11px}.freight-page .model-status{font-size:9px}.freight-page .detail-callout{font-size:9px}}
+@media(max-width:850px){.freight-page .chapter-nav a{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;min-height:48px}.freight-page .chapter-nav span{font-size:8px}.freight-page .chapter-nav b{font-size:10px}.freight-page .chapter-nav{gap:7px}.freight-page .chapter-nav b{white-space:nowrap}}
+.freight-page.is-static .chapter,.freight-page #freight-details{scroll-margin-top:0}

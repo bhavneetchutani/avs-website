@@ -1,0 +1,15 @@
+/* Individual properties compose with the existing road rotation and hover transform.
+   No default image crop, object-position, layout or source transform is replaced. */
+.avs-parallax-image {
+  translate: 0 var(--avs-parallax-y, 0px);
+  scale: var(--avs-parallax-scale, 1);
+}
+.avs-parallax-image.avs-parallax-active { will-change: translate; }
+
+[data-avs-quiet] .avs-parallax-image { translate: none !important; scale: none !important; will-change: auto !important; }
+@media (prefers-reduced-motion: reduce) {
+  .avs-parallax-image { translate: none !important; scale: none !important; will-change: auto !important; }
+}
+@media print {
+  .avs-parallax-image { translate: none !important; scale: none !important; will-change: auto !important; }
+}

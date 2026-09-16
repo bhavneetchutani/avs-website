@@ -250,29 +250,20 @@ footer a:hover { color: #6FC2F2; }
 @media (max-width: 1100px) { [data-people-grid] { grid-template-columns: 1fr 1fr !important; } }
 @media (max-width: 620px)  { [data-people-grid] { grid-template-columns: 1fr !important; } }
 </style>
+<link rel="stylesheet" href="/assets/site/site.css">
+<link rel="stylesheet" href="/assets/site/motion.css">
+<script src="/assets/site/motion.js" defer></script>
+<link rel="stylesheet" href="/assets/site/parallax.css">
+<script src="/assets/site/parallax.js" defer></script>
 </head>
-<body>
+<body class="avs-site privacy-page">
 <div id="page-top" style="background:#050A12;color:#EEF4FA;font-family:Archivo,system-ui,sans-serif;overflow-x:clip">
 
-  <header data-hdr="" style="position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:16px clamp(20px,3vw,44px);background:rgba(5,10,18,.86);backdrop-filter:blur(14px);border-bottom:1px solid #17293C">
-    <div data-progress="" style="position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:linear-gradient(90deg,#1272B8,#2196E8 60%,#6FC2F2);transform:scaleX(0);transform-origin:left center;pointer-events:none"></div>
-    <a href="#page-top" data-hdr-logo="" style="display:flex;align-items:center;gap:11px;color:#EEF4FA;flex:0 0 auto">
-      <span style="font-weight:900;font-variation-settings:'wdth' 125;font-size:21px;line-height:1;letter-spacing:-.02em">AVS</span>
-      <img src="../assets/2f89641a-46df-4c9d-9813-53bb64e70e51.svg" alt="" style="width:12px;height:auto;display:block" loading="lazy">
-      <span data-hdr-sub="" style="font-weight:200;font-variation-settings:'wdth' 100;font-size:21px;line-height:1;letter-spacing:.02em">Freight Services</span>
-    </a>
-    <nav data-hdr-nav="" style="display:flex;align-items:center;gap:clamp(18px,2.4vw,34px);font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
-      <a href="/" style="color:#8CA1B8;padding-bottom:3px;transition:color .2s,box-shadow .25s" style-hover="color:#EEF4FA;box-shadow:0 1px 0 0 #2196E8">Home</a>
-      <a href="/what-we-move/" style="color:#8CA1B8;padding-bottom:3px;transition:color .2s,box-shadow .25s" style-hover="color:#EEF4FA;box-shadow:0 1px 0 0 #2196E8">What We Move</a>
-      <a href="/carriers/" style="color:#8CA1B8;padding-bottom:3px;transition:color .2s,box-shadow .25s" style-hover="color:#EEF4FA;box-shadow:0 1px 0 0 #2196E8">Carriers</a>
-      <a href="/contact/" style="color:#8CA1B8;padding-bottom:3px;transition:color .2s,box-shadow .25s" style-hover="color:#EEF4FA;box-shadow:0 1px 0 0 #2196E8">Contact</a>
-    </nav>
-    <a href="/contact/" data-hdr-cta="" style="display:inline-flex;align-items:center;gap:10px;background:#2196E8;color:#050A12;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:13px 22px;white-space:nowrap;flex:0 0 auto;clip-path:polygon(0 0, calc(100% - 11px) 0, 100% 19px, 100% 100%, 11px 100%, 0 calc(100% - 19px));transition:background .2s" style-hover="background:#6FC2F2"><span data-cta-long="">Call dispatch</span><span data-cta-icon="" style="display:none;align-items:center" aria-label="Call dispatch"><svg sc-camel-view-box="0 0 24 24" width="17" height="17" fill="currentColor" style="display:block"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1z"></path></svg></span></a>
-  </header>
+  <header class="avs-header" data-hdr=""><a class="avs-logo" href="/#page-top" aria-label="AVS Freight Services home"><b>AVS</b><img src="/assets/2f89641a-46df-4c9d-9813-53bb64e70e51.svg" alt="" width="12" height="21"><span>Freight Services</span></a><nav class="avs-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/what-we-move/">What We Move</a><a href="/carriers/">Carriers</a><a href="/contact/">Contact</a><a class="avs-button" href="/contact/#quote">Get a quote <span aria-hidden="true">↗</span></a></nav><details class="avs-menu"><summary>Menu</summary><nav class="avs-mobile-nav" aria-label="Mobile navigation"><a href="/">Home<span aria-hidden="true">01</span></a><a href="/what-we-move/">What We Move<span aria-hidden="true">02</span></a><a href="/carriers/">Carriers<span aria-hidden="true">03</span></a><a href="/contact/">Contact<span aria-hidden="true">04</span></a><a class="avs-button" href="/contact/#quote">Get a quote <span aria-hidden="true">↗</span></a></nav></details><div class="avs-header-progress" data-progress="" aria-hidden="true"></div></header>
 
 
   <main style="padding:clamp(126px,15vw,168px) clamp(24px,4vw,56px) clamp(96px,10vw,140px);max-width:1500px;margin:0 auto">
-<h2>Privacy</h2>
+<h1>Privacy</h1>
 <p>AVS Freight Services Inc. is a licensed property broker in Cypress, Texas. We arrange freight. This website is not a product and there is nothing here to sign up for. This page says exactly what the site collects, who else sees it, and how to ask us to remove it. It took effect on 6 September 2026, and it covers <strong>this website only</strong> — not the records we keep as your broker once we are moving your freight.</p>
 <h2>The short version</h2>
 <p>If you read this site and send us nothing, we learn nothing about you. The one way to hand us anything here is the quote form, and what you type into it reaches two places: our own inbox, and the service that runs the form. We set no cookies, we run no analytics, and <strong>we do not sell your information</strong>.</p>
@@ -300,61 +291,8 @@ footer a:hover { color: #6FC2F2; }
 <p>AVS Freight Services Inc., 15055 Fairfield Meadows Dr, Ste 130-26, Cypress, TX 77433. Email cj@avsfreight.com, or call (281) 758-8676, Monday to Friday, 7am to 6pm Central.</p>
 </main>
 
-  <footer style="border-top:1px solid #17293C;padding:clamp(48px,6vw,72px) clamp(24px,4vw,56px) 0">
-    <div style="max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1.45fr .8fr 1.15fr 1fr;gap:clamp(28px,4vw,56px)" data-foot-grid>
-
-      <div>
-        <div style="display:flex;align-items:center;gap:11px;margin-bottom:16px">
-          <span style="font-weight:900;font-variation-settings:'wdth' 125;font-size:19px;line-height:1;letter-spacing:-.02em;color:#EEF4FA">AVS</span>
-          <span style="width:11px;height:18px;background:#2196E8;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);display:block"></span><span style="font-weight:200;font-variation-settings:'wdth' 100;font-size:19px;line-height:1;letter-spacing:.02em;color:#EEF4FA">Freight Services</span>
-        </div>
-        <p style="margin:0 0 20px;font-size:14px;line-height:1.7;color:#8CA1B8;max-width:300px">Moving freight since 2016.</p>
-        <a href="https://www.linkedin.com/company/avs-freight-services/" data-btn rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8CA1B8"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0Z"></path></svg>LinkedIn</a>
-      </div>
-
-      <div>
-        <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Site</p>
-        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;font-size:15px;line-height:1.4">
-          <li><a href="/" style="color:#8CA1B8">Home</a></li>
-          <li><a href="/what-we-move/" style="color:#8CA1B8">What We Move</a></li>
-          <li><a href="/carriers/" style="color:#8CA1B8">Carriers</a></li>
-          <li><a href="/contact/" style="color:#8CA1B8">Contact</a></li>
-          <li><a href="/contact/#quote" style="color:#6FC2F2">Get a quote</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Talk to us</p>
-        <p style="margin:0 0 6px;font-size:20px;font-weight:700;letter-spacing:-.01em"><a href="tel:+12817588676" data-btn style="color:#EEF4FA">(281) 758-8676</a></p>
-        <p style="margin:0 0 18px;font-size:14px;line-height:1.6;color:#6485A3">Mon&ndash;Fri, 7am&ndash;6pm CT</p>
-        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:13px;font-size:14px;line-height:1.4">
-          <li><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3;display:block;margin-bottom:3px">Quotes</span><a href="mailto:cj@avsfreight.com" style="color:#8CA1B8">cj@avsfreight.com</a></li>
-          <li><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3;display:block;margin-bottom:3px">Carrier setup</span><a href="mailto:kk@avsfreight.com" style="color:#8CA1B8">kk@avsfreight.com</a></li>
-          <li><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3;display:block;margin-bottom:3px">Billing</span><a href="mailto:billing@avsfreight.com" style="color:#8CA1B8">billing@avsfreight.com</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <p style="margin:0 0 16px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Billing address</p>
-        <p style="margin:0;font-size:14px;line-height:1.8;color:#8CA1B8">AVS Freight Services Inc.<br>15055 Fairfield Meadows Dr<br>Ste 130-26<br>Cypress, TX 77433</p>
-      </div>
-    </div>
-
-    <div style="max-width:1500px;margin:clamp(36px,4.5vw,52px) auto 0;padding-top:26px;border-top:1px solid #17293C">
-      <p style="margin:0 0 14px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6485A3">Authority</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-        <a href="https://safer.fmcsa.dot.gov/query.asp?query_type=queryCarrierSnapshot&amp;query_param=USDOT&amp;query_string=2950817" target="_blank" rel="noopener" data-btn style="display:inline-flex;align-items:center;gap:8px;border:1px solid #17293C;background:#0A1220;padding:9px 14px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8CA1B8;clip-path:polygon(0 0, calc(100% - 8px) 0, 100% 14px, 100% 100%, 8px 100%, 0 calc(100% - 14px))"><span style="width:7px;height:11px;background:#2196E8;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);display:block;flex:0 0 auto"></span>MC-999084</a>
-        <a href="https://safer.fmcsa.dot.gov/query.asp?query_type=queryCarrierSnapshot&amp;query_param=USDOT&amp;query_string=2950817" target="_blank" rel="noopener" data-btn style="display:inline-flex;align-items:center;gap:8px;border:1px solid #17293C;background:#0A1220;padding:9px 14px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8CA1B8;clip-path:polygon(0 0, calc(100% - 8px) 0, 100% 14px, 100% 100%, 8px 100%, 0 calc(100% - 14px))"><span style="width:7px;height:11px;background:#2196E8;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);display:block;flex:0 0 auto"></span>USDOT 2950817</a>
-        <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid #17293C;background:#0A1220;padding:9px 14px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8CA1B8;clip-path:polygon(0 0, calc(100% - 8px) 0, 100% 14px, 100% 100%, 8px 100%, 0 calc(100% - 14px))"><span style="width:7px;height:11px;background:#2196E8;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);display:block;flex:0 0 auto"></span>Broker authority &middot; active</span>
-      </div>
-      <p style="margin:13px 0 0;font-size:13px;line-height:1.6;color:#6485A3">Our authority is a public record. The MC and USDOT numbers above open our entry on the FMCSA SAFER system.</p>
-    </div>
-    <div style="max-width:1500px;margin:clamp(40px,5vw,60px) auto 0;padding:22px 0 26px;border-top:1px solid #17293C;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.13em;color:#6485A3">
-      <span>&copy; 2026 AVS Freight Services Inc.</span>
-      <span>Licensed property broker</span>
-      <span><a href="/privacy/" style="color:#8CA1B8">Privacy</a></span>
-    </div>
-  </footer>
+  <footer class="avs-footer"><div class="avs-shell"><div class="avs-footer-grid"><div><a class="avs-logo" href="/#page-top" aria-label="AVS Freight Services home"><b>AVS</b><img src="/assets/2f89641a-46df-4c9d-9813-53bb64e70e51.svg" alt="" width="12" height="21"><span>Freight Services</span></a><p class="avs-footer-intro">Freight from the plant floor to the next thing built. Moving since 2016.</p><a class="avs-social" href="https://www.linkedin.com/company/avs-freight-services/" rel="noopener"><img src="/assets/site/linkedin.svg" alt="" width="14" height="14">LinkedIn <span aria-hidden="true">↗</span></a></div><div><p class="avs-footer-label">Explore</p><ul><li><a href="/">Home</a></li><li><a href="/what-we-move/">What We Move</a></li><li><a href="/carriers/">Carriers</a></li><li><a href="/contact/">Contact</a></li><li><a href="/contact/#quote">Get a quote ↗</a></li></ul></div><div><p class="avs-footer-label">Talk to us</p><a class="avs-footer-phone" href="tel:+12817588676">(281) 758-8676</a><small>Mon–Fri, 7am–6pm CT</small><ul><li><a href="mailto:cj@avsfreight.com">Quotes · cj@avsfreight.com</a></li><li><a href="mailto:kk@avsfreight.com">Carriers · kk@avsfreight.com</a></li><li><a href="mailto:billing@avsfreight.com">Billing · billing@avsfreight.com</a></li></ul></div><div><p class="avs-footer-label">Mailing address</p><address>AVS Freight Services Inc.<br> 15055 Fairfield Meadows Dr<br> Ste 130-26<br> Cypress, TX 77433</address></div></div><div class="avs-footer-bottom"><span>© 2026 AVS Freight Services Inc.</span><div class="avs-authority"><a href="https://safer.fmcsa.dot.gov/query.asp?query_type=queryCarrierSnapshot&amp;query_param=USDOT&amp;query_string=2950817" target="_blank" rel="noopener">MC-999084 · USDOT 2950817 ↗</a><span>Licensed property broker</span><a href="/privacy/">Privacy</a></div></div></div></footer>
 
 </div>
+<script src="/assets/site/site.js" defer></script>
 </body></html>
