@@ -91,21 +91,6 @@
   clip-path: polygon(0 0, calc(100% - 11px) 0, 100% 19px, 100% 100%, 11px 100%, 0 calc(100% - 19px));
 }
 .freight-page .contact .phone { min-height: 44px; display: inline-flex; align-items: center; font-size: 17px; }
-.freight-page .freight-attribution {
-  position: relative;
-  z-index: 8;
-  display: grid;
-  grid-template-columns: minmax(180px, .75fr) 1.25fr;
-  gap: 32px;
-  padding: 26px clamp(24px, 7vw, 112px);
-  border-top: 1px solid #17293C;
-  background: #050A12;
-  color: #8CA1B8;
-}
-.freight-page .freight-attribution > span { font-size: 10px; letter-spacing: .11em; text-transform: uppercase; }
-.freight-page .freight-attribution p { margin: 0; max-width: 74ch; font-size: 11px; line-height: 1.7; }
-.freight-page .freight-attribution a { color: #A8BCD0; text-decoration: underline; text-underline-offset: 3px; }
-.freight-page .freight-attribution a:hover { color: #6FC2F2; }
 @media (max-width: 850px) {
   .freight-page { --header: var(--site-header-height, 60px); }
   .freight-page .equipment { padding: 76px 25px; }
@@ -116,8 +101,6 @@
   .freight-page .equipment .section-heading .text-link { font-size: 10px; }
   .freight-page .contact { padding: 76px 25px; }
   .freight-page .contact-context { max-width: 35ch; font-size: 15px; }
-  .freight-page .freight-attribution { display: block; padding: 26px 25px; }
-  .freight-page .freight-attribution > span { display: block; margin-bottom: 10px; }
 }
 @media (max-width: 380px) {
   .freight-page .equipment-list { grid-template-columns: 1fr; }
@@ -139,3 +122,9 @@
    so it covered the nav: 'Get a quote' was unclickable for the whole model load.
    Lift the header above it — the nav stays usable while the truck loads. */
 body.is-loading .avs-header { z-index: 90; }
+
+/* The truck model is CC BY 4.0: credit, license link and a note of the adaptation, kept to one
+   line of the footer's own small print. .avs-authority children are inline-flex at 32px, which
+   would strip the spaces between these words, so this line is plain inline text. */
+.freight-page .avs-authority > .avs-credit { display: inline; min-height: 0; }
+.freight-page .avs-credit a { display: inline; min-height: 0; text-decoration: underline; text-underline-offset: 2px; }

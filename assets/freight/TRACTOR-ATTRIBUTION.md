@@ -10,6 +10,6 @@ The tractor used in the AVS Freight concept is an adaptation: its painted body p
 - Sketchfab model ID: `0599b3d7f9a5437fa905b20674d16d17`.
 - The unmodified download is kept outside the published site, before AVS adaptation.
 - Original GLB SHA-256: `0b29a569a84becd942f4ae276e6209cda87f3ba612c69b8c5a638da6a7a8a56c`.
-- The website's footer credits the model, creator, license, and modifications. Keep that credit, or an equally accessible equivalent, wherever the adapted tractor is published.
+- The /what-we-move/ footer credits the creator, links the model and the license, and says it was adapted. That line is the license's attribution requirement, not decoration: keep it, or an equally accessible equivalent, wherever the adapted tractor is published.
 
 The original and adapted tractor may be shared and adapted, including commercially, subject to the linked license's attribution and other conditions. A copy of the license's legal terms is available at [CC BY 4.0 legal code](https://creativecommons.org/licenses/by/4.0/legalcode).
