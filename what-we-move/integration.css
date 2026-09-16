@@ -123,8 +123,3 @@
    Lift the header above it — the nav stays usable while the truck loads. */
 body.is-loading .avs-header { z-index: 90; }
 
-/* The truck model is CC BY 4.0: credit, license link and a note of the adaptation, kept to one
-   line of the footer's own small print. .avs-authority children are inline-flex at 32px, which
-   would strip the spaces between these words, so this line is plain inline text. */
-.freight-page .avs-authority > .avs-credit { display: inline; min-height: 0; }
-.freight-page .avs-credit a { display: inline; min-height: 0; text-decoration: underline; text-underline-offset: 2px; }
