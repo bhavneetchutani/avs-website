@@ -20,6 +20,8 @@
     {at:.64,start:.555,end:.765,name:'The distance'},
     {at:.845,start:.765,end:1,name:'On arrival'}
   ];
+  // Phones hold the landed lockup with the truck, then run the same exit over less scroll.
+  const late=(raw,vw)=>vw<761?.912+.082*ramp(raw,.93,.995):raw;
   class AVSCrawl {
     constructor(rig){
       this.rig=rig;
@@ -74,15 +76,16 @@
       if(!target)return;
       // Resolve against the settled layout, independent of the moving handoff surface.
       const rigTop=window.scrollY+this.rig.getBoundingClientRect().top;
-      const start=rigTop+this.rig.offsetHeight-(this.quiet?0:window.innerHeight);
+      const start=rigTop+this.rig.offsetHeight-(this.quiet?0:this.stageHeight());
       const offset=target.getBoundingClientRect().top-this.el.after.getBoundingClientRect().top;
       const headerOffset=(this.header?.offsetHeight||64)+20;
       let top=start+offset-headerOffset;
       if(!this.quiet && offset<headerOffset){
         // On short screens the moving handoff can still be ahead of its settled
         // surface. Clear both positions so skipping lands just below the header.
-        const vh=window.innerHeight,span=this.rig.offsetHeight-vh;
-        const release=rigTop+span*(.982-(.982-.912)*(headerOffset-offset)/vh);
+        const vh=this.stageHeight(),span=this.rig.offsetHeight-vh;
+        const r=.982-(.982-.912)*(headerOffset-offset)/vh;
+        const release=rigTop+span*(window.innerWidth<761?.93+.065*ramp(r,.912,.994):r);
         top=Math.max(top,release);
       }
       if(fromClick){target.tabIndex=-1;target.focus({preventScroll:true});}
@@ -106,8 +109,11 @@
       const at=CHAPTERS[index]?.at??0;
       if(this.el.cue.contains(document.activeElement))this.el.chapters[index]?.focus({preventScroll:true});
       const top=window.scrollY+this.rig.getBoundingClientRect().top;
-      window.scrollTo({top:top+at*.908*(this.rig.offsetHeight-window.innerHeight),behavior:this.media.matches?'instant':'smooth'});
+      window.scrollTo({top:top+at*.908*(this.rig.offsetHeight-this.stageHeight()),behavior:this.media.matches?'instant':'smooth'});
     }
+    // The pinned stage is 100vh, which phone toolbars never shrink; window.innerHeight is only
+    // the area they leave visible. Scroll span, handoff and landing are laid out in the former.
+    stageHeight(){return (!this.quiet&&this.el.stage.offsetHeight)||window.innerHeight;}
     show(el,opacity,transform){
       if(!el)return;
       el.style.opacity=opacity.toFixed(3);
@@ -123,7 +129,7 @@
       }
     }
     draw(){
-      const e=this.el,vh=window.innerHeight,vw=window.innerWidth;
+      const e=this.el,vh=this.stageHeight(),vw=window.innerWidth;
       const rect=this.rig.getBoundingClientRect(),span=this.rig.offsetHeight-vh;
       const raw=this.quiet?0:(span>0?clamp(-rect.top/span):0);
       const previous=this.geometry;
@@ -136,11 +142,11 @@
       this.lastRaw=raw;
       const {headerHeight,finaleHeight}=this.geometry;
       // Preserve the original drive/crane/release coupling through the shorter five-chapter journey.
-      const p=Math.min(1,raw/.908);
+      const p=Math.min(1,raw/.908),t=late(raw,vw),phone=vw<761;
       const colors=skyAt(p);
       e.sky.style.setProperty('--sky',`linear-gradient(${colors[0]} 0%,${colors[1]} 62%,${colors[2]} 100%)`);
       const night=ramp(p,.53,.85);
-      const crane=this.quiet?0:82*ramp(raw,.914,.988);
+      const crane=this.quiet?0:82*ramp(t,.914,.988);
       const sunEndpoint=vw<761?22:37;
       const sunClearance=(headerHeight+(vw<761?43:68))/vh*100;
       const descentStart=Math.max(sunEndpoint,sunClearance);
@@ -186,13 +192,14 @@
       e.dash.style.backgroundPosition=(-p*26000)+'px 0';
       e.dash2.style.backgroundPosition=(-p*9600)+'px 0';
       // The exact original lockup rises, settles, then leaves with the road.
-      const rise=ease(ramp(p,.935,1)),h=finaleHeight;
+      const rise=ease(phone?ramp(raw,.849,.89):ramp(p,.935,1)),h=finaleHeight;
       const horizon=vh-(vh<=560&&vw>600?120:288);
-      const land=Math.max(vw<761?150:vh*.30,Math.min(vh*.38,horizon-h-110));
-      const y=(horizon+100)+(land-(horizon+100))*rise;
+      // Phones land in the sky above the skyline and dissolve before the lift reaches the header.
+      const land=phone?Math.max(headerHeight+vh*.12,Math.min(vh*.3,horizon-h-230)):Math.max(vh*.30,Math.min(vh*.38,horizon-h-110));
+      const from=phone?land+vh*.2:horizon+100,y=from+(land-from)*rise,room=land-headerHeight-8,lift=crane*vh/100;
       e.finale.style.transform=`translateY(${y.toFixed(1)}px)`;
-      e.finale.style.opacity=(rise*(1-ramp(raw,.935,.971))).toFixed(3);
-      const arrivalOpacity=ease(ramp(p,.974,1))*(1-ease(ramp(raw,.935,.963)));
+      e.finale.style.opacity=(rise*(1-(phone?ramp(lift,room*.25,room):ramp(raw,.935,.971)))).toFixed(3);
+      const arrivalOpacity=ease(phone?ramp(raw,.88,.9):ramp(p,.974,1))*(1-ease(phone?ramp(lift,room*.2,room*.8):ramp(raw,.935,.963)));
       this.show(e.arrival,arrivalOpacity,`translateY(${((1-rise)*25).toFixed(1)}px)`);
       e.arrival.style.top=(land+h+30-crane*vh/100)+'px';
       const chapter=Math.max(0,CHAPTERS.findLastIndex(c=>p>=c.start));
@@ -204,12 +211,12 @@
       });
       const hudOpacity=this.quiet?1:1-ease(ramp(raw,.87,.9));
       this.show(e.hud,hudOpacity);
-      e.wipe.style.transform=`translate3d(${(26000*(1-p)).toFixed(1)}px,${(84-150*ramp(raw,.914,.98)).toFixed(2)}%,0)`;
-      e.blackout.style.opacity=ramp(raw,.962,.994).toFixed(3);
+      e.wipe.style.transform=`translate3d(${(26000*(1-p)).toFixed(1)}px,${(84-150*ramp(t,.914,.98)).toFixed(2)}%,0)`;
+      e.blackout.style.opacity=ramp(t,.962,.994).toFixed(3);
       if(this.quiet)e.after.style.transform='none';
       else{
         const base=span*(1-raw);
-        const y=Math.max(0,vh*(1-ramp(raw,.912,.982))-base);
+        const y=Math.max(0,vh*(1-ramp(t,.912,.982))-base);
         e.after.style.transform=y>.5?`translateY(${Math.round(y)-1}px)`:'none';
       }
     }
