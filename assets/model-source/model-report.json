@@ -1,0 +1,115 @@
+{
+  "units": "meters",
+  "blender_axes": {
+    "length": "X (nose negative)",
+    "width": "Y",
+    "up": "Z"
+  },
+  "deck_length_m": 16.1544,
+  "deck_width_m": 2.5908,
+  "deck_top_m": 1.55,
+  "source_components": {
+    "Tractor": 138,
+    "Trailer": 1549,
+    "Cargo_Steel": 55,
+    "Cargo_Precast": 105,
+    "Cargo_Wire": 1046,
+    "Cargo_Machinery": 279
+  },
+  "assemblies": {
+    "Tractor": {
+      "meshes": 15,
+      "vertices": 117444,
+      "triangles": 121826
+    },
+    "Trailer": {
+      "meshes": 10,
+      "vertices": 39988,
+      "triangles": 74004
+    },
+    "Cargo_Steel": {
+      "meshes": 5,
+      "vertices": 3128,
+      "triangles": 6096
+    },
+    "Cargo_Precast": {
+      "meshes": 6,
+      "vertices": 2084,
+      "triangles": 3416
+    },
+    "Cargo_Wire": {
+      "meshes": 5,
+      "vertices": 18048,
+      "triangles": 33120
+    },
+    "Cargo_Machinery": {
+      "meshes": 6,
+      "vertices": 7568,
+      "triangles": 13992
+    }
+  },
+  "materials": [
+    "Cargo | crate endgrain",
+    "Cargo | guard signal ochre",
+    "Cargo | machinery graphite",
+    "Cargo | mill steel",
+    "Cargo | ochre webbing",
+    "Cargo | pine crate slats",
+    "Cargo | pump petrol enamel",
+    "Cargo | recessed concrete",
+    "Cargo | rough-sawn hardwood",
+    "Cargo | warm cast concrete",
+    "Cargo | warm mill-scale rebar",
+    "Cargo | zinc silver",
+    "Hardware | brushed aluminum",
+    "Hardware | galvanized steel",
+    "Hardware | graphite",
+    "Hardware | polished aluminum",
+    "Lamps | amber",
+    "Livery | warm white",
+    "Reflectors | ruby",
+    "Tractor | AVS cobalt enamel",
+    "Tractor | amber lamp",
+    "Tractor | brushed cabin trim",
+    "Tractor | carbon tire rubber",
+    "Tractor | charcoal interior",
+    "Tractor | chassis graphite",
+    "Tractor | engine ochre",
+    "Tractor | headlamp crystal",
+    "Tractor | polished aluminum",
+    "Tractor | red lamp",
+    "Tractor | registration plate",
+    "Tractor | satin steel",
+    "Tractor | service air blue",
+    "Tractor | smoked glazing",
+    "Tractor | supply air red",
+    "Trailer | apitong nail strips",
+    "Tyres | carbon rubber",
+    "Tyres | satin sidewall"
+  ],
+  "total_triangles": 252454,
+  "total_meshes": 47,
+  "max_visible_triangles": 228950,
+  "max_visible_meshes": 31,
+  "raw_bytes": 9937420,
+  "web_bytes": 2498972,
+  "compression": "EXT_meshopt_compression; glTF Transform 4.2.1, level high",
+  "validated_materials": 37,
+  "validated_groups": [
+    "Tractor",
+    "Trailer",
+    "Cargo_Steel",
+    "Cargo_Precast",
+    "Cargo_Wire",
+    "Cargo_Machinery"
+  ],
+  "power_unit": {
+    "model": "1978 Peterbilt 359 Standard",
+    "creator": "hans1240",
+    "license": "CC BY 4.0",
+    "source": "https://sketchfab.com/3d-models/1978-peterbilt-359-standard-0599b3d7f9a5437fa905b20674d16d17",
+    "uniform_scale": 0.94,
+    "brand_srgb": "#2196E8",
+    "revision": "Complete replacement; uniform brand blue body paint, no AVS lettering, radiator fins and coupling risers"
+  }
+}

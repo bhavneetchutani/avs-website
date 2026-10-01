@@ -1,0 +1,27 @@
+{
+  "Trailer": {
+    "sha256_geometry_transform_material_assignment": "b2cea8ab9782fa842cd83a131ac995b75287010138d9ba04b7ef063213218ba9",
+    "meshes": 10,
+    "triangles": 74004
+  },
+  "Cargo_Steel": {
+    "sha256_geometry_transform_material_assignment": "dc730672fcbe7b131f3ef1fb2758dda3c45651cbb86068842cad7d0a96aecbc4",
+    "meshes": 5,
+    "triangles": 6096
+  },
+  "Cargo_Precast": {
+    "sha256_geometry_transform_material_assignment": "3e1055ecb0306554f03daf87cbbc4c4dfe9798d8b65cc81228b216fe080a1fcf",
+    "meshes": 6,
+    "triangles": 3416
+  },
+  "Cargo_Wire": {
+    "sha256_geometry_transform_material_assignment": "8782e54190896d3921d4d2c7a0c0eb13eaf0731a00ed486703d775d7c1a1d732",
+    "meshes": 5,
+    "triangles": 33120
+  },
+  "Cargo_Machinery": {
+    "sha256_geometry_transform_material_assignment": "bba2259e1bd487d610a407f30a356b78975ef0b5792d83b60b041422f2629a1f",
+    "meshes": 6,
+    "triangles": 13992
+  }
+}

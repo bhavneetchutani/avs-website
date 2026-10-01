@@ -1,0 +1,298 @@
+{
+  "date": "2026-09-05T21:14:30.281Z",
+  "browser": "152.0.7977.77",
+  "cases": [
+    {
+      "name": "desktop",
+      "initial": {
+        "visible": true,
+        "bodyLoading": true,
+        "static": true,
+        "width": 1440,
+        "height": 900,
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "overflow": "hidden",
+        "blocked": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "progress": null,
+        "fillY": 391,
+        "fillHeight": 0,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": null,
+        "cancelled": false,
+        "ready": false,
+        "calls": 0,
+        "modelStatus": "FREIGHT AT A GLANCE",
+        "visibleChapters": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "reducedMotion": false
+      },
+      "progressMechanism": {
+        "method": "Explicit freightLoader.update(50,100); real GLB still held",
+        "halfway": {
+          "visible": true,
+          "bodyLoading": true,
+          "static": true,
+          "width": 1440,
+          "height": 900,
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "overflow": "hidden",
+          "blocked": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "progress": "50",
+          "fillY": 0,
+          "fillHeight": 391,
+          "facets": 16,
+          "visibleFacets": 4,
+          "opening": null,
+          "cancelled": false,
+          "ready": false,
+          "calls": 0,
+          "modelStatus": "FREIGHT AT A GLANCE",
+          "visibleChapters": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "reducedMotion": false
+        }
+      },
+      "reveal": {
+        "visible": true,
+        "bodyLoading": true,
+        "static": false,
+        "width": 1440,
+        "height": 900,
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "overflow": "hidden",
+        "blocked": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "progress": "100",
+        "fillY": -391,
+        "fillHeight": 782,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": "720,-494.02123657762775 1220.629070918952,373.09375 720,1240.2087365776279 219.37092908104785,373.09375",
+        "cancelled": false,
+        "ready": true,
+        "calls": 52,
+        "modelStatus": "DRAG THE PAGE. FOLLOW THE LOAD.",
+        "visibleChapters": [
+          0
+        ],
+        "reducedMotion": false
+      },
+      "readyEvents": [
+        {
+          "ready": true,
+          "calls": 52,
+          "triangles": 391622,
+          "timestamp": 1706.2000002861023
+        }
+      ],
+      "after": {
+        "visible": false,
+        "bodyLoading": false,
+        "static": false,
+        "width": 0,
+        "height": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "overflow": "visible",
+        "blocked": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "progress": "100",
+        "fillY": -391,
+        "fillHeight": 782,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": "720,-1400.889078851755 1744.2094637753346,373.09375 720,2147.0765788517547 -304.2094637753346,373.09375",
+        "cancelled": false,
+        "ready": true,
+        "calls": 52,
+        "modelStatus": "DRAG THE PAGE. FOLLOW THE LOAD.",
+        "visibleChapters": [
+          0
+        ],
+        "reducedMotion": false
+      },
+      "restoredChapterLink": true,
+      "loadingAxe": [],
+      "afterAxe": [],
+      "errors": []
+    },
+    {
+      "name": "mobile",
+      "initial": {
+        "visible": true,
+        "bodyLoading": true,
+        "static": true,
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "overflow": "hidden",
+        "blocked": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "progress": null,
+        "fillY": 391,
+        "fillHeight": 0,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": null,
+        "cancelled": false,
+        "ready": false,
+        "calls": 0,
+        "modelStatus": "FREIGHT AT A GLANCE",
+        "visibleChapters": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "reducedMotion": false
+      },
+      "progressMechanism": {
+        "method": "Explicit freightLoader.update(50,100); real GLB still held",
+        "halfway": {
+          "visible": true,
+          "bodyLoading": true,
+          "static": true,
+          "width": 390,
+          "height": 844,
+          "viewportWidth": 390,
+          "viewportHeight": 844,
+          "overflow": "hidden",
+          "blocked": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "progress": "50",
+          "fillY": 0,
+          "fillHeight": 391,
+          "facets": 16,
+          "visibleFacets": 4,
+          "opening": null,
+          "cancelled": false,
+          "ready": false,
+          "calls": 0,
+          "modelStatus": "FREIGHT AT A GLANCE",
+          "visibleChapters": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "reducedMotion": false
+        }
+      },
+      "reveal": {
+        "visible": true,
+        "bodyLoading": true,
+        "static": false,
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "overflow": "hidden",
+        "blocked": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "progress": "100",
+        "fillY": -391,
+        "fillHeight": 782,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": "195,-64.99307808426335 431.30366458980876,344.296875 195,753.5868280842633 -41.30366458980876,344.296875",
+        "cancelled": false,
+        "ready": true,
+        "calls": 52,
+        "modelStatus": "DRAG THE PAGE. FOLLOW THE LOAD.",
+        "visibleChapters": [
+          0
+        ],
+        "reducedMotion": false
+      },
+      "readyEvents": [
+        {
+          "ready": true,
+          "calls": 52,
+          "triangles": 391622,
+          "timestamp": 1456.2999997138977
+        }
+      ],
+      "after": {
+        "visible": false,
+        "bodyLoading": false,
+        "static": false,
+        "width": 0,
+        "height": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "overflow": "visible",
+        "blocked": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "progress": "100",
+        "fillY": -391,
+        "fillHeight": 782,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": "195,-493.15615747593097 678.5037337336472,344.296875 195,1181.749907475931 -288.5037337336472,344.296875",
+        "cancelled": false,
+        "ready": true,
+        "calls": 52,
+        "modelStatus": "DRAG THE PAGE. FOLLOW THE LOAD.",
+        "visibleChapters": [
+          0
+        ],
+        "reducedMotion": false
+      },
+      "restoredChapterLink": true,
+      "loadingAxe": [],
+      "afterAxe": [],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "date": "2026-09-05T21:17:11.624Z",
+  "browser": "152.0.7977.77",
+  "cases": [
+    {
+      "name": "unknown-length-heartbeat",
+      "fakeClock": true,
+      "mechanism": "At 19s update(100,0); still loading at 38s; repeated same bytes do not reset deadline; timed out by 39.75s",
+      "heartbeat": {
+        "visible": true,
+        "bodyLoading": true,
+        "static": true,
+        "width": 1440,
+        "height": 900,
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "overflow": "hidden",
+        "blocked": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "progress": null,
+        "fillY": 391,
+        "fillHeight": 0,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": null,
+        "cancelled": false,
+        "ready": false,
+        "calls": 0,
+        "modelStatus": "FREIGHT AT A GLANCE",
+        "visibleChapters": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "reducedMotion": true
+      },
+      "stillLoading": {
+        "visible": true,
+        "bodyLoading": true,
+        "static": true,
+        "width": 1440,
+        "height": 900,
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "overflow": "hidden",
+        "blocked": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "progress": null,
+        "fillY": 391,
+        "fillHeight": 0,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": null,
+        "cancelled": false,
+        "ready": false,
+        "calls": 0,
+        "modelStatus": "FREIGHT AT A GLANCE",
+        "visibleChapters": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "reducedMotion": true
+      },
+      "timedOut": {
+        "visible": false,
+        "bodyLoading": false,
+        "static": true,
+        "width": 0,
+        "height": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "overflow": "visible",
+        "blocked": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "progress": null,
+        "fillY": 391,
+        "fillHeight": 0,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": null,
+        "cancelled": true,
+        "ready": false,
+        "calls": 0,
+        "modelStatus": "FREIGHT AT A GLANCE",
+        "visibleChapters": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "reducedMotion": true
+      },
+      "late": {
+        "visible": false,
+        "bodyLoading": false,
+        "static": true,
+        "width": 0,
+        "height": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "overflow": "visible",
+        "blocked": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "progress": null,
+        "fillY": 391,
+        "fillHeight": 0,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": null,
+        "cancelled": true,
+        "ready": false,
+        "calls": 0,
+        "modelStatus": "FREIGHT AT A GLANCE",
+        "visibleChapters": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "reducedMotion": true
+      },
+      "errors": []
+    },
+    {
+      "name": "context-loss-then-late-model",
+      "realWebGLContextLoss": true,
+      "lost": {
+        "visible": false,
+        "bodyLoading": false,
+        "static": true,
+        "width": 0,
+        "height": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "overflow": "visible",
+        "blocked": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "progress": null,
+        "fillY": 391,
+        "fillHeight": 0,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": null,
+        "cancelled": false,
+        "ready": false,
+        "calls": 0,
+        "modelStatus": "FREIGHT AT A GLANCE",
+        "visibleChapters": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "reducedMotion": false
+      },
+      "late": {
+        "visible": false,
+        "bodyLoading": false,
+        "static": true,
+        "width": 0,
+        "height": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "overflow": "visible",
+        "blocked": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "progress": null,
+        "fillY": 391,
+        "fillHeight": 0,
+        "facets": 16,
+        "visibleFacets": 4,
+        "opening": null,
+        "cancelled": false,
+        "ready": false,
+        "calls": 0,
+        "modelStatus": "FREIGHT AT A GLANCE",
+        "visibleChapters": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "reducedMotion": false
+      },
+      "errors": []
+    }
+  ]
+}
